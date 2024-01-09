@@ -1,0 +1,350 @@
+.page {
+  height: auto;
+  width: auto;
+  flex-direction: column;
+}
+
+.fl {
+  float: left;
+}
+
+.fr {
+  float: right;
+}
+.caption-title {
+  font-size: 22px;
+  font-family: "黑体";
+  color: #fff;
+  max-width: 900px;
+  margin: 0 auto;
+  height: 48px;
+  margin-top: 10px;
+}
+
+.biaoti {
+  line-height: 48px;
+  display: inline-block;
+  margin: 0px;
+  padding: 0px;
+  width: 276px;
+  text-align: center;
+  font-size: 28px;
+}
+
+.select {
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: row;
+
+  margin-top: 1%;
+  height: 5%;
+}
+
+.select-button {
+  position: relative;
+  display: flex;
+  margin: auto;
+  justify-content: center;
+  align-items: center;
+  flex-direction: row;
+
+  height: 100%;
+  width: 50%;
+}
+
+#select-left {
+  margin-left: 25%;
+}
+
+#select-right {
+  margin-right: 25%;
+}
+
+.nav > ul > li i {
+  width: 16px;
+  height: 16px;
+  display: inline-block;
+  position: relative;
+  top: 3px;
+  margin-right: 8px;
+}
+.nav > ul > li {
+  display: inline-block;
+  text-align: center;
+  height: 40px;
+  position: relative;
+  line-height: 35px;
+  margin-top: 0px;
+  box-sizing: border-box;
+  border-radius: 7px;
+}
+.text {
+  color: #ffffff;
+  position: relative;
+  font-size: 25px;
+  font-family: "黑体";
+}
+.text_un {
+  color: #ffffff;
+  position: relative;
+  font-size: 18px;
+  font-family: "微软雅黑";
+}
+
+#nav-right_un {
+  width: 100px;
+}
+#nav-right {
+  width: 110px;
+  height: 110%;
+}
+#nav-left_un {
+  width: 140px;
+}
+#nav-left_One {
+  width: 110px;
+  height: 110%;
+}
+
+.nav_1 {
+  background-image: url("../images/nav_2.png");
+}
+.nav_2 {
+  background-image: url("../images/nav_1.png");
+}
+.nav_active_un {
+  border-bottom: 4px solid #4b8df8;
+  box-shadow: -10px 0px 15px #034c6a inset,
+    /*å·¦è¾¹é˜´å½±*/ 0px -10px 15px #034c6a inset,
+    /*ä¸Šè¾¹é˜´å½±*/ 10px 0px 15px #034c6a inset,
+    /*å³è¾¹é˜´å½±*/ 0px 10px 15px #034c6a inset;
+
+  box-sizing: border-box;
+}
+
+.nav_active {
+  border-bottom: 4px solid #fdfe56;
+  box-shadow: -10px 0px 15px #a9a9a9 inset,
+    /*å·¦è¾¹é˜´å½±*/ 0px -10px 15px #a9a9a9 inset,
+    /*ä¸Šè¾¹é˜´å½±*/ 10px 0px 15px #a9a9a9 inset,
+    /*å³è¾¹é˜´å½±*/ 0px 10px 15px #a9a9a9 inset;
+
+  box-sizing: border-box;
+}
+
+.data-box1 {
+  border: 2px solid #032d60;
+  -webkit-box-shadow: #07417a 0 0 10px;
+  -moz-box-shadow: #07417a 0 0 10px;
+  box-shadow: inset 0 0 30px #07417a;
+  position: relative;
+  height: 100%;
+}
+
+.graph {
+  width: 100%;
+  margin: 0 auto;
+  overflow: hidden;
+  padding-top: 15px;
+}
+
+.map_zs {
+  padding-top: 20px;
+  width: 40%;
+  height: 80%;
+}
+
+.tb {
+  width: 98%;
+}
+
+.right_zs_1 {
+  padding-top: 0px;
+  width: 20%;
+  height: 15%;
+}
+
+.right_zs_2 {
+  padding-top: 20px;
+  width: 20%;
+  height: 35%;
+}
+
+.right_zs_3 {
+  padding-top: 20px;
+  width: 20%;
+  height: 25%;
+}
+
+#driver-pre {
+  margin: 1% 1% 1% 1%;
+  width: 98%;
+  height: 95%;
+  box-sizing: border-box;
+  border: solid 1px white;
+  background-image: url(https://pigkiller-011955-1319328397.cos.ap-beijing.myqcloud.com/img/202312071657908.png);
+  background-size: 100% 100%;
+}
+
+#order-pre {
+  margin: 1% 1% 1% 1%;
+  width: 98%;
+  height: 95%;
+  box-sizing: border-box;
+  border: solid 1px white;
+  background-image: url(https://pigkiller-011955-1319328397.cos.ap-beijing.myqcloud.com/img/202312071657908.png);
+  background-size: 100% 100%;
+}
+
+#dif-single {
+  margin: 1% 1% 1% 1%;
+  width: 98%;
+  height: 95%;
+  box-sizing: border-box;
+  border: solid 1px white;
+  background-image: url(https://pigkiller-011955-1319328397.cos.ap-beijing.myqcloud.com/img/202312071657908.png);
+  background-size: 100% 100%;
+}
+
+#dif-fed {
+  margin: 1% 1% 1% 1%;
+  width: 98%;
+  height: 95%;
+  box-sizing: border-box;
+  border: solid 1px white;
+  background-image: url(https://pigkiller-011955-1319328397.cos.ap-beijing.myqcloud.com/img/202312071657908.png);
+  background-size: 100% 100%;
+}
+
+#allo-single {
+  margin: 1% 1% 1% 1%;
+  width: 98%;
+  height: 95%;
+  box-sizing: border-box;
+  border: solid 1px white;
+  background-image: url(https://pigkiller-011955-1319328397.cos.ap-beijing.myqcloud.com/img/202312071657908.png);
+  background-size: 100% 100%;
+}
+
+#allo-fed {
+  margin: 1% 1% 1% 1%;
+  width: 98%;
+  height: 95%;
+  box-sizing: border-box;
+  border: solid 1px white;
+  background-image: url(https://pigkiller-011955-1319328397.cos.ap-beijing.myqcloud.com/img/202312071657908.png);
+  background-size: 100% 100%;
+}
+
+/*四个角*/
+.topL {
+  width: 20px;
+  height: 20px;
+  border-top-width: 2px;
+  border-top-color: #26c6f0;
+  border-top-style: solid;
+  border-left-width: 2px;
+  border-left-color: #26c6f0;
+  border-left-style: solid;
+  position: absolute;
+  top: -2px;
+  left: -2px;
+}
+
+.topR {
+  width: 20px;
+  height: 20px;
+  border-top-width: 2px;
+  border-top-color: #26c6f0;
+  border-top-style: solid;
+  border-right-width: 2px;
+  border-right-color: #26c6f0;
+  border-right-style: solid;
+  position: absolute;
+  top: -2px;
+  right: -2px;
+}
+
+.bottomL {
+  width: 20px;
+  height: 20px;
+  border-bottom-width: 2px;
+  border-bottom-color: #26c6f0;
+  border-bottom-style: solid;
+  border-left-width: 2px;
+  border-left-color: #26c6f0;
+  border-left-style: solid;
+  position: absolute;
+  bottom: -2px;
+  left: -2px;
+}
+
+.bottomR {
+  width: 20px;
+  height: 20px;
+  border-bottom-width: 2px;
+  border-bottom-color: #26c6f0;
+  border-bottom-style: solid;
+  border-right-width: 2px;
+  border-right-color: #26c6f0;
+  border-right-style: solid;
+  position: absolute;
+  bottom: -2px;
+  right: -2px;
+}
+
+/*小标题*/
+.data-title-left,
+.data-title-right {
+  color: #105eda;
+  font-family: "微软雅黑";
+  font-size: 23px;
+}
+.data-title {
+  background-color: #000c3b;
+  width: 225px;
+  text-align: center;
+  margin: -15px auto 0 auto;
+  color: #83c7e3;
+  font-size: 20px;
+}
+.data-title span {
+  text-align: center;
+  width: 200px;
+  display: inline-block;
+  text-align: center;
+  font-size: 20px;
+}
+
+#time {
+  margin: 15px auto 0 auto;
+  text-align: center;
+  color: #83c7e3;
+  font-family: "微软雅黑";
+  font-size: 20px;
+}
+
+#progressBar {
+  margin-top: 5%;
+  margin-bottom: 34%;
+  margin-left: auto;
+  margin-right: auto;
+  width: 87%;
+  background-color: #ddd;
+  border-radius: 3px;
+  box-shadow: 0 2px 3px rgba(0, 0, 0, 0.25);
+  height: 20px;
+  border: 1px solid #ccc;
+}
+
+[type="range"] {
+    transition: 0.3s;
+    background-size: 98% 3px;
+    margin: auto;
+    width: 240px;
+    outline: none;
+    height: 4px;
+    margin: 8px;
+}

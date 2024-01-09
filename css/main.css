@@ -1,0 +1,149 @@
+.welcome {
+  height: 10%;
+  overflow: hidden;
+  background-color: rgb(58, 39, 180);
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  color : white;
+  font-size: 40px;
+  font-weight: 100;
+}
+
+.login {
+  position: absolute;
+  top: 30%;
+  left: 50%;
+  
+  margin-left: -12.5%;
+
+  height: 40%;
+  width: 25%;
+
+  color: white;
+  border: 2px solid white;
+  border-radius: 30px;
+}
+
+.login-welcome {
+  position: relative;
+  display: flex;
+  margin: auto;
+  margin-top: 3%;
+  justify-content: center;
+  align-items: center;
+
+  height: 15%;
+}
+
+.login-input {
+  position: relative;
+  display: flex;
+  margin-bottom: auto;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+
+  height: 50%;
+}
+
+.login-enter {
+  position: relative;
+  display: flex;
+  margin: auto;
+  margin-top: -7px;
+  margin-bottom: 0px;
+  box-sizing: border-box;
+  width: 300px;
+
+  justify-content: center;
+  align-items: center;
+
+  height: 15%;
+
+  border: solid 2px white;
+  border-radius: 20px;
+  background-color:#483D8B;
+}
+
+.input-window {
+  position: relative;
+  display: flex;
+
+  box-sizing: border-box;
+  overflow: hidden;
+  margin-bottom: 10px;
+  padding: 0;
+
+  height: 48px;
+  padding-left: 50px;
+  padding-right: 50px;
+  border: 1px solid #fff;
+  border-radius: 25px;
+
+  font-size: 20px;
+  background-color: transparent;
+  width: 300px;
+  color: #fff;
+  outline: none;
+}
+
+.login-else {
+  position: relative;
+  display: flex;
+  margin: auto;
+  justify-content: center;
+  align-items: center;
+
+  flex-direction: row;
+
+  height: 15%;
+}
+
+.else-button {
+  position: relative;
+  display: flex;
+  margin: auto;
+  justify-content: center;
+  align-items: center;
+
+  width: 40%;
+  height: 100%;
+}
+
+#left {
+  margin-left:10%;
+  justify-content: left;
+}
+
+#right {
+  margin-right:10%;
+  justify-content: right;
+}
+
+.fl {
+  float: left;
+}
+.fr {
+  float: right;
+}
+.caption-title {
+  font-size: 22px;
+  font-family: "黑体";
+  color: #fff;
+  max-width: 900px;
+  margin: 0 auto;
+  height: 48px;
+  margin-top: 10px;
+}
+.biaoti {
+  line-height: 48px;
+  display: inline-block;
+  margin: 0px;
+  padding: 0px;
+  width: 276px;
+  text-align: center;
+  font-size: 28px;
+}
