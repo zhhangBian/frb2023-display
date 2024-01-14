@@ -55,9 +55,6 @@ canvas2.height = canvas2.offsetHeight;
 const divWidth1=canvas2.offsetWidth;
 const divHeight1=canvas2.offsetHeight;
 
-console.log(divHeight2);
-console.log(divWidth2);
-
 function drawCurve(beginX, beginY, ctrlX, ctrlY, endX, endY) {
   painter2.beginPath();
   painter2.moveTo(beginX, beginY);

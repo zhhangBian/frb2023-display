@@ -3,6 +3,14 @@ document.addEventListener("DOMContentLoaded", function () {
 var timeBegin = Date.now(), time;
 const timeMax=30000;
 
+const canvas1=document.getElementById('canvas1');
+const painter1=canvas1.getContext('2d');
+
+canvas1.width = canvas1.offsetWidth;
+canvas1.height = canvas1.offsetHeight;
+const divWidth1=canvas1.offsetWidth;
+const divHeight1=canvas1.offsetHeight;
+
 const tb_1=1100, te_1=11800;
 const tb_2=1800, te_2=12400;
 const tb_3=1700, te_3=12600;
@@ -37,17 +45,6 @@ progressBar.addEventListener('input', function () {
   timeBegin=Date.now()-currentTime;
   time=currentTime;
 });
-
-const canvas1=document.getElementById('canvas1');
-const painter1=canvas1.getContext('2d');
-
-canvas1.width = canvas1.offsetWidth;
-canvas1.height = canvas1.offsetHeight;
-const divWidth1=canvas1.offsetWidth;
-const divHeight1=canvas1.offsetHeight;
-
-console.log(divHeight1);
-console.log(divWidth1);
 
 function drawCurve(beginX, beginY, ctrlX, ctrlY, endX, endY) {
   painter1.beginPath();
@@ -149,9 +146,10 @@ function timeSet() {
 var timer = setInterval(function () {
   timeSet();
   set1();
-  let timeAllocation = document.getElementById('time-allocation');
-  let num = `2023 Jan 14th ${Hour} : ${parseInt(time/timeMax*60)} : ${parseInt(time/timeMax*6000%60)}`;
-  timeAllocation.value = num;
+  let timeAllo = document.getElementById('time-allocation');
+  let num = `2023-01-14  14:${(parseInt(time / timeMax * 60)).toString().padStart(2, '0')}:${(parseInt(time / timeMax * 6000 % 60)).toString().padStart(2, '0')}`;
+  timeSet();
+  timeAllo.value = num;
 }, 10);
-  
+
 });

@@ -1,27 +1,36 @@
-var dom = document.getElementById('saturation');
-var myChart = echarts.init(dom, null, {
+var dom_saturation_allo = document.getElementById('saturation-show-allo');
+var chart_saturation_allo = echarts.init(dom_saturation_allo, null, {
   renderer: 'canvas',
   useDirtyRect: false
 });
 var app = {};
 
-var option;
+var option_saturation_allo;
 
 const data = [];
 for (let i = 0; i < 5; ++i) {
   data.push(Math.round(Math.random() * 200));
 }
-option = {
+option_saturation_allo = {
+  left: "5%",
   xAxis: {
     max: 'dataMax'
   },
   yAxis: {
     type: 'category',
-    data: ['滴滴', '智慧出行', '飞马出行', 'T3出行', '打车'],
+    data: ['滴滴', '智慧', '飞马', 'T3', '高德'],
     inverse: true,
     animationDuration: 300,
     animationDurationUpdate: 300,
-    max: 3
+    max: 3,
+    axisLabel: {
+      color: "rgba(255, 255, 255, 1)",
+      fontWeight: "bold",
+      //inside: true,
+      align: "right",
+      width: 100,
+    },
+    
   },
   series: [
     {
@@ -32,17 +41,23 @@ option = {
       label: {
         show: true,
         position: 'right',
-        valueAnimation: true
+        valueAnimation: true,
+        color: 'white',
+        fontWeight: "bold",
       }
     }
   ],
   legend: {
-    show: true
+    show: false
   },
   animationDuration: 0,
   animationDurationUpdate: 3000,
   animationEasing: 'linear',
-  animationEasingUpdate: 'linear'
+  animationEasingUpdate: 'linear',
+
+  pageTextStyle: {
+    color: "rgba(255, 255, 255, 1)",
+  }
 };
 
 function run() {
@@ -53,7 +68,7 @@ function run() {
       data[i] += Math.round(Math.random() * 200);
     }
   }
-  myChart.setOption({
+  chart_saturation_allo.setOption({
     series: [
       {
         type: 'bar',
@@ -72,8 +87,8 @@ setInterval(function () {
 }, 3000);
 
 
-if (option && typeof option === 'object') {
-  myChart.setOption(option);
+if (option_saturation_allo && typeof option_saturation_allo === 'object') {
+  chart_saturation_allo.setOption(option_saturation_allo);
 }
 
-window.addEventListener('resize', myChart.resize);
+window.addEventListener('resize', chart_saturation_allo.resize);

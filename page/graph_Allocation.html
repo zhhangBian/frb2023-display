@@ -125,9 +125,7 @@
         </div>
 
         <div class="show-box" id="right-1">
-          <div id="time-chart" style="width: 100%;height: 100%;"></div>
-          <script src="https://fastly.jsdelivr.net/npm/echarts@5.4.3/dist/echarts.min.js"></script>
-          <script src="../js/allocation/time-chart.js"></script>
+          <div id="answer-show-allo" style="width: 100%;height: 100%;"></div>
         </div>
         </div>
       </div> 
@@ -146,9 +144,7 @@
           </div>
           
           <div class="show-box">
-            <div id="saturation" style="width: 100%;height: 100%;"></div>
-            <script src="https://registry.npmmirror.com/echarts/5.4.3/files/dist/echarts.min.js"></script>
-            <script src="../js/allocation/saturation.js"></script>
+            <div id="saturation-show-allo" style="width: 100%;height: 100%;"></div>
         </div>  
       </div>
     </div>   
@@ -157,6 +153,11 @@
 </body>
 </html>
 
+<!-- echarts api -->
+<script src="https://fastly.jsdelivr.net/npm/echarts@5.4.3/dist/echarts.min.js"></script>
+<script src="https://registry.npmmirror.com/echarts/5.4.3/files/dist/echarts.min.js"></script>
+
+<!-- baidu map api -->
 <script type="text/javascript">  
   function initialize() {  
     var mp = new BMap.Map('map');
@@ -171,6 +172,9 @@
   }
 </script>
 
+<!-- script -->
 <script src="../js/allocation/allo-single.js"></script>
 <script src="../js/allocation/allo-fed.js"></script>
-<script src="../js/allocation/time-allocation.js"></script>
+
+<script src="../js/allocation/chart-answer-allo.js"></script>
+<script src="../js/allocation/chart-saturation-allo.js"></script>
