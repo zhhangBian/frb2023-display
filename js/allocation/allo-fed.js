@@ -1,7 +1,7 @@
 document.addEventListener("DOMContentLoaded", function () {
 
 var timeBegin = Date.now(), time;
-const timeMax=30000;
+const timeMax=60000;
 
 const canvas2=document.getElementById('canvas2');
 const painter2=canvas2.getContext('2d');
@@ -14,32 +14,33 @@ const divHeight2=canvas2.offsetHeight;
 console.log(divHeight2);
 console.log(divWidth2);
 
-const tb_31=1100, te_31=11800;
-const tb_32=1800, te_32=12400;
-const tb_33=1700, te_33=12600;
-const tb_34=2100, te_34=12400;
-const tb_35=2300, te_35=20400;
-const tb_36=1000, te_36=20200;
-const tb_37=1400, te_37=12100;
-const tb_38=1000, te_38=11200;
-const tb_39=1200, te_39=15700;
-const tb_40=1500, te_40=17400;
-const tb_41=1500, te_41=16400;
-const tb_42=1700, te_42=10600;
-const tb_43=2200, te_43=19800;
-const tb_44=1300, te_44=13200;
-const tb_45=1200, te_45=19100;
-const tb_46=1000, te_46=15200;
-const tb_47=1200, te_47=15300;
-const tb_48=1300, te_48=11800;
-const tb_49=2400, te_49=19500;
-const tb_50=1400, te_50=15100;
+const tb_101=2200, te_101=23600;
+const tb_102=3600, te_102=24800;
+const tb_103=3400, te_103=25200;
+const tb_104=4200, te_104=24800;
+const tb_105=4600, te_105=40800;
+const tb_106=2000, te_106=40400;
+const tb_107=2800, te_107=24200;
+const tb_108=2000, te_108=22400;
+const tb_109=2400, te_109=31400;
+const tb_110=3000, te_110=34800;
+const tb_111=3000, te_111=32800;
+const tb_112=3400, te_112=21200;
+const tb_113=4400, te_113=39600;
+const tb_114=2600, te_114=26400;
+const tb_115=2400, te_115=38200;
+const tb_116=2000, te_116=30400;
+const tb_117=2400, te_117=30600;
+const tb_118=2600, te_118=23600;
+const tb_119=4800, te_119=39000;
+const tb_120=2800, te_120=30200;
 
-const tb_51=2200, te_51=12600;
-const tb_52=2700, te_52=21000;
-const tb_53=12500, te_53=26000;
-const tb_54=8300, te_54=18000;
-const tb_55=7000, te_55=23000;
+const tb_121=4400, te_121=25200;
+const tb_122=5400, te_122=42000;
+const tb_123=25000, te_123=52000;
+const tb_124=16600, te_124=36000;
+const tb_125=14000, te_125=46000;
+
 
 
 const progressBar = document.getElementById('timeControl-allocation');
@@ -59,7 +60,7 @@ function drawCurve(beginX, beginY, ctrlX, ctrlY, endX, endY) {
   painter2.beginPath();
   painter2.moveTo(beginX, beginY);
   painter2.quadraticCurveTo(ctrlX, ctrlY, endX, endY);
-  painter2.strokeStyle = "#AB82FF";
+  painter2.strokeStyle = "#432385";
   painter2.lineWidth = 3;
   painter2.stroke();
 }
@@ -96,7 +97,31 @@ function setDot(timeBegin, timeEnd, beginX, beginY, ctrlX, ctrlY, endX, endY) {
   painter2.fill();
 }
 
-function fdeDot(timeBegin, timeEnd, beginX, beginY, ctrlX, ctrlY, endX, endY) {
+function setDot(timeBegin, timeEnd, beginX, beginY, ctrlX, ctrlY, endX, endY) {
+  var t=(time-timeBegin)/(timeEnd-timeBegin);
+  var x,y;
+
+  if(time<timeBegin) {
+    painter2.fillStyle = "#FF7F00";
+    x = beginX;y = beginY
+  }
+  else if(time>=timeBegin && time<=timeEnd) {
+    drawCurve(beginX,beginY,ctrlX,ctrlY,endX,endY);
+    painter2.fillStyle = "#00FF00";
+    x = getX(t,beginX,beginY,ctrlX,ctrlY,endX,endY);
+    y = getY(t,beginX,beginY,ctrlX,ctrlY,endX,endY);
+  }
+  else if(time>timeEnd && time<=timeEnd+1000) {
+    painter2.fillStyle = "#F0F8FF	";
+    x= endX;y= endY;
+  }
+
+  painter2.beginPath();
+  painter2.arc(x, y, 7, 0, 2 * Math.PI);
+  painter2.fill();
+}
+
+function setDotMarkFed(timeBegin, timeEnd, beginX, beginY, ctrlX, ctrlY, endX, endY, label) {
   var t=(time-timeBegin)/(timeEnd-timeBegin);
   var x,y;
 
@@ -118,36 +143,40 @@ function fdeDot(timeBegin, timeEnd, beginX, beginY, ctrlX, ctrlY, endX, endY) {
   painter2.beginPath();
   painter2.arc(x, y, 12, 0, 2 * Math.PI);
   painter2.fill();
+
+  painter2.fillStyle = "#FF0000"; // 设置文本颜色
+  painter2.font = "bold 30px Arial"; // 设置文本字体和大小
+  painter2.fillText(label, x - 15, y - 15); 
 }
 
-function set1() {
+function set2() {
   painter2.clearRect(0, 0, divWidth1, divHeight1);
-  setDot(tb_31,te_31,498,359,506,222,485,122);
-  setDot(tb_32,te_32,134,37,239,19,304,480);
-  setDot(tb_33,te_33,272,427,493,495,439,23);
-  setDot(tb_34,te_34,86,203,291,411,258,298);
-  setDot(tb_35,te_35,32,338,526,90,131,126);
-  setDot(tb_36,te_36,476,321,47,551,535,12);
-  setDot(tb_37,te_37,184,340,444,445,254,418);
-  setDot(tb_38,te_38,340,27,484,106,142,16);
-  setDot(tb_39,te_39,138,554,41,148,313,90);
-  setDot(tb_40,te_40,151,299,487,185,15,424);
-  setDot(tb_41,te_41,347,348,162,228,190,174);
-  setDot(tb_42,te_42,502,22,54,307,105,138);
-  setDot(tb_43,te_43,441,117,24,50,93,62);
-  setDot(tb_44,te_44,329,182,83,330,376,12);
-  setDot(tb_45,te_45,492,24,16,341,415,467);
-  setDot(tb_46,te_46,158,155,214,526,333,378);
-  setDot(tb_47,te_47,249,0,213,470,85,47);
-  setDot(tb_48,te_48,422,497,380,362,305,306);
-  setDot(tb_49,te_49,301,243,294,363,86,164);
-  setDot(tb_50,te_50,81,241,170,139,67,344);
+  setDot(tb_101,te_101,498,359,506,222,485,122);
+  setDot(tb_102,te_102,134,37,239,19,304,480);
+  setDot(tb_103,te_103,272,427,493,495,439,23);
+  setDot(tb_104,te_104,86,203,291,411,258,298);
+  setDot(tb_105,te_105,32,338,526,90,131,126);
+  setDot(tb_106,te_106,476,321,47,551,535,12);
+  setDot(tb_107,te_107,184,340,444,445,254,418);
+  setDot(tb_108,te_108,340,27,484,106,142,16);
+  setDot(tb_109,te_109,138,554,41,148,313,90);
+  setDot(tb_110,te_110,151,299,487,185,15,424);
+  setDot(tb_111,te_111,347,348,162,228,190,174);
+  setDot(tb_112,te_112,502,22,54,307,105,138);
+  setDot(tb_113,te_113,441,117,24,50,93,62);
+  setDot(tb_114,te_114,329,182,83,330,376,12);
+  setDot(tb_115,te_115,492,24,16,341,415,467);
+  setDot(tb_116,te_116,158,155,214,526,333,378);
+  setDot(tb_117,te_117,249,0,213,470,85,47);
+  setDot(tb_118,te_118,422,497,380,362,305,306);
+  setDot(tb_119,te_119,301,243,294,363,86,164);
+  setDot(tb_120,te_120,81,241,170,139,67,344);
 
-  fdeDot(tb_51,te_51,302,71,452,116,34,445,);
-  fdeDot(tb_52,te_52,287,62,72,139,195,343,);
-  fdeDot(tb_53,te_53,392,140,258,539,238,76,);
-  fdeDot(tb_54,te_54,497,302,384,554,518,453,);
-  fdeDot(tb_55,te_55,5,503,327,504,316,337,);
+  setDotMarkFed(tb_121,te_121,302,71,452,116,34,445,"A");
+  setDotMarkFed(tb_122,te_122,287,62,72,139,195,343,"B");
+  setDotMarkFed(tb_123,te_123,392,140,258,539,238,76,"C");
+  setDotMarkFed(tb_124,te_124,497,302,384,554,518,453,"D");
+  setDotMarkFed(tb_125,te_125,5,503,327,504,316,337,"E");
 }
 
 function timeSet() {
@@ -163,7 +192,7 @@ function timeSet() {
 
 var timer=setInterval(function () {
   timeSet();
-  set1();
+  set2();
 }, 10);
   
-  });
+});

@@ -30,6 +30,16 @@ option_percent_pre = {
       color: "rgba(255, 255, 255, 1)",
     }
   },
+  label: {
+    color: 'white',
+    fontWeight: "bold",
+    fontSize: 14,
+    bleedMargin: 2,
+  },
+  labelLine: {
+    show: true,
+    smooth: true,
+  },
   series: [
     {
       name: '联邦贡献比率为：',

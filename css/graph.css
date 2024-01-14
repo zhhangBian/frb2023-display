@@ -254,6 +254,8 @@
   border: solid 1px white;
   background-image: url(https://pigkiller-011955-1319328397.cos.ap-beijing.myqcloud.com/img/202312071657908.png);
   background-size: 100% 100%;
+  /* filter: contrast(0.8); */
+  filter: brightness(0.9);
 }
 
 #allo-fed {
@@ -264,6 +266,8 @@
   border: solid 1px white;
   background-image: url(https://pigkiller-011955-1319328397.cos.ap-beijing.myqcloud.com/img/202312071657908.png);
   background-size: 100% 100%;
+  /* filter: contrast(0.8); */
+  filter: brightness(0.9);
 }
 
 /*四个角*/

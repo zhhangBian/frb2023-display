@@ -1,7 +1,7 @@
 document.addEventListener("DOMContentLoaded", function () {
 
 var timeBegin = Date.now(), time;
-const timeMax=30000;
+const timeMax=60000;
 
 const canvas1=document.getElementById('canvas1');
 const painter1=canvas1.getContext('2d');
@@ -11,32 +11,32 @@ canvas1.height = canvas1.offsetHeight;
 const divWidth1=canvas1.offsetWidth;
 const divHeight1=canvas1.offsetHeight;
 
-const tb_1=1100, te_1=11800;
-const tb_2=1800, te_2=12400;
-const tb_3=1700, te_3=12600;
-const tb_4=2100, te_4=12400;
-const tb_5=2300, te_5=20400;
-const tb_6=1000, te_6=20200;
-const tb_7=1400, te_7=12100;
-const tb_8=1000, te_8=11200;
-const tb_9=1200, te_9=15700;
-const tb_10=1500, te_10=17400;
-const tb_11=1500, te_11=16400;
-const tb_12=1700, te_12=10600;
-const tb_13=2200, te_13=19800;
-const tb_14=1300, te_14=13200;
-const tb_15=1200, te_15=19100;
-const tb_16=1000, te_16=15200;
-const tb_17=1200, te_17=15300;
-const tb_18=1300, te_18=11800;
-const tb_19=2400, te_19=19500;
-const tb_20=1400, te_20=15100;
+const tb_1=2200, te_1=23600;
+const tb_2=3600, te_2=24800;
+const tb_3=3400, te_3=25200;
+const tb_4=4200, te_4=24800;
+const tb_5=4600, te_5=40800;
+const tb_6=2000, te_6=40400;
+const tb_7=2800, te_7=24200;
+const tb_8=2000, te_8=22400;
+const tb_9=2400, te_9=31400;
+const tb_10=3000, te_10=34800;
+const tb_11=3000, te_11=32800;
+const tb_12=3400, te_12=21200;
+const tb_13=4400, te_13=39600;
+const tb_14=2600, te_14=26400;
+const tb_15=2400, te_15=38200;
+const tb_16=2000, te_16=30400;
+const tb_17=2400, te_17=30600;
+const tb_18=2600, te_18=23600;
+const tb_19=4800, te_19=39000;
+const tb_20=2800, te_20=30200;
 
-const tb_21=3500;
-const tb_22=3500;
-const tb_23=4100;
-const tb_24=3900;
-const tb_25=3900;
+const tb_21=7000;
+const tb_22=7000;
+const tb_23=8200;
+const tb_24=7800;
+const tb_25=7800;
 
 const progressBar = document.getElementById('timeControl-allocation');
 // 添加事件监听器以允许手动控制进度条
@@ -50,7 +50,7 @@ function drawCurve(beginX, beginY, ctrlX, ctrlY, endX, endY) {
   painter1.beginPath();
   painter1.moveTo(beginX, beginY);
   painter1.quadraticCurveTo(ctrlX, ctrlY, endX, endY);
-  painter1.strokeStyle = "#AB82FF";
+  painter1.strokeStyle = "#432385";
   painter1.lineWidth = 3;
   painter1.stroke();
 }
@@ -87,7 +87,7 @@ function setDot(timeBegin, timeEnd, beginX, beginY, ctrlX, ctrlY, endX, endY) {
   painter1.fill();
 }
 
-function stopDot(timeBegin, beginX, beginY) {
+function setDotMarkSin(timeBegin, beginX, beginY, label) {
   if(time<timeBegin) {
     painter1.fillStyle = "#FF7F00";
   }
@@ -100,10 +100,15 @@ function stopDot(timeBegin, beginX, beginY) {
   painter1.beginPath();
   painter1.arc(beginX, beginY, 12, 0, 2 * Math.PI);
   painter1.fill();
+
+  painter1.fillStyle = "#FF0000"; // 设置文本颜色
+  painter1.font = "bold 30px Arial"; // 设置文本字体和大小
+  painter1.fillText(label, beginX - 15, beginY - 15); 
 }
 
 function set1() {
   painter1.clearRect(0, 0, divWidth1, divHeight1);
+  console.log(divWidth1,divHeight1);
   setDot(tb_1,te_1,498,359,506,222,485,122);
   setDot(tb_2,te_2,134,37,239,19,304,480);
   setDot(tb_3,te_3,272,427,493,495,439,23);
@@ -125,11 +130,11 @@ function set1() {
   setDot(tb_19,te_19,301,243,294,363,86,164);
   setDot(tb_20,te_20,81,241,170,139,67,344);
 
-  stopDot(tb_21,302,71);
-  stopDot(tb_22,287,62);
-  stopDot(tb_23,392,140);
-  stopDot(tb_24,497,302);
-  stopDot(tb_25,5,503);
+  setDotMarkSin(tb_21,302,71,"A");
+  setDotMarkSin(tb_22,287,62,"B");
+  setDotMarkSin(tb_23,392,140,"C");
+  setDotMarkSin(tb_24,497,302,"D");
+  setDotMarkSin(tb_25,5,503,"E");
 }
 
 function timeSet() {
@@ -146,9 +151,9 @@ function timeSet() {
 var timer = setInterval(function () {
   timeSet();
   set1();
+
   let timeAllo = document.getElementById('time-allocation');
   let num = `2023-01-14  14:${(parseInt(time / timeMax * 60)).toString().padStart(2, '0')}:${(parseInt(time / timeMax * 6000 % 60)).toString().padStart(2, '0')}`;
-  timeSet();
   timeAllo.value = num;
 }, 10);
 
