@@ -31,6 +31,7 @@ var app = {};
 var option2;
 
 var COLORS2 = ["#060093", "#1b3fbf", "#1382e5", "#69b4eb", "#b3e0f3", "#feffff"];
+// var COLORS1 = ["#1382e5","#00BFFF", "#b3e0f3", "#E0FFFF","#F0FFFF","#feffff"];
 var lngExtent = [39.5, 40.6];
 var latExtent = [115.9, 116.8];
 var cellCount = [50, 50];

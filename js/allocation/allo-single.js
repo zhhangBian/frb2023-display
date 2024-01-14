@@ -30,8 +30,7 @@ const tb_23=4100;
 const tb_24=3900;
 const tb_25=3900;
 
-const progressBar = document.getElementById('timeControl');
-const mappedValueElement = document.getElementById('time');
+const progressBar = document.getElementById('timeControl-allocation');
 // 添加事件监听器以允许手动控制进度条
 progressBar.addEventListener('input', function () {
   currentTime = parseInt(progressBar.value);
@@ -147,9 +146,12 @@ function timeSet() {
   progressBar.value=time;
 }
 
-var timer=setInterval(function () {
+var timer = setInterval(function () {
   timeSet();
   set1();
+  let timeAllocation = document.getElementById('time-allocation');
+  let num = `2023 Jan 14th ${Hour} : ${parseInt(time/timeMax*60)} : ${parseInt(time/timeMax*6000%60)}`;
+  timeAllocation.value = num;
 }, 10);
   
 });

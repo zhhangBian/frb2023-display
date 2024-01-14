@@ -21,24 +21,32 @@
     <i class="fr"><img src="../images/title-right.png" ></i>
   </div>
 <!-- 选项 -->
-    <div class="select">
-      <div class="select-button nav" id="select-left">
-        <ul>
-          <li class="nav_active" id = "nav-left_One">
-            <i class="nav_1"></i><a href="graph_Pre.html" class="text">调度</a>
-          </li>
-        </ul>
-      </div>
-      
-      <div class="select-button nav" id="select-right">
-        <ul>
-          <li class="nav_active_un" id = "nav-right">
-            <i class="nav_2"></i><a href="graph_Allocation.html" class="text_un">分单</a>
-          </li>
-        </ul>
-      </div>
+<div class="select">
+  <div class="select-button nav" id="select-left">
+    <ul>
+      <li class="nav_active_un" id = "nav-left">
+        <i class="nav_3"></i><a href="graph_Pre.html" class="text">预测</a>
+      </li>
+    </ul>
+  </div>
 
-    </div>
+  <div class="select-button nav" id="select-middle">
+    <ul>
+      <li class="nav_active" id = "nav-middle">
+        <i class="nav_1"></i><a href="graph_Dispath.html" class="text">调度</a>
+      </li>
+    </ul>
+  </div>
+  
+  <div class="select-button nav" id="select-right">
+    <ul>
+      <li class="nav_active_un" id = "nav-right">
+        <i class="nav_2"></i><a href="graph_Allocation.html" class="text">分单</a>
+      </li>
+    </ul>
+  </div>
+
+</div>
 <!-- 表格部分 -->
     <div class="graph">
       <div class="map_zs fl">
@@ -54,10 +62,6 @@
           </div>
           
           <div id="dif-single"></div>
-          <script src="https://fastly.jsdelivr.net/npm/echarts@5.4.3/dist/echarts.min.js"></script>
-          <script src="https://api.map.baidu.com/api?v=3.0&ak=aqzLfIIEr6KaboQ31v7wg8G1VzGeXx1M&callback=initialize"></script>
-          <script src="https://fastly.jsdelivr.net/npm/echarts@5.4.3/dist/extension/bmap.min.js"></script>
-          <script src="../js/dispatch/dif-single.js"></script>
         </div>
       </div>
 
@@ -74,10 +78,6 @@
         </div>
 
         <div id="dif-fed"></div>
-        <script src="https://fastly.jsdelivr.net/npm/echarts@5.4.3/dist/echarts.min.js"></script>
-        <script src="https://api.map.baidu.com/api?v=3.0&ak=aqzLfIIEr6KaboQ31v7wg8G1VzGeXx1M&callback=initialize"></script>
-        <script src="https://fastly.jsdelivr.net/npm/echarts@5.4.3/dist/extension/bmap.min.js"></script>
-        <script src="../js/dispatch/dif-fed.js"></script>
         </div>
       </div>
 
@@ -93,11 +93,12 @@
             <b class="data-title-right fr">]</b>
         </div>
         <div id="right-1">
-          <p id = "time">
-            时间：XXXX年XX月XX日
-          </p>
-          <div id="progressBar" >
-            <input type="range" id="timeControl" min="0" max="30000" step="10" value="0">
+          <div id = "time">
+            <input type="text" id = "time-dispath" value="0" size = "25">
+          </div>
+          
+          <div id="progressBar-dispath" >
+            <input type="range" id="timeControl-dispath" min="0" max="30000" step="10" value="0">
           </div>
         </div>  
         </div>
@@ -162,3 +163,15 @@
     document.body.appendChild(script);  
   }
 </script>
+
+<script src="https://fastly.jsdelivr.net/npm/echarts@5.4.3/dist/echarts.min.js"></script>
+<script src="https://api.map.baidu.com/api?v=3.0&ak=aqzLfIIEr6KaboQ31v7wg8G1VzGeXx1M&callback=initialize"></script>
+<script src="https://fastly.jsdelivr.net/npm/echarts@5.4.3/dist/extension/bmap.min.js"></script>
+<script src="../js/dispatch/dif-single.js"></script>
+
+<script src="https://fastly.jsdelivr.net/npm/echarts@5.4.3/dist/echarts.min.js"></script>
+<script src="https://api.map.baidu.com/api?v=3.0&ak=aqzLfIIEr6KaboQ31v7wg8G1VzGeXx1M&callback=initialize"></script>
+<script src="https://fastly.jsdelivr.net/npm/echarts@5.4.3/dist/extension/bmap.min.js"></script>
+<script src="../js/dispatch/dif-fed.js"></script>
+
+<script src="../js/dispatch/time-dispath.js"></script>

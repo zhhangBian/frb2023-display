@@ -42,7 +42,7 @@ const tb_54=8300, te_54=18000;
 const tb_55=7000, te_55=23000;
 
 
-const progressBar = document.getElementById('timeControl');
+const progressBar = document.getElementById('timeControl-allocation');
 // 添加事件监听器以允许手动控制进度条
 progressBar.addEventListener('input', function () {
   currentTime = parseInt(progressBar.value);
