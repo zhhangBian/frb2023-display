@@ -33,7 +33,7 @@ var app = {};
 
 var option_order_map_pre;
 
-var COLORS1 = ['white', '#FFC0CB', '#FF69B4', '#FF6347', '#FF4500', '#FF0000'];
+var COLORS1 = ['#E1E4EA', '#92B8FF', '#5E91F2', '#1554BF', '#003B8E', '#00008B'];
 var lngExtent = [39.5, 40.6];
 var latExtent = [115.9, 116.8];
 var cellCount = [50, 50];
