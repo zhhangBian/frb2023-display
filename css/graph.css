@@ -353,7 +353,10 @@
 #time-pre {
   background: none;
   border: none;
-  margin: 15px auto -3px 30px;
+  /* margin: 15px auto -3px 30px; */
+  position: relative;
+  display: flex;
+  margin: auto;
   text-align: center;
   color: #83c7e3;
   font-family: "微软雅黑";
@@ -363,7 +366,9 @@
 #time-dispath {
   background: none;
   border: none;
-  margin: 15px auto -3px 30px;
+  position: relative;
+  display: flex;
+  margin: auto;
   text-align: center;
   color: #83c7e3;
   font-family: "微软雅黑";
@@ -373,7 +378,9 @@
 #time-allocation {
   background: none;
   border: none;
-  margin: 15px auto -3px 30px;
+  position: relative;
+  display: flex;
+  margin: auto;
   text-align: center;
   color: #83c7e3;
   font-family: "微软雅黑";
