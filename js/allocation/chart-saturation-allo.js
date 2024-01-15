@@ -9,7 +9,7 @@ var option_saturation_allo;
 
 const data = [];
 for (let i = 0; i < 5; ++i) {
-  data.push(Math.random() * 0.1);
+  data.push(parseFloat((Math.random() * 0.1).toFixed(4)));
 }
 
 option_saturation_allo = {
@@ -64,10 +64,11 @@ option_saturation_allo = {
 function run() {
   for (var i = 0; i < data.length; ++i) {
     if (Math.random() > 0.9) {
-      data[i] += Math.random() * 0.01;
+      data[i] += parseFloat((Math.random() * 0.01).toFixed(4));
     } else {
-      data[i] += Math.random() * 0.1;
+      data[i] += parseFloat((Math.random() * 0.1).toFixed(4));
     }
+    data[i]=parseFloat(data[i].toFixed(4))
   }
   chart_saturation_allo.setOption({
     series: [
