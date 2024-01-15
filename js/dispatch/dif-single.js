@@ -1,5 +1,5 @@
 var timeBegin = Date.now(), time;
-const timeMax=600000;
+const timeMax=30000;
 const timePer=6000;
 
 var list_dif_sin=[];

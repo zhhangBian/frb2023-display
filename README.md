@@ -1,1 +1,1 @@
-this is used to dosplay the FenRu Cup project's effect
+this is used to display the FenRu Cup project's effect
