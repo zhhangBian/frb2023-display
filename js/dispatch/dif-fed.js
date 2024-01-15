@@ -290,4 +290,4 @@ var timer=setInterval(function () {
   }
   
   window.addEventListener('resize', chart_dif_fed_dis.resize);
-}, 10);
+}, 500);

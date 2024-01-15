@@ -1,5 +1,5 @@
 var timeBegin = Date.now(), time;
-const timeMax=30000;
+const timeMax=600000;
 const timePer=6000;
 
 var list_dif_sin=[];
@@ -294,4 +294,4 @@ var timer=setInterval(function () {
   }
   
   window.addEventListener('resize', chart_dif_sin_dis.resize);
-}, 10);
+}, 500);
