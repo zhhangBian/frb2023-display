@@ -420,10 +420,11 @@
 }
 
 [type="range"] {
-    transition: 0.3s;
-    background-size: 98% 3px;
-    margin:8px 0 0 22px;
-    width: 240px;
-    outline: none;
-    height: 4px;
+  transition: 0.3s;
+  background-size: 98% 3px;
+  margin-top: 2.5%;
+  margin-left: 5%;;
+  width: 90%;
+  outline: none;
+  height: 30%;
 }
