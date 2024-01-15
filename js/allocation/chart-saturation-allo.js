@@ -9,8 +9,9 @@ var option_saturation_allo;
 
 const data = [];
 for (let i = 0; i < 5; ++i) {
-  data.push(Math.round(Math.random() * 200));
+  data.push(Math.random() * 0.1);
 }
+
 option_saturation_allo = {
   left: "5%",
   xAxis: {
@@ -63,9 +64,9 @@ option_saturation_allo = {
 function run() {
   for (var i = 0; i < data.length; ++i) {
     if (Math.random() > 0.9) {
-      data[i] += Math.round(Math.random() * 2000);
+      data[i] += Math.random() * 0.01;
     } else {
-      data[i] += Math.round(Math.random() * 200);
+      data[i] += Math.random() * 0.1;
     }
   }
   chart_saturation_allo.setOption({

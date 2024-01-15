@@ -44,7 +44,7 @@ option_percent_pre = {
     {
       name: '联邦贡献比率为：',
       type: 'pie',
-      radius: '70%',
+      radius: '60%',
       orient: 'vertical',
       top: '0%',
       data: [

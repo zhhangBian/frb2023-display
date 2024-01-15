@@ -43,7 +43,7 @@ option_answer_allo = {
     {
       name: '相应时间占比为：',
       type: 'pie',
-      radius: '60%',
+      radius: '50%',
       top: '0%',
       data: [
         { value: 0.423, name: '三分钟' },
