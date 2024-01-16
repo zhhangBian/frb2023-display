@@ -33,7 +33,7 @@ var app = {};
 
 var option_order_map_pre;
 
-const color_sin = ['#E1E4EA', '#92B8FF', '#5E91F2', '#1554BF', '#003B8E', '#00008B'];
+const color_sin = ['#F8F8FF', '#F0FFF0', '#7FFFD4', '#4EEE94', '#66CDAA', '#2E8B57'];
 var lngExtent = [39.5, 40.6];
 var latExtent = [115.9, 116.8];
 var cellCount = [50, 50];
@@ -287,7 +287,6 @@ var timer=setInterval(function () {
       }
     }
   };
-  
 
   if (option_order_map_pre && typeof option_order_map_pre === 'object') {
     chart_dif_sin_dis.setOption(option_order_map_pre);

@@ -30,7 +30,7 @@ var app = {};
 
 var option_driver_map_pre;
 
-const color_fed = ["white","#b3e0f3","#69b4eb", "#1382e5","#1b3fbf","#060093"];
+const color_fed = ['#F8F8FF', '#E0FFFF', '#4EEE94', '#00CD66', '#00CD00', '#006400'];
 
 var lngExtent = [39.5, 40.6];
 var latExtent = [115.9, 116.8];
