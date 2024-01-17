@@ -474,16 +474,16 @@
 .data-title-right {
   color: #105eda;
   font-family: "微软雅黑";
-  font-size: 100%;
+  font-size: 120%;
 }
 
 .data-title {
   background-color: #000c3b;
-  width: 60%;
+  width: 80%;
   text-align: center;
   margin: -15px auto 0 auto;
   color: #83c7e3;
-  font-size: 130%;
+  font-size: 100%;
 }
 
 .data-title span {
@@ -508,6 +508,8 @@
   width: 87%;
   height: 30%;
 
+  font-size: 100%;
+
   display: flex;
   justify-content: center;
   align-items: center;
@@ -522,7 +524,7 @@
   text-align: center;
   color: #83c7e3;
   font-family: "微软雅黑";
-  font-size: 150%;
+  font-size: 120%;
 }
 
 #time-dispath {
@@ -534,7 +536,7 @@
   text-align: center;
   color: #83c7e3;
   font-family: "微软雅黑";
-  font-size: 150%;
+  font-size: 120%;
 }
 
 #time-allocation {
@@ -546,7 +548,7 @@
   text-align: center;
   color: #83c7e3;
   font-family: "微软雅黑";
-  font-size: 150%;
+  font-size: 120%;
 }
 
 #progressBar-pre {
