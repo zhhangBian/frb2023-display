@@ -1,4 +1,4 @@
-var dom_saturation_allo_2 = document.getElementById('answer_show_saturation_2');
+var dom_saturation_allo_2 = document.getElementById('saturation_show_allo_2');
 var chart_saturation_allo_2 = echarts.init(dom_saturation_allo_2, null, {
   renderer: 'canvas',
   useDirtyRect: false

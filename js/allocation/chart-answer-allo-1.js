@@ -46,10 +46,10 @@ option_answer_allo_1 = {
       radius: '50%',
       top: '0%',
       data: [
-        { value: 0.423, name: '三分钟' },
-        { value: 0.239, name: '五分钟' },
-        { value: 0.184, name: '十分钟' },
-        { value: 0.154, name: '未接单' }
+        { value: 0.239, name: '三分钟' },
+        { value: 0.423, name: '五分钟' },
+        { value: 0.154, name: '十分钟' },
+        { value: 0.184, name: '未接单' }
       ],
       emphasis: {
         itemStyle: {

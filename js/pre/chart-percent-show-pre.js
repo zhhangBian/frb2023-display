@@ -48,11 +48,11 @@ option_percent_pre = {
       orient: 'vertical',
       top: '0%',
       data: [
-        { value: 0.333, name: '滴滴打车' },
-        { value: 0.234, name: '神州出行' },
-        { value: 0.184, name: '高德打车' },
-        { value: 0.154, name: 'T3出行' },
-        { value: 0.095, name: '其他' }
+        { value: 14514, name: '滴滴打车' },
+        { value: 3956, name: '神州出行' },
+        { value: 7658, name: '高德打车' },
+        { value: 2407, name: 'T3出行' },
+        { value: 6242, name: '其他公司' }
       ],
       emphasis: {
         itemStyle: {

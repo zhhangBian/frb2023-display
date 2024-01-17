@@ -302,9 +302,9 @@ function set0() {
   setDot(tb_090, te_090, 0.15, 0.80, 0.67, 0.31, 0.03, 0.84, 3);
 
   setDotMarkFed(tb_901, te_901, 0.11, 0.51, 0.04, 0.68, 0.86, 0.31, "A");
-  setDotMarkFed(tb_902, te_902, 0.01, 0.74, 0.35, 0.42, 0.12, 0.09, "B");
+  setDotMarkFed(tb_902, te_902, 0.08, 0.74, 0.35, 0.42, 0.12, 0.09, "B");
   setDotMarkFed(tb_903, te_903, 0.76, 0.92, 0.92, 0.68, 0.90, 0.47, "C");
-  setDotMarkFed(tb_904, te_904, 0.28, 0.07, 0.58, 0.67, 0.34, 0.86, "D");
+  setDotMarkFed(tb_904, te_904, 0.28, 0.10, 0.58, 0.67, 0.34, 0.86, "D");
   setDotMarkFed(tb_905, te_905, 0.76, 0.76, 0.90, 0.50, 0.17, 0.82, "E");
   setDotMarkFed(tb_906, te_906, 0.13, 0.40, 0.58, 0.10, 0.21, 0.45, "F");
   setDotMarkFed(tb_907, te_907, 0.32, 0.51, 0.09, 0.48, 0.73, 0.58, "G");
@@ -323,9 +323,13 @@ function timeSet() {
   progressBar.value=time;
 }
 
-var timer=setInterval(function () {
+var timer = setInterval(function () {
   timeSet();
   set0();
+
+  let timeAllo = document.getElementById('time-allo');
+  let num = `14:${(parseInt(time / timeMax * 60)).toString().padStart(2, '0')}:${(parseInt(time / timeMax * 6000 % 60)).toString().padStart(2, '0')}`;
+  timeAllo.value = num;
 }, 10);
   
 });

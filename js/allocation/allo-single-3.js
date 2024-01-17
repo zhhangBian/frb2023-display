@@ -166,13 +166,9 @@ function timeSet() {
   progressBar.value=time;
 }
 
-var timer = setInterval(function () {
+var timer=setInterval(function () {
   timeSet();
   set3();
-
-  let timeAllo = document.getElementById('time-allocation');
-  let num = `2023-01-14  14:${(parseInt(time / timeMax * 60)).toString().padStart(2, '0')}:${(parseInt(time / timeMax * 6000 % 60)).toString().padStart(2, '0')}`;
-  timeAllo.value = num;
 }, 10);
 
 });

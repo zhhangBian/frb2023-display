@@ -150,7 +150,7 @@ function set2() {
   setDot(tb_229, te_229, 0.61, 0.21, 0.76, 0.46, 0.52, 0.61);
   setDot(tb_230, te_230, 0.14, 0.94, 0.04, 0.63, 0.78, 0.65);
 
-  setDotMarkSin(tb_291, 0.28, 0.07, "D");
+  setDotMarkSin(tb_291, 0.28, 0.10, "D");
   setDotMarkSin(tb_292, 0.76, 0.76, "E");
   setDotMarkSin(tb_293, 0.13, 0.40, "F");
 }
@@ -166,13 +166,9 @@ function timeSet() {
   progressBar.value=time;
 }
 
-var timer = setInterval(function () {
+var timer=setInterval(function () {
   timeSet();
   set2();
-
-  let timeAllo = document.getElementById('time-allocation');
-  let num = `2023-01-14  14:${(parseInt(time / timeMax * 60)).toString().padStart(2, '0')}:${(parseInt(time / timeMax * 6000 % 60)).toString().padStart(2, '0')}`;
-  timeAllo.value = num;
 }, 10);
 
 });

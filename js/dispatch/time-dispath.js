@@ -18,9 +18,8 @@ progressBar.addEventListener('input', function () {
   }
 
 var timer=setInterval(function () {
-    let timeDis = document.getElementById('time-dispath');
-    let num = `2023-01-14  14:${(parseInt(time / timeMax * 60)).toString().padStart(2, '0')}:${(parseInt(time / timeMax * 6000 % 60)).toString().padStart(2, '0')}`;
+    let timeDis = document.getElementById('time-dis');
+    let num = `14:${(parseInt(time / timeMax * 60)).toString().padStart(2, '0')}:${(parseInt(time / timeMax * 6000 % 60)).toString().padStart(2, '0')}`;
     timeSet();
     timeDis.value = num;
 }, 10);
-
