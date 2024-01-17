@@ -65,7 +65,7 @@
         </div>
         
         <div id="allo-single">
-          <canvas id="canvas1"></canvas>
+          <canvas id="canvas1" style="height: 100%;width: 100%;"></canvas>
         </div>
       </div>
     </div>
@@ -84,7 +84,7 @@
         </div>
         
         <div id="allo-single">
-          <canvas id="canvas1"></canvas>
+          <canvas id="canvas2" style="height: 100%;width: 100%;"></canvas>
         </div>
       </div>
     </div>
@@ -103,7 +103,7 @@
         </div>
         
         <div id="allo-single">
-          <canvas id="canvas1"></canvas>
+          <canvas id="canvas3" style="height: 100%;width: 100%;"></canvas>
         </div>
       </div>
     </div>
@@ -118,12 +118,12 @@
       
       <div class="data-title">
         <b class="data-title-left fl">[</b>
-        <span>聚合打车平台</span>
+        <span>联邦聚合打车平台</span>
         <b class="data-title-right fr">]</b>
       </div>
       
       <div id="allo-fed">
-        <canvas id="canvas2"></canvas>
+        <canvas id="canvas0" style="height: 100%;width: 100%;"></canvas>
       </div>
     </div>
   </div>
@@ -166,8 +166,9 @@
           <b class="data-title-right fr">]</b>
       </div>
   
-      <div class="show-box" id="right-1">
-        <div id="answer-show-allo" style="width: 100%;height: 100%;"></div>
+      <div class="answer_box_allo">
+        <div class="answer_allo" id="answer_show_allo_1"></div>
+        <div class="answer_allo" id="answer_show_allo_2"></div>
       </div>
       </div>
     </div> 
@@ -185,14 +186,14 @@
           <b class="data-title-right fr">]</b>
         </div>
         
-        <div class="show-box">
-          <div id="saturation-show-allo" style="width: 100%;height: 100%;"></div>
+        <div class="saturation_box_allo">
+          <div class="saturation_allo" id="answer_show_saturation_1"></div>
+          <div class="saturation_allo" id="answer_show_saturation_2"></div>
       </div>  
     </div>
     </div> 
   </div>
 
-    
 </div>
 
 </body>
@@ -219,8 +220,12 @@
 </script>
 
 <!-- script -->
-<script src="../js/allocation/allo-single.js"></script>
 <script src="../js/allocation/allo-fed.js"></script>
+<script src="../js/allocation/allo-single-1.js"></script>
+<script src="../js/allocation/allo-single-2.js"></script>
+<script src="../js/allocation/allo-single-3.js"></script>
 
-<script src="../js/allocation/chart-answer-allo.js"></script>
-<script src="../js/allocation/chart-saturation-allo.js"></script>
+<script src="../js/allocation/chart-answer-allo-1.js"></script>
+<script src="../js/allocation/chart-answer-allo-2.js"></script>
+<script src="../js/allocation/chart-saturation-allo-1.js"></script>
+<script src="../js/allocation/chart-saturation-allo-2.js"></script>

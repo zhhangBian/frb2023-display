@@ -612,3 +612,33 @@
 #timeControl-allocation {
   margin-top: 1%;
 }
+
+.answer_box_allo {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: row;
+
+  height: 100%;
+  width: 100%;
+}
+
+.answer_allo {
+  height: 100%;
+  width: 49%;
+}
+
+.saturation_box_allo {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: row;
+
+  height: 100%;
+  width: 100%;
+}
+
+.saturation_allo {
+  height: 100%;
+  width: 49%;
+}

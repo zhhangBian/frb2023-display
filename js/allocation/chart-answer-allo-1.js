@@ -1,13 +1,13 @@
-var dom_answer_allo = document.getElementById('answer-show-allo');
-var chart_answer_allo = echarts.init(dom_answer_allo, null, {
+var dom_answer_allo_1 = document.getElementById('answer_show_allo_1');
+var chart_answer_allo_1 = echarts.init(dom_answer_allo_1, null, {
   renderer: 'canvas',
   useDirtyRect: false
 });
 var app = {};
 
-var option_answer_allo;
+var option_answer_allo_1;
 
-option_answer_allo = {
+option_answer_allo_1 = {
   tooltip: {
     trigger: 'item',
   },
@@ -62,8 +62,8 @@ option_answer_allo = {
   ]
 };
 
-if (option_answer_allo && typeof option_answer_allo === 'object') {
-  chart_answer_allo.setOption(option_answer_allo);
+if (option_answer_allo_1 && typeof option_answer_allo_1 === 'object') {
+  chart_answer_allo_1.setOption(option_answer_allo_1);
 }
 
-window.addEventListener('resize', chart_answer_allo.resize);
+window.addEventListener('resize', chart_answer_allo_1.resize);

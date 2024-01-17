@@ -1,18 +1,18 @@
-var dom_saturation_allo = document.getElementById('saturation-show-allo');
-var chart_saturation_allo = echarts.init(dom_saturation_allo, null, {
+var dom_saturation_allo_1 = document.getElementById('answer_show_saturation_1');
+var chart_saturation_allo_1 = echarts.init(dom_saturation_allo_1, null, {
   renderer: 'canvas',
   useDirtyRect: false
 });
 var app = {};
 
-var option_saturation_allo;
+var option_saturation_allo_1;
 
-const data = [];
+var data_1 = [];
 for (let i = 0; i < 5; ++i) {
-  data.push(parseFloat((Math.random() * 0.1).toFixed(4)));
+  data_1.push(parseFloat((Math.random() * 0.1).toFixed(4)));
 }
 
-option_saturation_allo = {
+option_saturation_allo_1 = {
   left: "5%",
   xAxis: {
     max: 'dataMax'
@@ -38,7 +38,7 @@ option_saturation_allo = {
       realtimeSort: true,
       name: '各公司饱和度',
       type: 'bar',
-      data: data,
+      data: data_1,
       label: {
         show: true,
         position: 'right',
@@ -61,36 +61,36 @@ option_saturation_allo = {
   }
 };
 
-function run() {
-  for (var i = 0; i < data.length; ++i) {
+function run_1() {
+  for (var i = 0; i < data_1.length; ++i) {
     if (Math.random() > 0.9) {
-      data[i] += parseFloat((Math.random() * 0.01).toFixed(4));
+      data_1[i] += parseFloat((Math.random() * 0.01).toFixed(4));
     } else {
-      data[i] += parseFloat((Math.random() * 0.1).toFixed(4));
+      data_1[i] += parseFloat((Math.random() * 0.1).toFixed(4));
     }
-    data[i]=parseFloat(data[i].toFixed(4))
+    data_1[i]=parseFloat(data_1[i].toFixed(4))
   }
-  chart_saturation_allo.setOption({
+  chart_saturation_allo_1.setOption({
     series: [
       {
         type: 'bar',
-        data
+        data:data_1
       }
     ]
   });
 }
 
 setTimeout(function () {
-  run();
+  run_1();
 }, 0);
 
 setInterval(function () {
-  run();
+  run_1();
 }, 3000);
 
 
-if (option_saturation_allo && typeof option_saturation_allo === 'object') {
-  chart_saturation_allo.setOption(option_saturation_allo);
+if (option_saturation_allo_1 && typeof option_saturation_allo_1 === 'object') {
+  chart_saturation_allo_1.setOption(option_saturation_allo_1);
 }
 
-window.addEventListener('resize', chart_saturation_allo.resize);
+window.addEventListener('resize', chart_saturation_allo_1.resize);
