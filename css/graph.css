@@ -3,11 +3,14 @@
   width: auto;
   flex-direction: column;
 }
-
+.logo { 
+  margin-top: 20px;
+  margin-left: -12%;
+  margin-right: 6%;
+}
 .fl {
   float: left;
 }
-
 .fr {
   float: right;
 }
@@ -32,9 +35,9 @@
 .title {
   line-height: 48px;
   display: inline-block;
-  margin: 0px;
+  margin-top: 17px;
   padding: 0px;
-  width: 30%;
+  width: 40%;
   height: 100%;
   
   text-align: center;
