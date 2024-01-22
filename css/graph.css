@@ -593,11 +593,17 @@
   font-size: 120%;
 }
 
+.data_select {
+  margin-left: 10%;
+  margin-right: -15%;
+}
+
 #time-allo {
   background: none;
   border: none;
   position: relative;
   display: flex;
+  margin-right: -15%;
 
   height: 100%;
   width: 60%;
