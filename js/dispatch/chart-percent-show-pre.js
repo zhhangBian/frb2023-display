@@ -16,7 +16,7 @@ option_percent_pre = {
     show: false,
     type: "scroll",
     top: "4%",
-    data: ['滴滴', '神州出行', '高德打车', 'T3出行', '其他'],
+    data: ['公司A', '公司B', '公司C', '公司D', '其他'],
     textStyle: {
       color: "rgba(255, 255, 255, 1)",
       // fontWeight: "bold",
@@ -48,10 +48,10 @@ option_percent_pre = {
       orient: 'vertical',
       top: '0%',
       data: [
-        { value: 0.333, name: '滴滴打车' },
-        { value: 0.234, name: '神州出行' },
-        { value: 0.184, name: '高德打车' },
-        { value: 0.154, name: 'T3出行' },
+        { value: 0.333, name: '公司A' },
+        { value: 0.234, name: '公司B' },
+        { value: 0.184, name: '公司C' },
+        { value: 0.154, name: '公司D' },
         { value: 0.095, name: '其他' }
       ],
       emphasis: {

@@ -15,7 +15,7 @@ option_data_pre = {
   legend: {
     type: "scroll",
     top: "4%",
-    data: ['滴滴', '神州出行', '高德打车', 'T3出行', '其他'],
+    data: ['公司A', '公司B', '公司C', '公司D', '其他'],
     textStyle: {
       color: "rgba(255, 255, 255, 1)",
       // fontWeight: "bold",
@@ -45,25 +45,25 @@ option_data_pre = {
   },
   series: [
     {
-      name: '滴滴',
+      name: '公司A',
       type: 'line',
       stack: 'Total',
       data: [120, 132, 101, 134, 90, 230, 210]
     },
     {
-      name: '神州出行',
+      name: '公司B',
       type: 'line',
       stack: 'Total',
       data: [220, 182, 191, 234, 290, 330, 310]
     },
     {
-      name: '高德打车',
+      name: '公司C',
       type: 'line',
       stack: 'Total',
       data: [150, 232, 201, 154, 190, 330, 410]
     },
     {
-      name: 'T3出行',
+      name: '公司D',
       type: 'line',
       stack: 'Total',
       data: [320, 332, 301, 334, 390, 330, 320]

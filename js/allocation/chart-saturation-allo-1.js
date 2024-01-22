@@ -9,7 +9,7 @@ var option_saturation_allo_1;
 
 var data_1 = [];
 for (let i = 0; i < 5; ++i) {
-  data_1.push(parseFloat((Math.random() * 0.1).toFixed(4)));
+  data_1.push(parseFloat((Math.random() * 0.1).toFixed(3)));
 }
 
 option_saturation_allo_1 = {
@@ -19,7 +19,7 @@ option_saturation_allo_1 = {
   },
   yAxis: {
     type: 'category',
-    data: ['滴滴', '智慧', '飞马', 'T3', '高德'],
+    data: ['公司A', '公司B', '公司C', '公司D', '公司E'],
     inverse: true,
     animationDuration: 300,
     animationDurationUpdate: 300,
@@ -64,11 +64,11 @@ option_saturation_allo_1 = {
 function run_1() {
   for (var i = 0; i < data_1.length; ++i) {
     if (Math.random() > 0.9) {
-      data_1[i] += parseFloat((Math.random() * 0.01).toFixed(4));
+      data_1[i] += parseFloat((Math.random() * 0.01).toFixed(3));
     } else {
-      data_1[i] += parseFloat((Math.random() * 0.1).toFixed(4));
+      data_1[i] += parseFloat((Math.random() * 0.1).toFixed(3));
     }
-    data_1[i]=parseFloat(data_1[i].toFixed(4))
+    data_1[i]=parseFloat(data_1[i].toFixed(3))
   }
   chart_saturation_allo_1.setOption({
     series: [
