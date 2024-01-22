@@ -3,11 +3,30 @@
   width: auto;
   flex-direction: column;
 }
-.logo { 
-  margin-top: 20px;
-  margin-left: -12%;
-  margin-right: 6%;
+
+.logo {
+  position: absolute;
+  left: 3%;
+  top: 1%;
+
+  width: 5%;
 }
+
+.logo_image {
+  float: left;
+  width: 100%;
+
+}
+
+.title_box {
+  position: absolute;
+  width: 100%;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
 .fl {
   float: left;
 }
@@ -21,8 +40,7 @@
   color: #fff;
 
   margin: 0 auto;
-  height: 48px;
-  margin-top: 10px;
+  margin-top: 0.5%;
 
   width: 99%;
   height: 7%;
@@ -331,8 +349,7 @@
 
 .map_sin_allo {
   padding-top: 20px;
-  width: 90%;
-  height: 50%;
+  height: 33%;
 }
 
 .map_fed_allo {
