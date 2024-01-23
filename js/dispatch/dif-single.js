@@ -33,7 +33,7 @@ var app = {};
 
 var option_order_map_pre;
 
-const color_sin = ['#F8F8FF', '#F0FFF0', '#7FFFD4', '#4EEE94', '#66CDAA', '#2E8B57'];
+const color_sin = ['#F8F8FF', '#e4fbe7', '#a1f2ac', '#4ce662', '#058016', '#023c0a'];
 var lngExtent = [39.5, 40.6];
 var latExtent = [115.9, 116.8];
 var cellCount = [50, 50];
