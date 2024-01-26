@@ -19,7 +19,14 @@ progressBar.addEventListener('input', function () {
 
 var timer=setInterval(function () {
     let timeDis = document.getElementById('time-dis');
-    let num = `14:${(parseInt(time / timeMax * 60)).toString().padStart(2, '0')}:${(parseInt(time / timeMax * 6000 % 60)).toString().padStart(2, '0')}`;
+    var num;
+    if(time<timeMax/2) {
+      num = `13:${(parseInt((2 * time / timeMax * 60)%60)).toString().padStart(2, '0')}:${(parseInt(time / timeMax * 6000 % 60)).toString().padStart(2, '0')}`;
+    }
+    else {
+      num = `14:${(parseInt((2 * time / timeMax * 60)%60)).toString().padStart(2, '0')}:${(parseInt(time / timeMax * 6000 % 60)).toString().padStart(2, '0')}`;
+    }
+
     timeSet();
     timeDis.value = num;
 }, 10);

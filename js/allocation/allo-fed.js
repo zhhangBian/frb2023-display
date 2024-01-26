@@ -328,7 +328,13 @@ var timer = setInterval(function () {
   set0();
 
   let timeAllo = document.getElementById('time-allo');
-  let num = `14:${(parseInt(time / timeMax * 60)).toString().padStart(2, '0')}:${(parseInt(time / timeMax * 6000 % 60)).toString().padStart(2, '0')}`;
+  var num;
+  if(time<timeMax/2) {
+    num = `13:${(parseInt((2 * time / timeMax * 60)%60)).toString().padStart(2, '0')}:${(parseInt(time / timeMax * 6000 % 60)).toString().padStart(2, '0')}`;
+  }
+  else {
+    num = `14:${(parseInt((2 * time / timeMax * 60)%60)).toString().padStart(2, '0')}:${(parseInt(time / timeMax * 6000 % 60)).toString().padStart(2, '0')}`;
+  }
   timeAllo.value = num;
 }, 10);
   
