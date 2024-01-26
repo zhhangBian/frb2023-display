@@ -6,16 +6,16 @@ progressBar.addEventListener('input', function () {
     time=currentTime;
   });
 
-  function timeSet() {
-    time=Date.now()-timeBegin;
-  
-    if(time>timeMax) {
-      currentTime=0;
-      timeBegin=Date.now();
-      time=0;
-    }
-    progressBar.value=time;
+function timeSet() {
+  time=Date.now()-timeBegin;
+
+  if(time>timeMax) {
+    currentTime=0;
+    timeBegin=Date.now();
+    time=0;
   }
+  progressBar.value=time;
+}
 
 var timer=setInterval(function () {
     let timeDis = document.getElementById('time-dis');
