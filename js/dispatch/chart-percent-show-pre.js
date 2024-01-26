@@ -1,14 +1,14 @@
-var dom_percent_pre = document.getElementById('percent-show-dis');
+var dom_percent_dis = document.getElementById('percent-show-dis');
 
-var chart_percent_pre = echarts.init(dom_percent_pre, null, {
+var chart_percent_dis = echarts.init(dom_percent_dis, null, {
   renderer: 'canvas',
   useDirtyRect: false
 });
 var app = {};
 
-var option_percent_pre;
+var option_percent_dis;
 
-option_percent_pre = {
+option_percent_dis = {
   tooltip: {
     trigger: 'item'
   },
@@ -65,8 +65,8 @@ option_percent_pre = {
   ]
 };
 
-if (option_percent_pre && typeof option_percent_pre === 'object') {
-  chart_percent_pre.setOption(option_percent_pre);
+if (option_percent_dis && typeof option_percent_dis === 'object') {
+  chart_percent_dis.setOption(option_percent_dis);
 }
 
-window.addEventListener('resize', chart_percent_pre.resize);
+window.addEventListener('resize', chart_percent_dis.resize);

@@ -1,14 +1,14 @@
-var dom_data_pre = document.getElementById('data-show-dis');
+var dom_place_dis = document.getElementById('place-show-dis');
 
-var chart_data_pre = echarts.init(dom_data_pre, null, {
+var chart_place_dis = echarts.init(dom_place_dis, null, {
   renderer: 'canvas',
   useDirtyRect: false
 });
 var app = {};
 
-var option_data_pre;
+var option_place_dis;
 
-option_data_pre = {
+option_place_dis = {
   tooltip: {
     trigger: 'axis'
   },
@@ -78,8 +78,8 @@ option_data_pre = {
 };
 
 
-if (option_data_pre && typeof option_data_pre === 'object') {
-  chart_data_pre.setOption(option_data_pre);
+if (option_place_dis && typeof option_place_dis === 'object') {
+  chart_place_dis.setOption(option_place_dis);
 }
 
-window.addEventListener('resize', chart_data_pre.resize);
+window.addEventListener('resize', chart_place_dis.resize);

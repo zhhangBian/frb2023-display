@@ -34,6 +34,7 @@ var app = {};
 var option_order_map_pre;
 
 var COLORS1 = ["white","#f7d4db","#f2b1be", "#e97c93","#e03e5f","#b71537"];
+//var COLORS1 = ['#E1E4EA', '#92B8FF', '#5E91F2', '#1554BF', '#003B8E', '#00008B'];
 var lngExtent = [39.5, 40.6];
 var latExtent = [115.9, 116.8];
 var cellCount = [50, 50];
@@ -287,7 +288,6 @@ var timer=setInterval(function () {
       }
     }
   };
-  
 
   if (option_order_map_pre && typeof option_order_map_pre === 'object') {
     chart_order_map_pre.setOption(option_order_map_pre);

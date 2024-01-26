@@ -206,7 +206,7 @@ function setDotMarkFed(timeBegin, timeEnd, beginX, beginY, ctrlX, ctrlY, endX, e
 function set0() {
   painter0.clearRect(0, 0, divWidth0, divHeight0);
 
-  console.log(divWidth0,divHeight0);
+  //console.log(divWidth0,divHeight0);
 
   setDot(tb_001, te_001, 0.82, 0.59, 0.29, 0.78, 0.57, 0.29, 1);
   setDot(tb_002, te_002, 0.48, 0.89, 0.12, 0.62, 0.63, 0.96, 1);
