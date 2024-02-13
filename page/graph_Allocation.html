@@ -1,242 +1,243 @@
 <head>
-  <title>联邦调度</title>
-  <meta charset="utf-8">
-  <meta name="viewport" content="initial-scale=1.0, user-scalable=no" />  
-  <link rel="stylesheet" href="../css/main.css">
-  <link rel="stylesheet" href="../css/graph.css">
-  <link rel="stylesheet" href="../css/dot.css">
-  <style type="text/css">
-      html{
-      height: 100%;
-      }
-      a {text-decoration: none}
-  </style>
-  <script type="text/javascript" src="https://api.map.baidu.com/api?v=3.0&ak=aqzLfIIEr6KaboQ31v7wg8G1VzGeXx1M"></script>
-  <script src="../js/echarts.js"></script>
+    <title>联邦调度</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="initial-scale=1.0, user-scalable=no"/>
+    <link rel="stylesheet" href="../css/main.css">
+    <link rel="stylesheet" href="../css/graph.css">
+    <link rel="stylesheet" href="../css/dot.css">
+    <style>
+        html {
+            height: 100%;
+        }
+
+        a {
+            text-decoration: none
+        }
+    </style>
+    <script type="text/javascript"
+            src="https://api.map.baidu.com/api?v=3.0&ak=aqzLfIIEr6KaboQ31v7wg8G1VzGeXx1M"></script>
 </head>
 
 <body style="background:#000d4a url(../images/bg.jpg) center top;">
 
 <div class="caption-title">
-  <i class="logo">
-    <img src="../images/6e04cb8fddaca8897426b1c95502a08.jpg" class="logo_image">
-  </i>
+    <i class="logo">
+        <img src="../images/6e04cb8fddaca8897426b1c95502a08.jpg" class="logo_image" alt="">
+    </i>
 
-  <div class="title_box">
-    <i class="fl"><img src="../images/title-left.png"></i>
-    <span class="title">基于联邦优化的动态资源感知计算系统</span>
-    <i class="fr"><img src="../images/title-right.png" ></i>
-  </div>
+    <div class="title_box">
+        <i class="fl"><img src="../images/title-left.png" alt=""></i>
+        <span class="title">基于联邦优化的动态资源感知计算系统</span>
+        <i class="fr"><img src="../images/title-right.png" alt=""></i>
+    </div>
 </div>
 
 <div class="select">
-  <div class="select-button nav" id="select-left">
-    <ul>
-      <li class="nav_active_un">
-        <i class="nav_3"></i>
-        <a href="graph_Pre.html" class="text">联邦预测</a>
-      </li>
-    </ul>
-  </div>
+    <div class="select-button nav" id="select-left">
+        <ul>
+            <li class="nav_active_un">
+                <i class="nav_3"></i>
+                <a href="graph_Pre.html" class="text">联邦预测</a>
+            </li>
+        </ul>
+    </div>
 
-  <div class="select-button nav" id="select-middle">
-    <ul>
-      <li class="nav_active_un">
-        <i class="nav_1"></i>
-        <a href="graph_Dispath.html" class="text">联邦调度</a>
-      </li>
-    </ul>
-  </div>
-  
-  <div class="select-button nav" id="select-right">
-    <ul>
-      <li class="nav_active">
-        <i class="nav_2"></i>
-        <a href="graph_Allocation.html" class="text">联邦分单</a>
-      </li>
-    </ul>
-  </div>
+    <div class="select-button nav" id="select-middle">
+        <ul>
+            <li class="nav_active_un">
+                <i class="nav_1"></i>
+                <a href="graph_Dispath.html" class="text">联邦调度</a>
+            </li>
+        </ul>
+    </div>
+
+    <div class="select-button nav" id="select-right">
+        <ul>
+            <li class="nav_active">
+                <i class="nav_2"></i>
+                <a href="graph_Allocation.html" class="text">联邦分单</a>
+            </li>
+        </ul>
+    </div>
 
 </div>
 
 <div class="graph">
-  <div class="map_sin_all_allo">
-    <div class="map_sin_allo" id="sin_company_1_allo">
-      <div class="data-box1 tb fl">
-        <i class="topL"></i>
-        <i class="topR"></i>
-        <i class="bottomL"></i>
-        <i class="bottomR"></i>
-        
-        <div class="data-title">
-          <b class="data-title-left fl">[</b>
-          <span>公司A</span>
-          <b class="data-title-right fr">]</b>
+    <div class="map_sin_all_allo">
+        <div class="map_sin_allo" id="sin_company_1_allo">
+            <div class="data-box1 tb fl">
+                <i class="topL"></i>
+                <i class="topR"></i>
+                <i class="bottomL"></i>
+                <i class="bottomR"></i>
+
+                <div class="data-title">
+                    <b class="data-title-left fl">[</b>
+                    <span>公司A</span>
+                    <b class="data-title-right fr">]</b>
+                </div>
+
+                <div class="allo-single">
+                    <canvas id="canvas1" style="height: 100%;width: 100%;"></canvas>
+                </div>
+            </div>
         </div>
-        
-        <div id="allo-single">
-          <canvas id="canvas1" style="height: 100%;width: 100%;"></canvas>
+
+        <div class="map_sin_allo" id="sin_company_2_allo">
+            <div class="data-box1 tb fl">
+                <i class="topL"></i>
+                <i class="topR"></i>
+                <i class="bottomL"></i>
+                <i class="bottomR"></i>
+
+                <div class="data-title">
+                    <b class="data-title-left fl">[</b>
+                    <span>公司B</span>
+                    <b class="data-title-right fr">]</b>
+                </div>
+
+                <div class="allo-single">
+                    <canvas id="canvas2" style="height: 100%;width: 100%;"></canvas>
+                </div>
+            </div>
         </div>
-      </div>
+
+        <div class="map_sin_allo" id="sin_company_3_allo">
+            <div class="data-box1 tb fl">
+                <i class="topL"></i>
+                <i class="topR"></i>
+                <i class="bottomL"></i>
+                <i class="bottomR"></i>
+
+                <div class="data-title">
+                    <b class="data-title-left fl">[</b>
+                    <span>公司C</span>
+                    <b class="data-title-right fr">]</b>
+                </div>
+
+                <div class="allo-single">
+                    <canvas id="canvas3" style="height: 100%;width: 100%;"></canvas>
+                </div>
+            </div>
+        </div>
     </div>
 
-    <div class="map_sin_allo" id="sin_company_2_allo">
-      <div class="data-box1 tb fl">
-        <i class="topL"></i>
-        <i class="topR"></i>
-        <i class="bottomL"></i>
-        <i class="bottomR"></i>
-        
-        <div class="data-title">
-          <b class="data-title-left fl">[</b>
-          <span>公司B</span>
-          <b class="data-title-right fr">]</b>
+    <div class="map_fed_allo">
+        <div class="data-box1 tb">
+            <i class="topL"></i>
+            <i class="topR"></i>
+            <i class="bottomL"></i>
+            <i class="bottomR"></i>
+
+            <div class="data-title">
+                <b class="data-title-left fl">[</b>
+                <span>联邦聚合打车平台</span>
+                <b class="data-title-right fr">]</b>
+            </div>
+
+            <div class="allo-fed">
+                <canvas id="canvas0" style="height: 100%;width: 100%;"></canvas>
+            </div>
         </div>
-        
-        <div id="allo-single">
-          <canvas id="canvas2" style="height: 100%;width: 100%;"></canvas>
-        </div>
-      </div>
     </div>
 
-    <div class="map_sin_allo" id="sin_company_3_allo">
-      <div class="data-box1 tb fl">
-        <i class="topL"></i>
-        <i class="topR"></i>
-        <i class="bottomL"></i>
-        <i class="bottomR"></i>
-        
-        <div class="data-title">
-          <b class="data-title-left fl">[</b>
-          <span>公司C</span>
-          <b class="data-title-right fr">]</b>
+    <div class="graph_right_allo">
+        <div class="graph_time_allo">
+            <div class="data-box1 tb">
+                <i class="topL"></i>
+                <i class="topR"></i>
+                <i class="bottomL"></i>
+                <i class="bottomR"></i>
+
+                <div class="data-title">
+                    <b class="data-title-left fl">[</b>
+                    <span>调节时间轴</span>
+                    <b class="data-title-right fr">]</b>
+                </div>
+
+                <div class="time-control">
+                    <div class="time-display">
+                        <input type="date" class="data_select" value="2021-06-18" min="2020-01-01" max="2022-12-31"/>
+                        <input type="text" id="time-allo" value="0">
+                    </div>
+
+                    <div id="progressBar-allocation">
+                        <input type="range" id="timeControl-allocation" min="0" max="60000" step="10" value="0">
+                    </div>
+                </div>
+            </div>
         </div>
-        
-        <div id="allo-single">
-          <canvas id="canvas3" style="height: 100%;width: 100%;"></canvas>
+
+        <div class="graph_answer_allo">
+            <div class="data-box1 tb">
+                <i class="topL"></i>
+                <i class="topR"></i>
+                <i class="bottomL"></i>
+                <i class="bottomR"></i>
+                <div class="data-title">
+                    <b class="data-title-left fl">[</b>
+                    <span>响应时间占比</span>
+                    <b class="data-title-right fr">]</b>
+                </div>
+
+                <div class="answer_box_title_allo">
+                    <div class="answer_title_allo">公司各自经营下</div>
+                    <div class="answer_title_allo">联邦平台管理下</div>
+                </div>
+
+                <div class="answer_box_allo">
+                    <div class="answer_allo" id="answer_show_allo_1"></div>
+                    <div class="answer_allo" id="answer_show_allo_2"></div>
+                </div>
+            </div>
         </div>
-      </div>
+
+        <div class="graph_saturation_allo">
+            <div class="data-box1 tb">
+                <i class="topL"></i>
+                <i class="topR"></i>
+                <i class="bottomL"></i>
+                <i class="bottomR"></i>
+
+                <div class="data-title">
+                    <b class="data-title-left fl">[</b>
+                    <span>饱和度变化</span>
+                    <b class="data-title-right fr">]</b>
+                </div>
+
+                <div class="saturation_box_title_allo">
+                    <div class="saturation_title_allo">公司各自经营下</div>
+                    <div class="saturation_title_allo">联邦平台管理下</div>
+                </div>
+
+                <div class="saturation_box_allo">
+                    <div class="saturation_allo" id="saturation_show_allo_1"></div>
+                    <div class="saturation_allo" id="saturation_show_allo_2"></div>
+                </div>
+            </div>
+        </div>
     </div>
-  </div>
-
-  <div class="map_fed_allo">
-    <div class="data-box1 tb">
-      <i class="topL"></i>
-      <i class="topR"></i>
-      <i class="bottomL"></i>
-      <i class="bottomR"></i>
-      
-      <div class="data-title">
-        <b class="data-title-left fl">[</b>
-        <span>联邦聚合打车平台</span>
-        <b class="data-title-right fr">]</b>
-      </div>
-      
-      <div id="allo-fed">
-        <canvas id="canvas0" style="height: 100%;width: 100%;"></canvas>
-      </div>
-    </div>
-  </div>
-
-  <div class="graph_right_allo">
-    <div class="graph_time_allo">
-      <div class="data-box1 tb">
-        <i class="topL"></i>
-        <i class="topR"></i>
-        <i class="bottomL"></i>
-        <i class="bottomR"></i>
-        
-        <div class="data-title">
-          <b class="data-title-left fl">[</b>
-          <span>调节时间轴</span>
-          <b class="data-title-right fr">]</b>
-        </div>
-        
-        <div class="time-control">
-          <div class="time-display">
-            <input type="date" class="data_select"  value="2021-06-18" min="2020-01-01" max="2022-12-31" />
-            <input type="text" id="time-allo" value="0">
-          </div>
-
-          <div id="progressBar-allocation">
-            <input type="range" id="timeControl-allocation" min="0" max="60000" step="10" value="0">
-          </div>
-        </div>  
-      </div>
-    </div>
-  
-    <div class="graph_answer_allo">
-      <div class="data-box1 tb">
-        <i class="topL"></i>
-        <i class="topR"></i>
-        <i class="bottomL"></i>
-        <i class="bottomR"></i>
-        <div class="data-title">
-          <b class="data-title-left fl">[</b>
-          <span>响应时间占比</span>
-          <b class="data-title-right fr">]</b>
-      </div>
-  
-      <div class="answer_box_title_allo">
-        <div class="answer_title_allo">公司各自经营下</div>
-        <div class="answer_title_allo">联邦平台管理下</div>
-      </div>
-
-      <div class="answer_box_allo">
-        <div class="answer_allo" id="answer_show_allo_1"></div>
-        <div class="answer_allo" id="answer_show_allo_2"></div>
-      </div>
-      </div>
-    </div> 
-  
-    <div class="graph_saturation_allo">
-      <div class="data-box1 tb">
-        <i class="topL"></i>
-        <i class="topR"></i>
-        <i class="bottomL"></i>
-        <i class="bottomR"></i>
-        
-        <div class="data-title">
-          <b class="data-title-left fl">[</b>
-          <span>饱和度变化</span>
-          <b class="data-title-right fr">]</b>
-        </div>
-
-        <div class="saturation_box_title_allo">
-          <div class="saturation_title_allo">公司各自经营下</div>
-          <div class="saturation_title_allo">联邦平台管理下</div>
-        </div>
-
-        <div class="saturation_box_allo">
-          <div class="saturation_allo" id="saturation_show_allo_1"></div>
-          <div class="saturation_allo" id="saturation_show_allo_2"></div>
-      </div>  
-    </div>
-    </div> 
-  </div>
 </div>
 
 </body>
-
-</html>
 
 <!-- echarts api -->
 <script src="https://fastly.jsdelivr.net/npm/echarts@5.4.3/dist/echarts.min.js"></script>
 <script src="https://registry.npmmirror.com/echarts/5.4.3/files/dist/echarts.min.js"></script>
 
 <!-- baidu map api -->
-<script type="text/javascript">  
-  function initialize() {  
-    var mp = new BMap.Map('map');
-    map.enableScrollWheelZoom();
-    mp.centerAndZoom(new BMap.Point(121.491, 31.233), 11);
-  }
+<script type="text/javascript">
+    function initialize() {
+        var mp = new BMap.Map('map');
+        map.enableScrollWheelZoom();
+        mp.centerAndZoom(new BMap.Point(121.491, 31.233), 11);
+    }
 
-  function loadScript() {  
-    var script = document.createElement("script");  
-    script.src = "https://api.map.baidu.com/api?v=2.0&ak=aqzLfIIEr6KaboQ31v7wg8G1VzGeXx1M&callback=initialize";
-    document.body.appendChild(script);  
-  }
+    function loadScript() {
+        var script = document.createElement("script");
+        script.src = "https://api.map.baidu.com/api?v=2.0&ak=aqzLfIIEr6KaboQ31v7wg8G1VzGeXx1M&callback=initialize";
+        document.body.appendChild(script);
+    }
 </script>
 
 <!-- script -->

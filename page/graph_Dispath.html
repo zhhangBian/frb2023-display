@@ -1,158 +1,165 @@
 <head>
-  <title>联邦分单</title>
-  <meta charset="utf-8">
-  <meta name="viewport" content="initial-scale=1.0, user-scalable=no" />  
-  <link rel="stylesheet" href="../css/main.css">
-  <link rel="stylesheet" href="../css/graph.css">
-  <style type="text/css">
-      html{
-      height: 100%;
-      }
-      a {text-decoration: none}
-  </style>
-  <script type="text/javascript" src="https://api.map.baidu.com/api?v=3.0&ak=aqzLfIIEr6KaboQ31v7wg8G1VzGeXx1M"></script>
-  <script src="../js/echarts.js"></script>
+    <title>联邦分单</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="initial-scale=1.0, user-scalable=no"/>
+    <link rel="stylesheet" href="../css/main.css">
+    <link rel="stylesheet" href="../css/graph.css">
+    <style>
+        html {
+            height: 100%;
+        }
+
+        a {
+            text-decoration: none
+        }
+    </style>
+    <script type="text/javascript"
+            src="https://api.map.baidu.com/api?v=3.0&ak=aqzLfIIEr6KaboQ31v7wg8G1VzGeXx1M"></script>
 </head>
 
 <body style="background:#000d4a url(../images/bg.jpg) center top;">
 
 <div class="caption-title">
-  <i class="logo">
-    <img src="../images/6e04cb8fddaca8897426b1c95502a08.jpg" class="logo_image">
-  </i>
+    <i class="logo">
+        <img src="../images/6e04cb8fddaca8897426b1c95502a08.jpg" class="logo_image" alt="">
+    </i>
 
-  <div class="title_box">
-    <i class="fl"><img src="../images/title-left.png"></i>
-    <span class="title">基于联邦优化的动态资源感知计算系统</span>
-    <i class="fr"><img src="../images/title-right.png" ></i>
-  </div>
+    <div class="title_box">
+        <i class="fl"><img src="../images/title-left.png" alt=""></i>
+        <span class="title">基于联邦优化的动态资源感知计算系统</span>
+        <i class="fr"><img src="../images/title-right.png" alt=""></i>
+    </div>
 </div>
 
 <div class="select">
-  <div class="select-button nav" id="select-left">
-    <ul>
-      <li class="nav_active_un">
-        <i class="nav_3"></i><a href="graph_Pre.html" class="text">联邦预测</a>
-      </li>
-    </ul>
-  </div>
+    <div class="select-button nav" id="select-left">
+        <ul>
+            <li class="nav_active_un">
+                <i class="nav_3"></i><a href="graph_Pre.html" class="text">联邦预测</a>
+            </li>
+        </ul>
+    </div>
 
-  <div class="select-button nav" id="select-middle">
-    <ul>
-      <li class="nav_active">
-        <i class="nav_1"></i><a href="graph_Dispath.html" class="text">联邦调度</a>
-      </li>
-    </ul>
-  </div>
-  
-  <div class="select-button nav" id="select-right">
-    <ul>
-      <li class="nav_active_un">
-        <i class="nav_2"></i><a href="graph_Allocation.html" class="text">联邦分单</a>
-      </li>
-    </ul>
-  </div>
+    <div class="select-button nav" id="select-middle">
+        <ul>
+            <li class="nav_active">
+                <i class="nav_1"></i><a href="graph_Dispath.html" class="text">联邦调度</a>
+            </li>
+        </ul>
+    </div>
+
+    <div class="select-button nav" id="select-right">
+        <ul>
+            <li class="nav_active_un">
+                <i class="nav_2"></i><a href="graph_Allocation.html" class="text">联邦分单</a>
+            </li>
+        </ul>
+    </div>
 </div>
 
 
 <div class="graph">
-  <div class="map_sin_dis">
-    <div class="data-box1 tb fl">
-      <i class="topL"></i>
-      <i class="topR"></i>
-      <i class="bottomL"></i>
-      <i class="bottomR"></i>
-      <div class="data-title">
-        <b class="data-title-left fl">[</b>
-        <span>A公司运力差情况</span>
-        <b class="data-title-right fr">]</b>
-      </div>
-      
-      <div id="dif-single"></div>
-    </div>
-  </div>
+    <div class="map_sin_dis">
+        <div class="data-box1 tb fl">
+            <i class="topL"></i>
+            <i class="topR"></i>
+            <i class="bottomL"></i>
+            <i class="bottomR"></i>
+            <div class="data-title">
+                <b class="data-title-left fl">[</b>
+                <span>A公司运力差情况</span>
+                <b class="data-title-right fr">]</b>
+            </div>
 
-  <div class="map_fed_dis">
-    <div class="data-box1 tb">
-      <i class="topL"></i>
-      <i class="topR"></i>
-      <i class="bottomL"></i>
-      <i class="bottomR"></i>
-      <div class="data-title">
-        <b class="data-title-left fl">[</b>
-        <span>联邦聚合平台运力差情况</span>
-        <b class="data-title-right fr">]</b>
+            <div id="dif-single"></div>
+        </div>
     </div>
 
-    <div id="dif-fed"></div>
-  </div>
-  </div>
+    <div class="map_fed_dis">
+        <div class="data-box1 tb">
+            <i class="topL"></i>
+            <i class="topR"></i>
+            <i class="bottomL"></i>
+            <i class="bottomR"></i>
+            <div class="data-title">
+                <b class="data-title-left fl">[</b>
+                <span>联邦聚合平台运力差情况</span>
+                <b class="data-title-right fr">]</b>
+            </div>
 
-  <div class="graph_right_dis">
-    <div class="graph_time_dis">
-      <div class="data-box1 tb">
-        <i class="topL"></i>
-        <i class="topR"></i>
-        <i class="bottomL"></i>
-        <i class="bottomR"></i>
-        <div class="data-title">
-          <b class="data-title-left fl">[</b>
-          <span>调节时间轴</span>
-          <b class="data-title-right fr">]</b>
+            <div id="dif-fed"></div>
         </div>
-      
-        <div class="time-control">
-          <div class="time-display">
-            <input type="date" class="data_select"  value="2021-06-18" min="2020-01-01" max="2022-12-31" />
-            <input type="text" id="time-dis" value="0">
-          </div>
-        
-          <div id="progressBar-dispath">
-            <input type="range" id="timeControl-dispath" min="0" max="30000" step="10" value="0">
-          </div>
-        </div>  
-      </div>
     </div>
 
-    <div class="graph_rate_dis">
-      <div class="data-box1 tb">
-        <i class="topL"></i>
-        <i class="topR"></i>
-        <i class="bottomL"></i>
-        <i class="bottomR"></i>
-        
-        <div class="data-title">
-          <b class="data-title-left fl">[</b>
-          <span>联邦平台各方贡献比率</span>
-          <b class="data-title-right fr">]</b>
+    <div class="graph_right_dis">
+        <div class="graph_time_dis">
+            <div class="data-box1 tb">
+                <i class="topL"></i>
+                <i class="topR"></i>
+                <i class="bottomL"></i>
+                <i class="bottomR"></i>
+                <div class="data-title">
+                    <b class="data-title-left fl">[</b>
+                    <span>调节时间轴</span>
+                    <b class="data-title-right fr">]</b>
+                </div>
+
+                <div class="time-control">
+                    <div class="time-display">
+                        <label>
+                            <input type="date" class="data_select" value="2021-06-18" min="2020-01-01" max="2022-12-31"/>
+                        </label>
+
+                        <label for="time-dis"></label>
+                        <input type="text" id="time-dis" value="0">
+                    </div>
+
+                    <div id="progressBar-dispath">
+                        <label for="timeControl-dispath"></label>
+                        <input type="range" id="timeControl-dispath" min="0" max="30000" step="10" value="0">
+                    </div>
+                </div>
+            </div>
         </div>
-        
-        <div id="percent-show-dis" style="width: 100%;height: 100%;"></div>
-      </div>  
-    </div> 
-    
-    <div class="graph_num_dis">
-      <div class="data-box1 tb">
-        <i class="topL"></i>
-        <i class="topR"></i>
-        <i class="bottomL"></i>
-        <i class="bottomR"></i>
-        
-        <div class="data-title">
-          <b class="data-title-left fl">[</b>
-          <span>实时调度的订单数量</span>
-          <b class="data-title-right fr">]</b>
+
+        <div class="graph_rate_dis">
+            <div class="data-box1 tb">
+                <i class="topL"></i>
+                <i class="topR"></i>
+                <i class="bottomL"></i>
+                <i class="bottomR"></i>
+
+                <div class="data-title">
+                    <b class="data-title-left fl">[</b>
+                    <span>联邦平台各方贡献比率</span>
+                    <b class="data-title-right fr">]</b>
+                </div>
+
+                <div id="percent-show-dis" style="width: 100%;height: 100%;"></div>
+            </div>
         </div>
-  
-        <div id="place-show-dis" style="width: 100%;height: 100%;"></div>
-      </div>
-  
-    </div> 
-  </div>
+
+        <div class="graph_num_dis">
+            <div class="data-box1 tb">
+                <i class="topL"></i>
+                <i class="topR"></i>
+                <i class="bottomL"></i>
+                <i class="bottomR"></i>
+
+                <div class="data-title">
+                    <b class="data-title-left fl">[</b>
+                    <span>实时调度的订单数量</span>
+                    <b class="data-title-right fr">]</b>
+                </div>
+
+                <div id="place-show-dis" style="width: 100%;height: 100%;"></div>
+            </div>
+
+        </div>
+    </div>
 </div>
 
 </body>
-</html>
 
 <!-- echarts api -->
 <script src="https://fastly.jsdelivr.net/npm/echarts@5.4.3/dist/echarts.min.js"></script>
@@ -160,18 +167,18 @@
 
 <!-- baidu map api -->
 <script src="https://api.map.baidu.com/api?v=3.0&ak=aqzLfIIEr6KaboQ31v7wg8G1VzGeXx1M&callback=initialize"></script>
-<script type="text/javascript">  
-  function initialize() {  
-    var mp = new BMap.Map('map');
-    map.enableScrollWheelZoom();
-    mp.centerAndZoom(new BMap.Point(121.491, 31.233), 11);
-  }
+<script type="text/javascript">
+    function initialize() {
+        let mp = new BMap.Map('map');
+        map.enableScrollWheelZoom();
+        mp.centerAndZoom(new BMap.Point(121.491, 31.233), 11);
+    }
 
-  function loadScript() {  
-    var script = document.createElement("script");  
-    script.src = "https://api.map.baidu.com/api?v=2.0&ak=aqzLfIIEr6KaboQ31v7wg8G1VzGeXx1M&callback=initialize";
-    document.body.appendChild(script);  
-  }
+    function loadScript() {
+        let script = document.createElement("script");
+        script.src = "https://api.map.baidu.com/api?v=2.0&ak=aqzLfIIEr6KaboQ31v7wg8G1VzGeXx1M&callback=initialize";
+        document.body.appendChild(script);
+    }
 </script>
 
 <!-- script -->
