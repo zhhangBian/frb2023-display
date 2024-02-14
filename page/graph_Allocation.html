@@ -4,7 +4,6 @@
     <meta name="viewport" content="initial-scale=1.0, user-scalable=no"/>
     <link rel="stylesheet" href="../css/main.css">
     <link rel="stylesheet" href="../css/graph.css">
-    <link rel="stylesheet" href="../css/dot.css">
     <style>
         html {
             height: 100%;
@@ -157,11 +156,16 @@
 
                 <div class="time-control">
                     <div class="time-display">
-                        <input type="date" class="data_select" value="2021-06-18" min="2020-01-01" max="2022-12-31"/>
+                        <label>
+                            <input type="date" class="data_select" value="2021-06-18" min="2020-01-01" max="2022-12-31"/>
+                        </label>
+
+                        <label for="time-allo"></label>
                         <input type="text" id="time-allo" value="0">
                     </div>
 
                     <div id="progressBar-allocation">
+                        <label for="timeControl-allocation"></label>
                         <input type="range" id="timeControl-allocation" min="0" max="60000" step="10" value="0">
                     </div>
                 </div>
@@ -228,13 +232,13 @@
 <!-- baidu map api -->
 <script type="text/javascript">
     function initialize() {
-        var mp = new BMap.Map('map');
+        let mp = new BMap.Map('map');
         map.enableScrollWheelZoom();
         mp.centerAndZoom(new BMap.Point(121.491, 31.233), 11);
     }
 
     function loadScript() {
-        var script = document.createElement("script");
+        let script = document.createElement("script");
         script.src = "https://api.map.baidu.com/api?v=2.0&ak=aqzLfIIEr6KaboQ31v7wg8G1VzGeXx1M&callback=initialize";
         document.body.appendChild(script);
     }
