@@ -1,7 +1,3 @@
-let timeBegin = Date.now(), time,currentTime;
-const timeMax = 30000;
-const timePer = 6000;
-
 let list_dif_sin = [];
 
 const progressBar = document.getElementById('timeControl-dispath');
