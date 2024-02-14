@@ -1,8 +1,8 @@
-var timeBegin = Date.now(), time;
+let timeBegin = Date.now(), time,currentTime;
 const timeMax = 30000;
 const timePer = 6000;
 
-var list_dif_sin = [];
+let list_dif_sin = [];
 
 const progressBar = document.getElementById('timeControl-dispath');
 // 添加事件监听器以允许手动控制进度条
@@ -101,7 +101,7 @@ if (option_order_map_pre && typeof option_order_map_pre === 'object') {
 }
 window.addEventListener('resize', chart_dif_sin_dis.resize);
 
-var timer = setInterval(function () {
+setInterval(function () {
     timeSet();
     data_dif_sin = list_dif_sin[Math.floor(time / timePer)];
     console.log(Math.floor(time / timePer));

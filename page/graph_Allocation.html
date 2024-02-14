@@ -13,8 +13,6 @@
             text-decoration: none
         }
     </style>
-    <script type="text/javascript"
-            src="https://api.map.baidu.com/api?v=3.0&ak=aqzLfIIEr6KaboQ31v7wg8G1VzGeXx1M"></script>
 </head>
 
 <body style="background:#000d4a url(../images/bg.jpg) center top;">
@@ -157,7 +155,8 @@
                 <div class="time-control">
                     <div class="time-display">
                         <label>
-                            <input type="date" class="data_select" value="2021-06-18" min="2020-01-01" max="2022-12-31"/>
+                            <input type="date" class="data_select" value="2021-06-18" min="2020-01-01"
+                                   max="2022-12-31"/>
                         </label>
 
                         <label for="time-allo"></label>
@@ -228,21 +227,6 @@
 <!-- echarts api -->
 <script src="https://fastly.jsdelivr.net/npm/echarts@5.4.3/dist/echarts.min.js"></script>
 <script src="https://registry.npmmirror.com/echarts/5.4.3/files/dist/echarts.min.js"></script>
-
-<!-- baidu map api -->
-<script type="text/javascript">
-    function initialize() {
-        let mp = new BMap.Map('map');
-        map.enableScrollWheelZoom();
-        mp.centerAndZoom(new BMap.Point(121.491, 31.233), 11);
-    }
-
-    function loadScript() {
-        let script = document.createElement("script");
-        script.src = "https://api.map.baidu.com/api?v=2.0&ak=aqzLfIIEr6KaboQ31v7wg8G1VzGeXx1M&callback=initialize";
-        document.body.appendChild(script);
-    }
-</script>
 
 <!-- script -->
 <script src="../js/allocation/allo-fed.js"></script>

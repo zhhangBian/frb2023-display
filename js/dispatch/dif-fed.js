@@ -1,6 +1,4 @@
-var timeBegin = Date.now(), time;
-
-var list_dif_fed = [];
+let list_dif_fed = [];
 
 // 添加事件监听器以允许手动控制进度条
 progressBar.addEventListener('input', function () {
@@ -98,7 +96,7 @@ if (option_driver_map_pre && typeof option_driver_map_pre === "object") {
 
 window.addEventListener("resize", chart_dif_fed_dis.resize);
 
-var timer = setInterval(function () {
+setInterval(function () {
     timeSet();
     data2 = list_dif_fed[Math.floor(time / timePer)];
 
@@ -283,7 +281,6 @@ var timer = setInterval(function () {
             }
         }
     };
-
 
     if (option_driver_map_pre && typeof option_driver_map_pre === 'object') {
         chart_dif_fed_dis.setOption(option_driver_map_pre);

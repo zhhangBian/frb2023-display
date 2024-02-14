@@ -17,7 +17,7 @@ function timeSet() {
     progressBar.value = time;
 }
 
-var timer = setInterval(function () {
+setInterval(function () {
     let timeDis = document.getElementById('time-dis');
     var num;
     if (time < timeMax / 2) {

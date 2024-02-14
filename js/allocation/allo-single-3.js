@@ -163,7 +163,7 @@ document.addEventListener("DOMContentLoaded", function () {
         progressBar.value = time;
     }
 
-    var timer = setInterval(function () {
+    setInterval(function () {
         timeSet();
         set3();
     }, 10);

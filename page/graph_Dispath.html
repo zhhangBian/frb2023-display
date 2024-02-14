@@ -169,7 +169,7 @@
 <script src="https://api.map.baidu.com/api?v=3.0&ak=aqzLfIIEr6KaboQ31v7wg8G1VzGeXx1M&callback=initialize"></script>
 <script type="text/javascript">
     function initialize() {
-        let mp = new BMap.Map('map');
+        var mp = new BMap.Map('map');
         map.enableScrollWheelZoom();
         mp.centerAndZoom(new BMap.Point(121.491, 31.233), 11);
     }
