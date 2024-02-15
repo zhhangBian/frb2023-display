@@ -1,13 +1,5 @@
 let list_dif_sin = [];
 
-const progressBar = document.getElementById('timeControl-dispath');
-// 添加事件监听器以允许手动控制进度条
-progressBar.addEventListener('input', function () {
-    currentTime = parseInt(progressBar.value);
-    timeBegin = Date.now() - currentTime;
-    time = currentTime;
-});
-
 function timeSet() {
     time = Date.now() - timeBegin;
 

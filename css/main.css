@@ -1,117 +1,110 @@
 .welcome {
-  height: 10%;
-  overflow: hidden;
-  background-color: rgb(58, 39, 180);
+    height: 10%;
+    overflow: hidden;
+    background-color: rgb(58, 39, 180);
 
-  display: flex;
-  justify-content: center;
-  align-items: center;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 
-  color : white;
-  font-size: 40px;
-  font-weight: 100;
+    color: white;
+    font-size: 40px;
+    font-weight: 100;
 }
 
 .login {
-  position: absolute;
-  top: 30%;
-  left: 50%;
-  
-  margin-left: -12.5%;
+    position: absolute;
+    top: 30%;
+    left: 50%;
 
-  height: 40%;
-  width: 25%;
+    margin-left: -12.5%;
 
-  color: white;
-  border: 2px solid white;
-  border-radius: 30px;
+    height: 40%;
+    width: 25%;
+
+    color: white;
+    border: 2px solid white;
+    border-radius: 30px;
 }
 
 .login-welcome {
-  position: relative;
-  display: flex;
-  margin: auto;
-  margin-top: 3%;
-  justify-content: center;
-  align-items: center;
+    position: relative;
+    display: flex;
+    margin: 3% auto auto;
+    justify-content: center;
+    align-items: center;
 
-  height: 15%;
+    height: 15%;
 }
 
 .login-input {
-  position: relative;
-  display: flex;
-  margin-bottom: auto;
-  justify-content: center;
-  align-items: center;
-  flex-direction: column;
+    position: relative;
+    display: flex;
+    margin-bottom: auto;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
 
-  height: 50%;
-  width: 100%;
+    height: 50%;
+    width: 100%;
 }
 
 .login-enter {
-  position: relative;
-  display: flex;
-  margin: auto;
-  margin-top: -7px;
-  margin-bottom: 0px;
-  box-sizing: border-box;
+    position: relative;
+    display: flex;
+    margin: -7px auto 0;
+    box-sizing: border-box;
 
-  justify-content: center;
-  align-items: center;
+    justify-content: center;
+    align-items: center;
 
-  height: 15%;
-  width: 30%;
+    height: 15%;
+    width: 30%;
 
-  border-radius: 20px;
-  background-color:#180a78;
+    border-radius: 20px;
+    background-color: #180a78;
 }
 
 .input-window {
-  position: relative;
-  display: flex;
+    position: relative;
+    display: flex;
 
-  box-sizing: border-box;
-  overflow: hidden;
-  margin-bottom: 10px;
-  padding: 0;
+    box-sizing: border-box;
+    overflow: hidden;
+    margin-bottom: 10px;
+    padding: 0 50px;
+    border: 1px solid #fff;
+    border-radius: 25px;
 
-  
-  padding-left: 50px;
-  padding-right: 50px;
-  border: 1px solid #fff;
-  border-radius: 25px;
+    font-size: 100%;
+    background-color: transparent;
 
-  font-size: 100%;
-  background-color: transparent;
+    height: 30%;
+    width: 60%;
 
-  height: 30%;
-  width: 60%;
-
-  color: #fff;
-  outline: none;
+    color: #fff;
+    outline: none;
 }
 
 .login-else {
-  position: relative;
-  display: flex;
-  margin: auto;
-  justify-content: center;
-  align-items: center;
+    position: relative;
+    display: flex;
+    margin: auto;
+    justify-content: center;
+    align-items: center;
 
-  flex-direction: row;
+    flex-direction: row;
 
-  height: 15%;
+    height: 15%;
 }
 
 .else-button {
-  position: relative;
-  display: flex;
-  margin: auto;
-  justify-content: center;
-  align-items: center;
+    position: relative;
+    display: flex;
+    margin: auto;
+    justify-content: center;
+    align-items: center;
 
-  width: 40%;
-  height: 100%;
+    width: 40%;
+    height: 100%;
 }

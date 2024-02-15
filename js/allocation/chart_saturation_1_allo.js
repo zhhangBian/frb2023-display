@@ -1,16 +1,4 @@
 document.addEventListener("DOMContentLoaded", function () {
-
-    let timeBegin = Date.now(), time, currentTime;
-    const timeMax = 60000;
-
-    const progressBar = document.getElementById('timeControl-allocation');
-// 添加事件监听器以允许手动控制进度条
-    progressBar.addEventListener('input', function () {
-        currentTime = parseInt(progressBar.value);
-        timeBegin = Date.now() - currentTime;
-        time = currentTime;
-    });
-
     var dom_saturation_allo_1 = document.getElementById('saturation_show_allo_1');
     var chart_saturation_allo_1 = echarts.init(dom_saturation_allo_1, null, {
         renderer: 'canvas',

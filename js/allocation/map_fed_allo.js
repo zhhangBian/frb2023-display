@@ -1,8 +1,5 @@
 document.addEventListener("DOMContentLoaded", function () {
 
-    var timeBegin = Date.now(), time;
-    const timeMax = 60000;
-
     const canvas0 = document.getElementById('canvas0');
     const painter0 = canvas0.getContext('2d');
 
@@ -114,25 +111,17 @@ document.addEventListener("DOMContentLoaded", function () {
     const tb_908 = 14726, te_908 = 40336;
     const tb_909 = 15983, te_909 = 58848;
 
-    const progressBar = document.getElementById('timeControl-allocation');
-// 添加事件监听器以允许手动控制进度条
-    progressBar.addEventListener('input', function () {
-        currentTime = parseInt(progressBar.value);
-        timeBegin = Date.now() - currentTime;
-        time = currentTime;
-    });
-
     function drawCurve(beginX, beginY, ctrlX, ctrlY, endX, endY, type) {
         painter0.beginPath();
         painter0.moveTo(beginX * divWidth0, beginY * divHeight0);
         painter0.quadraticCurveTo(ctrlX * divWidth0, ctrlY * divHeight0, endX * divWidth0, endY * divHeight0);
 
         painter0.lineWidth = 3;
-        if (type == 0) {
+        if (type === 0) {
             painter0.lineWidth = 5;
             painter0.strokeStyle = "#00868B";
-        } else if (type == 1) painter0.strokeStyle = "#8B658B";
-        else if (type == 2) painter0.strokeStyle = "#8B6914";
+        } else if (type === 1) painter0.strokeStyle = "#8B658B";
+        else if (type === 2) painter0.strokeStyle = "#8B6914";
         else painter0.strokeStyle = "#7A8B8B";
 
         painter0.stroke();
@@ -171,8 +160,8 @@ document.addEventListener("DOMContentLoaded", function () {
     }
 
     function setDotMarkFed(timeBegin, timeEnd, beginX, beginY, ctrlX, ctrlY, endX, endY, label) {
-        var t = (time - timeBegin) / (timeEnd - timeBegin);
-        var x, y;
+        let t = (time - timeBegin) / (timeEnd - timeBegin);
+        let x, y;
 
         if (time < timeBegin) {
             painter0.fillStyle = "#FF7F00";
@@ -307,29 +296,8 @@ document.addEventListener("DOMContentLoaded", function () {
         setDotMarkFed(tb_909, te_909, 0.83, 0.41, 0.50, 0.06, 0.13, 0.77, "I");
     }
 
-    function timeSet() {
-        time = Date.now() - timeBegin;
-
-        if (time > timeMax) {
-            currentTime = 0;
-            timeBegin = Date.now();
-            time = 0;
-        }
-        progressBar.value = time;
-    }
-
-    var timer = setInterval(function () {
+    setInterval(function () {
         timeSet();
         set0();
-
-        let timeAllo = document.getElementById('time-allo');
-        var num;
-        if (time < timeMax / 2) {
-            num = `13:${(parseInt((2 * time / timeMax * 60) % 60)).toString().padStart(2, '0')}:${(parseInt(time / timeMax * 6000 % 60)).toString().padStart(2, '0')}`;
-        } else {
-            num = `14:${(parseInt((2 * time / timeMax * 60) % 60)).toString().padStart(2, '0')}:${(parseInt(time / timeMax * 6000 % 60)).toString().padStart(2, '0')}`;
-        }
-        timeAllo.value = num;
     }, 10);
-
 });

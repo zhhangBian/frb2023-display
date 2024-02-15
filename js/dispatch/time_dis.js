@@ -1,8 +1,9 @@
-var timeBegin = Date.now(), time, currentTime;
+let timeBegin = Date.now(), time, currentTime;
 const timeMax = 30000;
 const timePer = 6000;
 
 // 添加事件监听器以允许手动控制进度条
+const progressBar = document.getElementById('timeControl-dispath');
 progressBar.addEventListener('input', function () {
     currentTime = parseInt(progressBar.value);
     timeBegin = Date.now() - currentTime;

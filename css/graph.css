@@ -147,22 +147,22 @@
     font-family: "黑体";
 }
 
-.nav_1 {
-    background-image: url("../images/nav_2.png");
+.logo_pre {
+    background-image: url("../images/logo_pre.png");
     background-size: contain;
     background-repeat: no-repeat;
     background-position: center;
 }
 
-.nav_2 {
-    background-image: url("../images/nav_1.png");
+.logo_dis {
+    background-image: url("../images/logo_dis.png");
     background-size: contain;
     background-repeat: no-repeat;
     background-position: center;
 }
 
-.nav_3 {
-    background-image: url("../images/nav_7.png");
+.logo_allo {
+    background-image: url("../images/logo_allo.png");
     background-size: contain;
     background-repeat: no-repeat;
     background-position: center;

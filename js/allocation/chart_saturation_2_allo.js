@@ -1,30 +1,18 @@
 document.addEventListener("DOMContentLoaded", function () {
-
-    let timeBegin = Date.now(), time, currentTime;
-    const timeMax = 60000;
-
-    const progressBar = document.getElementById('timeControl-allocation');
-    // 添加事件监听器以允许手动控制进度条
-    progressBar.addEventListener('input', function () {
-        currentTime = parseInt(progressBar.value);
-        timeBegin = Date.now() - currentTime;
-        time = currentTime;
-    });
-
     const dom_saturation_allo_2 = document.getElementById('saturation_show_allo_2');
     const chart_saturation_allo_2 = echarts.init(dom_saturation_allo_2, null, {
         renderer: 'canvas',
         useDirtyRect: false
     });
 
-    let data_2 = [];
+    var data_2 = [];
     data_2[0] = 0;
     data_2[1] = 0;
     data_2[2] = 0;
     data_2[3] = 0;
     data_2[4] = 0;
 
-    let option_saturation_allo_2 = {
+    var option_saturation_allo_2 = {
         left: "5%",
         xAxis: {
             max: 'dataMax'
@@ -73,7 +61,7 @@ document.addEventListener("DOMContentLoaded", function () {
         }
     };
 
-    let t;
+    var t;
     function setData_2() {
         t = time / timeMax;
 

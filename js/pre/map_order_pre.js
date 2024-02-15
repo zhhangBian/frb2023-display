@@ -1,16 +1,4 @@
-var timeBegin = Date.now(), time;
-const timeMax = 30000;
-const timePer = 6000;
-
-var list_order_pre = [];
-
-const progressBar = document.getElementById('timeControl-pre');
-// 添加事件监听器以允许手动控制进度条
-progressBar.addEventListener('input', function () {
-    currentTime = parseInt(progressBar.value);
-    timeBegin = Date.now() - currentTime;
-    time = currentTime;
-});
+let list_order_pre = [];
 
 function timeSet() {
     time = Date.now() - timeBegin;
@@ -23,8 +11,8 @@ function timeSet() {
     progressBar.value = time;
 }
 
-var dom = document.getElementById('order-pre');
-var chart_order_map_pre = echarts.init(dom, null, {
+var dom_order_pre = document.getElementById('order-pre');
+var chart_order_map_pre = echarts.init(dom_order_pre, null, {
     renderer: 'canvas',
     useDirtyRect: false
 });
@@ -102,7 +90,7 @@ if (option_order_map_pre && typeof option_order_map_pre === 'object') {
 }
 window.addEventListener('resize', chart_order_map_pre.resize);
 
-var timer = setInterval(function () {
+setInterval(function () {
     timeSet();
     data_order_pre = list_order_pre[Math.floor(time / timePer)];
     console.log(Math.floor(time / timePer));

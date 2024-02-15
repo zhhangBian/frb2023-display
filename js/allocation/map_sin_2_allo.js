@@ -1,8 +1,4 @@
 document.addEventListener("DOMContentLoaded", function () {
-
-    var timeBegin = Date.now(), time;
-    const timeMax = 60000;
-
     const canvas2 = document.getElementById('canvas2');
     const painter2 = canvas2.getContext('2d');
 
@@ -45,14 +41,6 @@ document.addEventListener("DOMContentLoaded", function () {
     const tb_291 = 10421;
     const tb_292 = 19637;
     const tb_293 = 13032;
-
-    const progressBar = document.getElementById('timeControl-allocation');
-// 添加事件监听器以允许手动控制进度条
-    progressBar.addEventListener('input', function () {
-        currentTime = parseInt(progressBar.value);
-        timeBegin = Date.now() - currentTime;
-        time = currentTime;
-    });
 
     function drawCurve(beginX, beginY, ctrlX, ctrlY, endX, endY) {
         painter2.beginPath();
@@ -153,7 +141,7 @@ document.addEventListener("DOMContentLoaded", function () {
     }
 
     function timeSet() {
-        time = Date.now() - timeBegin;
+        let time = Date.now() - timeBegin;
 
         if (time > timeMax) {
             currentTime = 0;

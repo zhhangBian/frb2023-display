@@ -1,13 +1,4 @@
-var timeBegin = Date.now(), time;
-
 var list_driver_pre = [];
-
-// 添加事件监听器以允许手动控制进度条
-progressBar.addEventListener('input', function () {
-    currentTime = parseInt(progressBar.value);
-    timeBegin = Date.now() - currentTime;
-    time = currentTime;
-});
 
 function timeSet() {
     time = Date.now() - timeBegin;
@@ -21,8 +12,8 @@ function timeSet() {
 }
 
 
-var dom = document.getElementById("driver-pre");
-var chart_driver_map_pre = echarts.init(dom, null, {
+var dom_driver_pre = document.getElementById("driver-pre");
+var chart_driver_map_pre = echarts.init(dom_driver_pre, null, {
     renderer: "canvas",
     useDirtyRect: false,
 });
@@ -98,7 +89,7 @@ if (option_driver_map_pre && typeof option_driver_map_pre === "object") {
 
 window.addEventListener("resize", chart_driver_map_pre.resize);
 
-var timer = setInterval(function () {
+setInterval(function () {
     timeSet();
     data_driver_pre = list_driver_pre[Math.floor(time / timePer)];
 
