@@ -13,7 +13,9 @@ document.addEventListener("DOMContentLoaded", function () {
     data_2[4] = 0;
 
     var option_saturation_allo_2 = {
-        left: "5%",
+        grid: {
+          left: "15%",
+        },
         xAxis: {
             max: 'dataMax'
         },
@@ -28,9 +30,7 @@ document.addEventListener("DOMContentLoaded", function () {
                 color: "rgba(255, 255, 255, 1)",
                 fontWeight: "bold",
                 align: "right",
-                width: 100,
-            },
-
+            }
         },
         series: [
             {
@@ -50,6 +50,8 @@ document.addEventListener("DOMContentLoaded", function () {
         legend: {
             show: false
         },
+
+        width: "70%",
 
         animationDuration: 0,
         animationDurationUpdate: 10,

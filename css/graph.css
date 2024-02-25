@@ -347,21 +347,19 @@
 
 .map_sin_allo {
     padding-top: 20px;
-    height: 33%;
+    height: 32%;
 }
 
 .map_fed_allo {
-    padding-top: 20px;
     width: 39%;
-    height: 95%;
+    height: 100%;
 }
 
 #sin_company_1_allo {
-    margin-top: -20%;
+    margin-top: -18%;
 }
 
 .graph_right_allo {
-    padding-top: 20px;
     width: 46%;
     height: 100%;
 
@@ -435,8 +433,8 @@
 
 .allo-single {
     margin: 1% 1% 1% 1%;
-    width: 98%;
-    height: 95%;
+    width: 95%;
+    height: 90%;
     box-sizing: border-box;
     border: solid 1px white;
     background-image: url(https://pigkiller-011955-1319328397.cos.ap-beijing.myqcloud.com/img/202312071657908.png);
@@ -735,11 +733,14 @@
 
     height: 70%;
     width: 100%;
+
+    overflow: visible;
 }
 
 .saturation_allo {
     height: 100%;
-    width: 49%;
+    width: 50%;
+    overflow: visible;
 }
 
 .saturation_box_title_allo {
