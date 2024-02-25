@@ -1,4 +1,5 @@
 import * as echarts from 'echarts';
+
 <template>
   <div class="container">
     <div class="content">
@@ -39,8 +40,10 @@ import * as echarts from 'echarts';
       </div>
     </div>
 
-    <!-- 地图 -->
-    <div id="map-container"></div>
+
+    <div class="map-container">
+      12345
+    </div>
   </div>
 </template>
 
@@ -49,10 +52,38 @@ export default {
   data() {
     return {
       profiles: [
-        { id: 1, name: '小明', age: 28, gender: '男', hobbies: ['游泳', '登山'], image: 'https://via.placeholder.com/150' },
-        { id: 2, name: '小红', age: 25, gender: '女', hobbies: ['阅读', '电影'], image: 'https://via.placeholder.com/150' },
-        { id: 3, name: '小刚', age: 30, gender: '男', hobbies: ['音乐', '旅行'], image: 'https://via.placeholder.com/150' },
-        { id: 4, name: '小美', age: 27, gender: '女', hobbies: ['摄影', '跳舞'], image: 'https://via.placeholder.com/150' }
+        {
+          id: 1,
+          name: '小明',
+          age: 28,
+          gender: '男',
+          hobbies: ['游泳', '登山'],
+          image: 'https://pigkiller-011955-1319328397.cos.ap-beijing.myqcloud.com/img/202402252313808.jpg'
+        },
+        {
+          id: 2,
+          name: '小红',
+          age: 25,
+          gender: '女',
+          hobbies: ['阅读', '电影'],
+          image: 'https://pigkiller-011955-1319328397.cos.ap-beijing.myqcloud.com/img/202402252313810.png'
+        },
+        {
+          id: 3,
+          name: '小刚',
+          age: 30,
+          gender: '男',
+          hobbies: ['音乐', '旅行'],
+          image: 'https://pigkiller-011955-1319328397.cos.ap-beijing.myqcloud.com/img/202402252313811.jpg'
+        },
+        {
+          id: 4,
+          name: '小美',
+          age: 27,
+          gender: '女',
+          hobbies: ['摄影', '跳舞'],
+          image: 'https://pigkiller-011955-1319328397.cos.ap-beijing.myqcloud.com/img/202402252313812.jpg'
+        }
       ],
       newProfile: {
         name: '',
@@ -60,14 +91,14 @@ export default {
         gender: '',
         hobbiesStr: ''
       }
-    };
+    }
   },
   methods: {
     addProfile() {
       // 生成新的 ID
-      const id = this.profiles.length + 1;
+      const id = this.profiles.length + 1
       // 分割爱好字符串并去除空格
-      const hobbies = this.newProfile.hobbiesStr.split(',').map(hobby => hobby.trim());
+      const hobbies = this.newProfile.hobbiesStr.split(',').map(hobby => hobby.trim())
       // 添加到列表中
       this.profiles.push({
         id,
@@ -76,41 +107,49 @@ export default {
         gender: this.newProfile.gender,
         hobbies,
         image: 'https://via.placeholder.com/150'
-      });
+      })
       // 清空表单
-      this.newProfile.name = '';
-      this.newProfile.age = null;
-      this.newProfile.gender = '';
-      this.newProfile.hobbiesStr = '';
+      this.newProfile.name = ''
+      this.newProfile.age = null
+      this.newProfile.gender = ''
+      this.newProfile.hobbiesStr = ''
     }
   }
-};
+}
 
 </script>
 
 <style scoped>
 .container {
-  width: 90vw; /* 将网站宽度设置为视口宽度 */
-  margin: 0 auto;
-  padding: 20px;
-  background-color: #ffc0cb; /* 粉色背景 */
-  color: #000; /* 黑色字体 */
+  height: 100%;
+  width: 100%;
+
+  margin: 0;
+  padding: 0;
+
+  background-color: #ffc0cb;
+  color: black;
+
+  font-size: 20px;
   display: flex;
 }
 
 .content {
+  height: 100%;
+  width: 50%;
+
   flex: 1;
 }
 
 .profile {
-  position: relative; /* 相对定位 */
-  border: 2px solid #ccc;
+  width: 100%;
+
+  position: relative;
+  border: solid #ccc 2px;
   border-radius: 20px;
-  padding: 1%; /* 调整为原先的一半 */
-  margin-bottom: 1%; /* 调整为原先的一半 */
-  background-color: rgba(255, 255, 255, 0.7); /* 透明背景 */
-  width: 48%; /* 调整为原先的一半 */
-  max-width: calc(50% - 20px); /* 考虑到边距的调整 */
+  padding: 1%;
+  margin-bottom: 1%;
+  background-color: rgba(255, 255, 255, 0.7);
 }
 
 .profile h2 {
@@ -119,17 +158,19 @@ export default {
 }
 
 .profile img {
-  position: absolute; /* 绝对定位 */
-  top: 5px; /* 距离卡片顶部 5px */
-  right: 5px; /* 距离卡片右侧 5px */
-  width: 50px; /* 调整为原先的一半 */
-  height: 50px; /* 调整为原先的一半 */
+  width: 50px;
+  height: 50px;
+
+  position: absolute;
+  top: 5px;
+  right: 5px;
+
   border-radius: 50%;
   border: 2px solid #ddd;
 }
 
 .profile p {
-  margin: 4px 0; /* 调整为原先的一半 */
+  margin: 4px 0;
 }
 
 .profile p strong {
@@ -137,19 +178,20 @@ export default {
 }
 
 .form-group {
-  margin-bottom: 5px; /* 调整为原先的一半 */
+  margin-bottom: 5px;
 }
 
 form input,
 form select {
-  width: 45%;
-  padding: 4px; /* 调整为原先的一半 */
+  width: 100%;
+
+  padding: 4px;
   border-radius: 4px;
   border: 1px solid #ccc;
 }
 
 form button {
-  padding: 4px 8px; /* 调整为原先的一半 */
+  padding: 4px 8px;
   background-color: #007bff;
   color: #fff;
   border: none;
@@ -161,9 +203,12 @@ form button:hover {
   background-color: #0056b3;
 }
 
-#map-container {
+.map-container {
+  width: 50%;
+  height: 100%;
+
   flex: 1;
   padding: 20px;
-  background-color: #f0f0f0; /* 地图容器背景色 */
+  background-color: #f0f0f0;
 }
 </style>
