@@ -11,10 +11,12 @@ import * as echarts from 'echarts';
           <label for="name">姓名：</label>
           <input type="text" id="name" v-model="newProfile.name" required>
         </div>
+
         <div class="form-group">
           <label for="age">年龄：</label>
           <input type="number" id="age" v-model="newProfile.age" required>
         </div>
+
         <div class="form-group">
           <label for="gender">性别：</label>
           <select id="gender" v-model="newProfile.gender" required>
@@ -22,11 +24,13 @@ import * as echarts from 'echarts';
             <option value="女">女</option>
           </select>
         </div>
+
         <div class="form-group">
           <label for="hobbies">爱好：</label>
           <input type="text" id="hobbies" v-model="newProfile.hobbiesStr" required>
           <!-- <small>（多个爱好用逗号分隔）</small> -->
         </div>
+
         <button type="submit">添加</button>
       </form>
 
@@ -178,12 +182,20 @@ export default {
 }
 
 .form-group {
-  margin-bottom: 5px;
+  width: 100%;
+
+  border: solid red 2px;
+}
+
+.form-group label {
+  width: 20%;
+
+  border: solid green 2px;
 }
 
 form input,
 form select {
-  width: 100%;
+  width: 80%;
 
   padding: 4px;
   border-radius: 4px;
