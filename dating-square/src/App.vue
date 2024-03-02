@@ -113,7 +113,7 @@
 </template>
 
 <script>
-import * as echarts from 'echarts';
+import * as echarts from 'echarts'
 
 export default {
   data() {
@@ -266,10 +266,10 @@ export default {
       },
 
       matcher: {
-        rate: "0%",
-        source_company: "not match yet",
-        name: "not match yet",
-        age: "我刚满18岁",
+        rate: '0%',
+        source_company: 'not match yet',
+        name: 'not match yet',
+        age: '我刚满18岁'
       },
 
       company_list: ['北航', '南航', '西航', '东航'],
@@ -350,8 +350,8 @@ export default {
               { value: 274, name: '30-40' },
               { value: 235, name: '40-50' },
               { value: 400, name: '50+' }
-            ].sort(function (a, b) {
-              return a.value - b.value;
+            ].sort(function(a, b) {
+              return a.value - b.value
             }),
             roseType: 'radius',
             label: {
@@ -372,38 +372,38 @@ export default {
             },
             animationType: 'scale',
             animationEasing: 'elasticOut',
-            animationDelay: function (idx) {
-              return Math.random() * 200;
+            animationDelay: function(idx) {
+              return Math.random() * 200
             }
           }
         ]
       }
-    };
+    }
   },
 
   mounted() {
-    this.init();
-    this.createDots();
-    this.renderScene();
-    window.addEventListener('resize', this.onResize);
+    this.init()
+    this.createDots()
+    this.renderScene()
+    window.addEventListener('resize', this.onResize)
 
-    this.initChart_count();
-    window.addEventListener('resize', this.resizeChart_count);
+    this.initChart_count()
+    window.addEventListener('resize', this.resizeChart_count)
 
-    this.initChart_rate();
-    window.addEventListener('resize', this.resizeChart_rate);
+    this.initChart_rate()
+    window.addEventListener('resize', this.resizeChart_rate)
   },
 
   beforeUnmount() {
-    window.removeEventListener('resize', this.onResize);
+    window.removeEventListener('resize', this.onResize)
   },
 
   methods: {
     addProfile() {
       // 生成新的 ID
-      const id = this.profiles_1.length + this.profiles_2.length + this.profiles_3.length + this.profiles_4.length + 1;
+      const id = this.profiles_1.length + this.profiles_2.length + this.profiles_3.length + this.profiles_4.length + 1
       // 分割爱好字符串并去除空格
-      const hobbies = this.newProfile.hobbiesStr.split(',').map(hobby => hobby.trim());
+      const hobbies = this.newProfile.hobbiesStr.split(',').map(hobby => hobby.trim())
       // 添加到列表中
       this.profiles_1.push({
         id,
@@ -412,143 +412,143 @@ export default {
         gender: this.newProfile.gender,
         hobbies,
         image: 'https://pigkiller-011955-1319328397.cos.ap-beijing.myqcloud.com/img/202403021612148.png'
-      });
+      })
 
       // 清空表单
-      this.newProfile.name = '';
-      this.newProfile.age = null;
-      this.newProfile.gender = '';
-      this.newProfile.hobbiesStr = '';
+      this.newProfile.name = ''
+      this.newProfile.age = null
+      this.newProfile.gender = ''
+      this.newProfile.hobbiesStr = ''
     },
 
     searchProfile() {
-      this.matcher.rate = (Math.random() * (95 - 60) + 60).toFixed(2) + '%';
-      this.matcher.source_company = this.company_list[Math.floor(Math.random() * this.company_list.length)];
+      this.matcher.rate = (Math.random() * (95 - 60) + 60).toFixed(2) + '%'
+      this.matcher.source_company = this.company_list[Math.floor(Math.random() * this.company_list.length)]
 
-      this.matcher.name = this.name_list[Math.floor(Math.random() * this.name_list.length)];
-      this.matcher.age = "我刚满" + (++this.age_init) + "岁";
+      this.matcher.name = this.name_list[Math.floor(Math.random() * this.name_list.length)]
+      this.matcher.age = '我刚满' + (++this.age_init) + '岁'
     },
 
     initChart_count() {
       this.chart_count = echarts.init(this.$refs.chart_count, null, {
         renderer: 'canvas',
         useDirtyRect: false
-      });
-      this.chart_count.setOption(this.option_count_chart);
+      })
+      this.chart_count.setOption(this.option_count_chart)
     },
 
     resizeChart_count() {
       if (this.chart_count) {
-        this.chart_count.resize();
+        this.chart_count.resize()
       }
     },
 
     initChart_rate() {
-      const dom_rate = document.getElementById('rate_chart');
+      const dom_rate = document.getElementById('rate_chart')
       this.chart_rate = echarts.init(dom_rate, null, {
         renderer: 'canvas',
         useDirtyRect: false
-      });
+      })
       if (this.option_rate_chart && typeof this.option_rate_chart === 'object') {
-        this.chart_rate.setOption(this.option_rate_chart);
+        this.chart_rate.setOption(this.option_rate_chart)
       }
     },
 
     resizeChart_rate() {
-      this.chart_rate.resize();
+      this.chart_rate.resize()
     },
 
     init() {
-      const canvas = this.$refs.canvas;
-      const ctx = canvas.getContext('2d');
-      this.width = canvas.clientWidth;
-      this.height = canvas.clientHeight;
+      const canvas = this.$refs.canvas
+      const ctx = canvas.getContext('2d')
+      this.width = canvas.clientWidth
+      this.height = canvas.clientHeight
 
       if (window.devicePixelRatio > 1) {
-        canvas.width = canvas.clientWidth * 2;
-        canvas.height = canvas.clientHeight * 2;
-        ctx.scale(2, 2);
+        canvas.width = canvas.clientWidth * 2
+        canvas.height = canvas.clientHeight * 2
+        ctx.scale(2, 2)
       }
 
-      this.GLOBE_RADIUS = this.height * 0.5;
-      this.GLOBE_CENTER_Z = -this.GLOBE_RADIUS;
-      this.PROJECTION_CENTER_X = this.width / 2;
-      this.PROJECTION_CENTER_Y = this.height / 2;
-      this.FIELD_OF_VIEW = this.width * 0.8;
+      this.GLOBE_RADIUS = this.height * 0.5
+      this.GLOBE_CENTER_Z = -this.GLOBE_RADIUS
+      this.PROJECTION_CENTER_X = this.width / 2
+      this.PROJECTION_CENTER_Y = this.height / 2
+      this.FIELD_OF_VIEW = this.width * 0.8
     },
 
     createDots() {
-      this.dots = [];
-      this.dotColors = [];
+      this.dots = []
+      this.dotColors = []
       for (let i = 0; i < this.DOTS_AMOUNT; i++) {
-        const theta = Math.random() * 2 * Math.PI;
-        const phi = Math.acos((Math.random() * 2) - 1);
-        const x = this.GLOBE_RADIUS * Math.sin(phi) * Math.cos(theta);
-        const y = this.GLOBE_RADIUS * Math.sin(phi) * Math.sin(theta);
-        const z = (this.GLOBE_RADIUS * Math.cos(phi)) + this.GLOBE_CENTER_Z;
-        const color = this.generateRandomColor(); // 生成随机颜色
-        this.dots.push({ x, y, z });
-        this.dotColors.push(color); // 将随机颜色存入数组
+        const theta = Math.random() * 2 * Math.PI
+        const phi = Math.acos((Math.random() * 2) - 1)
+        const x = this.GLOBE_RADIUS * Math.sin(phi) * Math.cos(theta)
+        const y = this.GLOBE_RADIUS * Math.sin(phi) * Math.sin(theta)
+        const z = (this.GLOBE_RADIUS * Math.cos(phi)) + this.GLOBE_CENTER_Z
+        const color = this.generateRandomColor() // 生成随机颜色
+        this.dots.push({ x, y, z })
+        this.dotColors.push(color) // 将随机颜色存入数组
       }
     },
 
     renderScene() {
-      const ctx = this.$refs.canvas.getContext('2d');
-      ctx.clearRect(0, 0, this.width, this.height);
-      this.rotation += 0.002;
-      const sineRotation = Math.sin(this.rotation);
-      const cosineRotation = Math.cos(this.rotation);
+      const ctx = this.$refs.canvas.getContext('2d')
+      ctx.clearRect(0, 0, this.width, this.height)
+      this.rotation += 0.002
+      const sineRotation = Math.sin(this.rotation)
+      const cosineRotation = Math.cos(this.rotation)
       for (let i = 0; i < this.dots.length; i++) {
-        const color = this.dotColors[i]; // 获取随机颜色
-        this.drawDot(ctx, this.dots[i], sineRotation, cosineRotation, color);
+        const color = this.dotColors[i] // 获取随机颜色
+        this.drawDot(ctx, this.dots[i], sineRotation, cosineRotation, color)
       }
-      window.requestAnimationFrame(this.renderScene);
+      window.requestAnimationFrame(this.renderScene)
     },
 
     generateRandomColor() {
-      const r = Math.floor(Math.random() * 256); // 随机生成红色分量
-      const g = Math.floor(Math.random() * 256); // 随机生成绿色分量
-      const b = Math.floor(Math.random() * 256); // 随机生成蓝色分量
-      return `rgb(${r},${g},${b})`; // 返回随机颜色
+      const r = Math.floor(Math.random() * 256) // 随机生成红色分量
+      const g = Math.floor(Math.random() * 256) // 随机生成绿色分量
+      const b = Math.floor(Math.random() * 256) // 随机生成蓝色分量
+      return `rgb(${r},${g},${b})` // 返回随机颜色
     },
 
     drawDot(ctx, dot, sin, cos, color) {
-      const rotX = cos * dot.x + sin * (dot.z - this.GLOBE_CENTER_Z);
-      const rotZ = -sin * dot.x + cos * (dot.z - this.GLOBE_CENTER_Z) + this.GLOBE_CENTER_Z;
-      const sizeProjection = this.FIELD_OF_VIEW / (this.FIELD_OF_VIEW - rotZ);
-      const xProject = (rotX * sizeProjection) + this.PROJECTION_CENTER_X;
-      const yProject = (dot.y * sizeProjection) + this.PROJECTION_CENTER_Y;
-      ctx.fillStyle = color; // 设置点的颜色
-      ctx.beginPath();
-      ctx.arc(xProject, yProject, this.DOT_RADIUS * sizeProjection, 0, Math.PI * 2);
-      ctx.closePath();
-      ctx.fill();
+      const rotX = cos * dot.x + sin * (dot.z - this.GLOBE_CENTER_Z)
+      const rotZ = -sin * dot.x + cos * (dot.z - this.GLOBE_CENTER_Z) + this.GLOBE_CENTER_Z
+      const sizeProjection = this.FIELD_OF_VIEW / (this.FIELD_OF_VIEW - rotZ)
+      const xProject = (rotX * sizeProjection) + this.PROJECTION_CENTER_X
+      const yProject = (dot.y * sizeProjection) + this.PROJECTION_CENTER_Y
+      ctx.fillStyle = color // 设置点的颜色
+      ctx.beginPath()
+      ctx.arc(xProject, yProject, this.DOT_RADIUS * sizeProjection, 0, Math.PI * 2)
+      ctx.closePath()
+      ctx.fill()
     },
 
     afterResize() {
-      this.width = this.$refs.canvas.offsetWidth;
-      this.height = this.$refs.canvas.offsetHeight;
+      this.width = this.$refs.canvas.offsetWidth
+      this.height = this.$refs.canvas.offsetHeight
       if (window.devicePixelRatio > 1) {
-        this.$refs.canvas.width = this.$refs.canvas.clientWidth * 2;
-        this.$refs.canvas.height = this.$refs.canvas.clientHeight * 2;
-        ctx.scale(2, 2);
+        this.$refs.canvas.width = this.$refs.canvas.clientWidth * 2
+        this.$refs.canvas.height = this.$refs.canvas.clientHeight * 2
+        ctx.scale(2, 2)
       } else {
-        this.$refs.canvas.width = this.width;
-        this.$refs.canvas.height = this.height;
+        this.$refs.canvas.width = this.width
+        this.$refs.canvas.height = this.height
       }
-      this.GLOBE_RADIUS = this.width * 0.7;
-      this.GLOBE_CENTER_Z = -this.GLOBE_RADIUS;
-      this.PROJECTION_CENTER_X = this.width / 2;
-      this.PROJECTION_CENTER_Y = this.height / 2;
-      this.FIELD_OF_VIEW = this.width * 0.8;
-      this.createDots();
+      this.GLOBE_RADIUS = this.width * 0.7
+      this.GLOBE_CENTER_Z = -this.GLOBE_RADIUS
+      this.PROJECTION_CENTER_X = this.width / 2
+      this.PROJECTION_CENTER_Y = this.height / 2
+      this.FIELD_OF_VIEW = this.width * 0.8
+      this.createDots()
     },
     onResize() {
-      clearTimeout(this.resizeTimeout);
-      this.resizeTimeout = setTimeout(this.afterResize, 500);
+      clearTimeout(this.resizeTimeout)
+      this.resizeTimeout = setTimeout(this.afterResize, 500)
     }
   }
-};
+}
 
 </script>
 
@@ -668,8 +668,6 @@ export default {
 
   border: solid purple 2px;
 }
-
-
 
 
 .profile {
