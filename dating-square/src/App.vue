@@ -5,17 +5,17 @@
         <div class="profile_input">
           <form @submit.prevent="addProfile">
             <div>添加您的匹配条件</div>
-  
+
             <div class="form-group">
               <label for="name">姓名：</label>
               <input type="text" id="name" v-model="newProfile.name" required>
             </div>
-  
+
             <div class="form-group">
               <label for="age">年龄：</label>
               <input type="number" id="age" v-model="newProfile.age" required>
             </div>
-  
+
             <div class="form-group">
               <label for="gender">性别：</label>
               <select id="gender" v-model="newProfile.gender" required>
@@ -23,26 +23,26 @@
                 <option value="女">女</option>
               </select>
             </div>
-  
+
             <div class="form-group">
               <label for="hobbies">爱好：</label>
               <input type="text" id="hobbies" v-model="newProfile.hobbiesStr" required>
               <small>（多个爱好请用逗号分隔）</small>
             </div>
-  
+
             <button type="submit">添加</button>
           </form>
         </div>
 
         <div class="profile_match">
-          <p><strong>匹配结果：</strong>{{ matcher.rate }}</p> 
+          <p><strong>匹配结果：</strong>{{ matcher.rate }}</p>
           <p><strong>来源公司：</strong>{{ matcher.source_company }}</p>
           <p><strong>姓名：</strong>{{ matcher.name }}</p>
           <p><strong>年龄：</strong>{{ matcher.age }}</p>
           <div></div>
           <input type="button" value="点击了解更多" @click="searchProfile">
         </div>
-        
+
       </div>
 
       <div class="company_profile">
@@ -100,13 +100,20 @@
       </div>
 
       <div class="match_rate">
-        
+        <div class="count_chart" ref="chart_count">
+
+        </div>
+
+        <div class="rate_chart" id="rate_chart">
+
+        </div>
       </div>
     </div>
   </div>
 </template>
 
 <script>
+import * as echarts from 'echarts';
 
 export default {
   data() {
@@ -266,7 +273,7 @@ export default {
       },
 
       company_list: ['北航', '南航', '西航', '东航'],
-      name_list: ['a','b','c','d','e'],
+      name_list: ['a', 'b', 'c', 'd', 'e'],
       age_init: 18,
 
       width: 0,
@@ -281,7 +288,96 @@ export default {
       PROJECTION_CENTER_Y: 0,
       FIELD_OF_VIEW: 0,
       resizeTimeout: null,
-      dotColors: []
+      dotColors: [],
+
+      chart_count: null,
+      option_count_chart: {
+        xAxis: {
+          type: 'category',
+          data: ['Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat', 'Sun']
+        },
+        yAxis: {
+          type: 'value'
+        },
+        series: [{
+          data: [120, 200, 150, 80, 70, 110, 130],
+          type: 'line',
+          symbol: 'triangle',
+          symbolSize: 20,
+          lineStyle: {
+            color: '#5470C6',
+            width: 4,
+            type: 'dashed'
+          },
+          itemStyle: {
+            borderWidth: 3,
+            borderColor: '#EE6666',
+            color: 'yellow'
+          }
+        }]
+      },
+
+      chart_rate: null,
+      option_rate_chart: {
+        title: {
+          text: '访问年龄占比',
+          left: 'center',
+          top: 20,
+          textStyle: {
+            color: '#000'
+          }
+        },
+        tooltip: {
+          trigger: 'item'
+        },
+        visualMap: {
+          show: false,
+          min: 80,
+          max: 600,
+          inRange: {
+            colorLightness: [0, 1]
+          }
+        },
+        series: [
+          {
+            name: 'Access From',
+            type: 'pie',
+            radius: '55%',
+            center: ['50%', '50%'],
+            data: [
+              { value: 335, name: '18-20' },
+              { value: 310, name: '20-30' },
+              { value: 274, name: '30-40' },
+              { value: 235, name: '40-50' },
+              { value: 400, name: '50+' }
+            ].sort(function (a, b) {
+              return a.value - b.value;
+            }),
+            roseType: 'radius',
+            label: {
+              color: 'rgba(0, 0, 0, 1)'
+            },
+            labelLine: {
+              lineStyle: {
+                color: 'rgba(0, 0, 0, 1)'
+              },
+              smooth: 0.2,
+              length: 10,
+              length2: 20
+            },
+            itemStyle: {
+              color: '#c23531',
+              shadowBlur: 200,
+              shadowColor: 'rgba(0, 0, 0, 1)'
+            },
+            animationType: 'scale',
+            animationEasing: 'elasticOut',
+            animationDelay: function (idx) {
+              return Math.random() * 200;
+            }
+          }
+        ]
+      }
     };
   },
 
@@ -290,6 +386,12 @@ export default {
     this.createDots();
     this.renderScene();
     window.addEventListener('resize', this.onResize);
+
+    this.initChart_count();
+    window.addEventListener('resize', this.resizeChart_count);
+
+    this.initChart_rate();
+    window.addEventListener('resize', this.resizeChart_rate);
   },
 
   beforeUnmount() {
@@ -311,7 +413,7 @@ export default {
         hobbies,
         image: 'https://pigkiller-011955-1319328397.cos.ap-beijing.myqcloud.com/img/202403021612148.png'
       });
-      
+
       // 清空表单
       this.newProfile.name = '';
       this.newProfile.age = null;
@@ -322,9 +424,38 @@ export default {
     searchProfile() {
       this.matcher.rate = (Math.random() * (95 - 60) + 60).toFixed(2) + '%';
       this.matcher.source_company = this.company_list[Math.floor(Math.random() * this.company_list.length)];
-    
+
       this.matcher.name = this.name_list[Math.floor(Math.random() * this.name_list.length)];
       this.matcher.age = "我刚满" + (++this.age_init) + "岁";
+    },
+
+    initChart_count() {
+      this.chart_count = echarts.init(this.$refs.chart_count, null, {
+        renderer: 'canvas',
+        useDirtyRect: false
+      });
+      this.chart_count.setOption(this.option_count_chart);
+    },
+
+    resizeChart_count() {
+      if (this.chart_count) {
+        this.chart_count.resize();
+      }
+    },
+
+    initChart_rate() {
+      const dom_rate = document.getElementById('rate_chart');
+      this.chart_rate = echarts.init(dom_rate, null, {
+        renderer: 'canvas',
+        useDirtyRect: false
+      });
+      if (this.option_rate_chart && typeof this.option_rate_chart === 'object') {
+        this.chart_rate.setOption(this.option_rate_chart);
+      }
+    },
+
+    resizeChart_rate() {
+      this.chart_rate.resize();
     },
 
     init() {
@@ -518,8 +649,28 @@ export default {
   height: 100%;
   width: 60%;
 
+  display: flex;
+  flex-direction: row;
+
   border: solid black 3px;
 }
+
+.count_chart {
+  height: 100%;
+  width: 50%;
+
+  border: solid purple 2px;
+}
+
+.rate_chart {
+  height: 100%;
+  width: 50%;
+
+  border: solid purple 2px;
+}
+
+
+
 
 .profile {
   height: 20%;
