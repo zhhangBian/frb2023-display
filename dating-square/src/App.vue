@@ -77,8 +77,8 @@
     </div>
 
     <div class="bottom">
-      <div class="relationship_map">
-
+      <div class="relationship_map" id="relationship">
+        
       </div>
 
       <div class="match_rate">
@@ -89,10 +89,16 @@
 </template>
 
 <script>
+import * as echarts from 'echarts';
+import axios from 'axios';
+
 export default {
+  name: 'relationship_map',
+  mounted() {
+    this.initChart();
+  },
   data() {
     return {
-      ROOT_PATH: './',
       profiles: [
         {
           id: 1,
@@ -155,7 +161,56 @@ export default {
       this.newProfile.age = null
       this.newProfile.gender = ''
       this.newProfile.hobbiesStr = ''
-    }
+    },
+
+    initChart() {
+      const chartDom = document.getElementById('relationship');
+      const myChart = echarts.init(chartDom);
+
+      myChart.showLoading();
+      axios.get('https://echarts.apache.org/examples/data/asset/data/webkit-dep.json' , {
+      headers: {
+        'Access-Control-Allow-Origin': '*'
+      }
+      })
+      .then(response => {
+          myChart.hideLoading();
+          const webkitDep = response.data;
+          const option = {
+            legend: {
+              data: ['HTMLElement', 'WebGL', 'SVG', 'CSS', 'Other']
+            },
+            series: [
+              {
+                type: 'graph',
+                layout: 'force',
+                animation: false,
+                label: {
+                  position: 'right',
+                  formatter: '{b}'
+                },
+                draggable: true,
+                data: webkitDep.nodes.map(function (node, idx) {
+                  node.id = idx;
+                  return node;
+                }),
+                categories: webkitDep.categories,
+                force: {
+                  edgeLength: 5,
+                  repulsion: 20,
+                  gravity: 0.2
+                },
+                edges: webkitDep.links
+              }
+            ]
+          };
+          myChart.setOption(option);
+          window.addEventListener('resize', myChart.resize);
+        })
+        .catch(error => {
+          console.error('Error fetching data:', error);
+        });
+    },
   }
 }
 
