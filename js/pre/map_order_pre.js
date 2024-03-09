@@ -29,7 +29,7 @@ var color_list = [
   ["#060093", "#1382e5", "#b3e0f3", "#F25F5C", "#E84545", "#FF0000"], //blue and red
   ["white", "#b3e0f3", "#69b4eb", "#1382e5", "#1b3fbf", "#060093"]  //same color
 ]
-var COLORS1 = ["white", "#D7E9FD", "#99CCFF", "#6699CC", "#336699", "#003366"];
+var COLORS1 = ["#060093", "#1382e5", "#b3e0f3", "#F7A8A8", "#E84545", "#C70039"];
 var lngExtent = [39.5, 40.6];
 var latExtent = [115.9, 116.8];
 var cellCount = [50, 50];
@@ -100,7 +100,7 @@ window.addEventListener('resize', chart_order_map_pre.resize);
 setInterval(function () {
     timeSet();
     data_order_pre = list_order_pre[Math.floor(time / timePer)];
-    COLORS1 = color_list[Math.floor(time / timePer)]
+    //COLORS1 = color_list[Math.floor(time / timePer)];
     console.log(Math.floor(time / timePer));
 
     option_order_map_pre = {

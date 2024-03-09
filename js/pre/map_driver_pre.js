@@ -21,8 +21,8 @@ var app = {};
 
 var option_driver_map_pre;
 
-var COLORS2 = ["white", "#b3e0f3", "#69b4eb", "#1382e5", "#1b3fbf", "#060093"];
-//var COLORS2 = ["#060093", "#1382e5", "#b3e0f3", "#F25F5C", "#E84545", "#FF0000"];
+//var COLORS2 = ["white", "#b3e0f3", "#69b4eb", "#1382e5", "#1b3fbf", "#060093"];
+var COLORS2 = ["#060093", "#1382e5", "#b3e0f3", "#F7A8A8", "#E84545", "#C70039"];
 
 var lngExtent = [39.5, 40.6];
 var latExtent = [115.9, 116.8];
