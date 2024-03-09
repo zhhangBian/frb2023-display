@@ -23,7 +23,7 @@ var option_order_map_pre;
 
 var color_list = [
   ["white", "#D7E9FD", "#99CCFF", "#6699CC", "#336699", "#003366"], //blue
-  ["white", "#FFF0F5", "#D1E8E2", "#B2D785", "#A2D8DD", "#66C784"], //green
+  ["white", "#FFF0F5", "#D1E8E2", "#A2D8DD", "#B2D785", "#66C784"], //green
   ["white", "#F9D3D3", "#F9B9B9", "#FFC0CB", "#F99F9F", "#F98787"], //pink
   ["white", "#FFC3A0", "#FF9F80", "#F7A072", "#F08CAC", "#DB6B3A"], //orange
   ["white", "#b3e0f3", "#69b4eb", "#1382e5", "#1b3fbf", "#060093"]  //same color
