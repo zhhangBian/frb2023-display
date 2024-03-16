@@ -35,7 +35,7 @@
         </div>
 
         <div class="profile_match">
-          <p><span class="label"><strong>匹配结果</strong></span> <span class="value">{{ matcher.rate }}</span></p>
+          <p><span class="label1"><strong>匹配结果</strong></span> <span class="value">{{ matcher.rate }}</span></p>
           <p><span class="label"><strong>来源公司</strong></span> <span class="value">{{ matcher.source_company }}</span></p>
           <p><span class="label"><strong>姓名</strong></span> <span class="value">{{ matcher.name }}</span></p>
           <p><span class="label"><strong>年龄</strong></span> <span class="value">{{ matcher.age }}</span></p>
@@ -560,7 +560,7 @@ export default {
 
   background-color: #ffc0cb;
   color: black;
-  font-size: 20px;
+  font-size: 115%;
 
   display: flex;
   flex-direction: column;
@@ -591,7 +591,7 @@ export default {
 }
 
 .profile_input {
-  height: 45%;
+  height: 43%;
   width: 93%;
     
   border: solid #FFAEB9 2px;
@@ -599,15 +599,15 @@ export default {
   padding: 1%;
   margin: 2% 0 1% 4%;
   background-color: #FFF0F5;
-  box-shadow: 0 0 10px rgba(255, 174, 185, 0.5);
+  box-shadow: 0 0 10% rgba(255, 174, 185, 0.5);
 }
 
 .form-title {
-  padding-top: 15px;
-  padding-bottom: 3px;
-  margin-left: 25px;   
+  padding-top: 6%;
+  padding-bottom: 2%;
+  margin-left: 9%;   
   font-weight: bold;
-  font-size: 18px; 
+  font-size: 115%; 
 }
 
 .form-group {
@@ -615,28 +615,28 @@ export default {
 }
 
 .form-group label {
-  padding-top: 3px;
-  padding-bottom: 3px;
-  margin-left: 25px;   
+  padding-top: 1%;
+  padding-bottom: 1%;
+  margin-left: 9%;   
   font-weight: bold;
-  font-size: 15px;  
+  font-size: 93%;  
 }
 
 #note {
-  padding-top: 3px;
-  padding-bottom: 3px;
-  margin-left: 70px;  
-  font-size: 15px; 
+  padding-top: 1%;
+  padding-bottom: 1%;
+  margin-left: 23%;  
+  font-size: 95%; 
 }
 
 form button {
-  padding: 4px 8px;
+  padding: 1.5% 4%;
   background-color: #007bff;
   color: #fff;
   border: none;
-  border-radius: 4px;
+  border-radius: 3px;
   cursor: pointer;
-  margin-left: 115px; 
+  margin-left: 40%; 
 }
 
 form button:hover {
@@ -655,41 +655,56 @@ form button:hover {
 
 form input,
 form select {
-  padding: 4px;
+  padding: 1.5%;
   border-radius: 4px;
   border: 1px solid #ccc;
 }
 
 .profile_match {
-  height: 32%;
+  height: 31%;
   width: 80%;
   border: solid #FFAEB9 2px;
   border-radius: 15px;
-  margin: 3% 0 1% 9%;
+  margin: 4% 0 1% 9%;
   background-color: #FFF0F5;
   box-shadow: 0 0 10px rgba(255, 174, 185, 0.5);
 }
 
-.profile_match .label{
+.profile_match .label1{
   display: inline-block; /* 使其可以像块级元素一样设置宽度和高度，但保留内联元素的特性 */  
-  padding: 5px; /* 设置内边距，确保文字不会紧贴着边框 */  
+  padding: 2%; /* 设置内边距，确保文字不会紧贴着边框 */  
   background-color: black; /* 设置背景颜色为黑色 */  
   color: white; /* 设置文字颜色为白色，以便在黑色背景上可见 */  
   border-radius: 10% / 10%; /* 创建一个椭圆形的边框，水平半径和垂直半径不同 */  
   line-height: 1.3; /*调整行高以更好地适应椭圆形状   */
   text-align: center; /* 文字水平居中 */  
-  font-size: 12px; /* 设置字体大小 */
-  margin-left: 30px; 
+  font-size:70%; /* 设置字体大小 */
+  margin-left: 15%; 
+  margin-top: 5%;
+  font-weight: bold;
+}
+
+.profile_match .label{
+  display: inline-block; /* 使其可以像块级元素一样设置宽度和高度，但保留内联元素的特性 */  
+  padding: 2%; /* 设置内边距，确保文字不会紧贴着边框 */  
+  background-color: black; /* 设置背景颜色为黑色 */  
+  color: white; /* 设置文字颜色为白色，以便在黑色背景上可见 */  
+  border-radius: 10% / 10%; /* 创建一个椭圆形的边框，水平半径和垂直半径不同 */  
+  line-height: 1.3; /*调整行高以更好地适应椭圆形状   */
+  text-align: center; /* 文字水平居中 */  
+  font-size:70%; /* 设置字体大小 */
+  margin-left: 15%; 
   font-weight: bold;
 }
 
 .profile_match .value{
-  margin-left: 5px;   
-  font-size: 14px;  
+  margin-left: 3%;   
+  font-size: 80%;  
 }
 
 .profile_match input{
   margin-left: 30%; 
+  margin-top: 5%;
 }
 
 .company_profile {
@@ -726,8 +741,8 @@ form select {
 
   font-size: 200%;
   writing-mode: vertical-lr;
-  margin-top: 100px;
-  margin-left: 10px;
+  margin-top: 20%;
+  margin-left: 2%;
   justify-content: space-between;
 }
 
@@ -773,7 +788,7 @@ form select {
   background-color: #FFF0F5;
   box-shadow: 0 0 10px rgba(255, 174, 185, 0.5);
 
-  font-size: 10px;
+  font-size: 80%;
 }
 
 .profile img {
@@ -785,11 +800,11 @@ form select {
   margin: 0 auto; 
   display: block; 
   border: 2px solid #FFAEB9; 
-  padding: 2px; 
+  padding: 1%; 
 
   position: absolute;
-  top: 8px;
-  right: 10px;
+  top: 7%;
+  right: 5%;
 }
 
 @keyframes glow {  
@@ -804,32 +819,32 @@ form select {
 }  
 
 .profile h2 {  
-  padding-top: 3px;
-  padding-bottom: 3px;
-  margin-left: 25px;   
+  padding-top: 1.5%;
+  padding-bottom: 1%;
+  margin-left: 10%;   
   font-weight: bold;
-  font-size: 12px;  
+  font-size: 98%;  
   color: #FF3030;  
-  animation: glow 1s ease-in-out infinite; 
+  animation: glow 2s ease-in-out infinite; 
 }
 
 .profile .label {
-  padding-top: 5px;
-  margin-left: 30px;   
-  font-size: 10px;   
+  padding-top: 1%;
+  margin-left: 10%;   
+  font-size: 80%;   
   color: #FF83FA;   
   border-radius: 15%;  
   border: 1px solid #E066FF;
   box-shadow: 0 0 1px rgba(0, 0, 0, 0.3); 
   background-color: #FFF0F5;  
   line-height: 2.3;  
-  padding: 3px; 
+  padding: 0.8%; 
 }
 
 .profile .value {
   font-weight: bold;
   font-family:'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
-  margin-left: 5px;   
-  font-size: 10px;   
+  margin-left: 2%;   
+  font-size: 85%;   
 }
 </style>
