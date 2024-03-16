@@ -4,7 +4,7 @@
       <div class="profile_add">
         <div class="profile_input">
           <form @submit.prevent="addProfile">
-            <div>添加您的匹配条件</div>
+            <div class="form-title">添加您的匹配条件</div>
 
             <div class="form-group">
               <label for="name">姓名：</label>
@@ -27,7 +27,7 @@
             <div class="form-group">
               <label for="hobbies">爱好：</label>
               <input type="text" id="hobbies" v-model="newProfile.hobbiesStr" required>
-              <small>（多个爱好请用逗号分隔）</small>
+              <p id="note"><small>（多个爱好请用逗号分隔）</small></p>
             </div>
 
             <button type="submit">添加</button>
@@ -35,10 +35,10 @@
         </div>
 
         <div class="profile_match">
-          <p><strong>匹配结果：</strong>{{ matcher.rate }}</p>
-          <p><strong>来源公司：</strong>{{ matcher.source_company }}</p>
-          <p><strong>姓名：</strong>{{ matcher.name }}</p>
-          <p><strong>年龄：</strong>{{ matcher.age }}</p>
+          <p><span class="label"><strong>匹配结果</strong></span> <span class="value">{{ matcher.rate }}</span></p>
+          <p><span class="label"><strong>来源公司</strong></span> <span class="value">{{ matcher.source_company }}</span></p>
+          <p><span class="label"><strong>姓名</strong></span> <span class="value">{{ matcher.name }}</span></p>
+          <p><span class="label"><strong>年龄</strong></span> <span class="value">{{ matcher.age }}</span></p>
           <div></div>
           <input type="button" value="点击了解更多" @click="searchProfile">
         </div>
@@ -48,41 +48,41 @@
       <div class="company_profile">
         <div class="candiate_profile" id="company_1">
           <div v-for="profile in profiles_1" :key="profile.id" class="profile">
-            <h2 style="font-size: 10px;">{{ profile.name }}</h2>
+            <h2>{{ profile.name }}</h2>
             <img :src="profile.image" alt="Profile Image">
-            <p><strong>年龄:</strong> {{ profile.age }}</p>
-            <p><strong>性别:</strong> {{ profile.gender }}</p>
-            <p><strong>爱好:</strong> {{ profile.hobbies.join(', ') }}</p>
+            <p><span class="label"><strong>年龄:</strong></span> <span class="value">{{ profile.age }}</span></p>
+            <p><span class="label"><strong>性别:</strong></span> <span class="value">{{ profile.gender }}</span></p>
+            <p><span class="label"><strong>爱好:</strong></span> <span class="value">{{ profile.hobbies.join(', ') }}</span></p>
           </div>
         </div>
 
         <div class="candiate_profile" id="company_2">
           <div v-for="profile in profiles_2" :key="profile.id" class="profile">
-            <h2 style="font-size: 10px;">{{ profile.name }}</h2>
+            <h2>{{ profile.name }}</h2>
             <img :src="profile.image" alt="Profile Image">
-            <p><strong>年龄:</strong> {{ profile.age }}</p>
-            <p><strong>性别:</strong> {{ profile.gender }}</p>
-            <p><strong>爱好:</strong> {{ profile.hobbies.join(', ') }}</p>
+            <p><span class="label"><strong>年龄:</strong></span> <span class="value">{{ profile.age }}</span></p>
+            <p><span class="label"><strong>性别:</strong></span> <span class="value">{{ profile.gender }}</span></p>
+            <p><span class="label"><strong>爱好:</strong></span> <span class="value">{{ profile.hobbies.join(', ') }}</span></p>
           </div>
         </div>
 
         <div class="candiate_profile" id="company_3">
           <div v-for="profile in profiles_3" :key="profile.id" class="profile">
-            <h2 style="font-size: 10px;">{{ profile.name }}</h2>
+            <h2>{{ profile.name }}</h2>
             <img :src="profile.image" alt="Profile Image">
-            <p><strong>年龄:</strong> {{ profile.age }}</p>
-            <p><strong>性别:</strong> {{ profile.gender }}</p>
-            <p><strong>爱好:</strong> {{ profile.hobbies.join(', ') }}</p>
+            <p><span class="label"><strong>年龄:</strong></span> <span class="value">{{ profile.age }}</span></p>
+            <p><span class="label"><strong>性别:</strong></span> <span class="value">{{ profile.gender }}</span></p>
+            <p><span class="label"><strong>爱好:</strong></span> <span class="value">{{ profile.hobbies.join(', ') }}</span></p>
           </div>
         </div>
 
         <div class="candiate_profile" id="company_4">
           <div v-for="profile in profiles_4" :key="profile.id" class="profile">
-            <h2 style="font-size: 10px;">{{ profile.name }}</h2>
+            <h2>{{ profile.name }}</h2>
             <img :src="profile.image" alt="Profile Image">
-            <p><strong>年龄:</strong> {{ profile.age }}</p>
-            <p><strong>性别:</strong> {{ profile.gender }}</p>
-            <p><strong>爱好:</strong> {{ profile.hobbies.join(', ') }}</p>
+            <p><span class="label"><strong>年龄:</strong></span> <span class="value">{{ profile.age }}</span></p>
+            <p><span class="label"><strong>性别:</strong></span> <span class="value">{{ profile.gender }}</span></p>
+            <p><span class="label"><strong>爱好:</strong></span> <span class="value">{{ profile.hobbies.join(', ') }}</span></p>
           </div>
         </div>
       </div>
@@ -591,15 +591,105 @@ export default {
 }
 
 .profile_input {
-  height: 50%;
+  height: 48%;
+  width: 93%;
+    
+  border: solid #FFAEB9 2px;
+  border-radius: 15px;
+  padding: 1%;
+  margin: 2% 0 1% 4%;
+  background-color: #FFF0F5;
+  box-shadow: 0 0 10px rgba(255, 174, 185, 0.5);
+}
+
+.form-title {
+  padding-top: 3px;
+  padding-bottom: 3px;
+  margin-left: 25px;   
+  font-weight: bold;
+  font-size: 18px; 
+}
+
+.form-group {
   width: 100%;
 }
 
-.profile_match {
-  height: 50%;
-  width: 100%;
+.form-group label {
+  padding-top: 3px;
+  padding-bottom: 3px;
+  margin-left: 25px;   
+  font-weight: bold;
+  font-size: 15px;  
+}
 
-  font-size: 15px;
+#note {
+  padding-top: 3px;
+  padding-bottom: 3px;
+  margin-left: 70px;  
+  font-size: 15px; 
+}
+
+form button {
+  padding: 4px 8px;
+  background-color: #007bff;
+  color: #fff;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  margin-left: 115px; 
+}
+
+form button:hover {
+  background-color: #0056b3;
+}
+
+#name {
+  width: 30%;
+}
+#age {
+  width: 20%;
+}
+#gender {
+  width: 20%;
+}
+
+form input,
+form select {
+  padding: 4px;
+  border-radius: 4px;
+  border: 1px solid #ccc;
+}
+
+.profile_match {
+  height: 34%;
+  width: 80%;
+  border: solid #FFAEB9 2px;
+  border-radius: 15px;
+  margin: 1% 0 1% 9%;
+  background-color: #FFF0F5;
+  box-shadow: 0 0 10px rgba(255, 174, 185, 0.5);
+}
+
+.profile_match .label{
+  display: inline-block; /* 使其可以像块级元素一样设置宽度和高度，但保留内联元素的特性 */  
+  padding: 5px; /* 设置内边距，确保文字不会紧贴着边框 */  
+  background-color: black; /* 设置背景颜色为黑色 */  
+  color: white; /* 设置文字颜色为白色，以便在黑色背景上可见 */  
+  border-radius: 10% / 10%; /* 创建一个椭圆形的边框，水平半径和垂直半径不同 */  
+  line-height: 1.3; /*调整行高以更好地适应椭圆形状   */
+  text-align: center; /* 文字水平居中 */  
+  font-size: 12px; /* 设置字体大小 */
+  margin-left: 30px; 
+  font-weight: bold;
+}
+
+.profile_match .value{
+  margin-left: 5px;   
+  font-size: 14px;  
+}
+
+.profile_match input{
+  margin-left: 30%; 
 }
 
 .company_profile {
@@ -615,7 +705,6 @@ export default {
 .candiate_profile {
   height: 100%;
   width: 25%;
-
   overflow: auto;
 }
 
@@ -635,8 +724,10 @@ export default {
   height: 100%;
   width: 15%;
 
-  font-size: 250%;
+  font-size: 200%;
   writing-mode: vertical-lr;
+  margin-top: 100px;
+  margin-left: 10px;
   justify-content: space-between;
 }
 
@@ -672,64 +763,73 @@ export default {
 
 .profile {
   height: 20%;
-  width: 100%;
+  width: 98%;
 
   position: relative;
-  border: solid #ccc 2px;
-  border-radius: 20px;
+  border: solid #FFAEB9 2px;
+  border-radius: 15px;
   padding: 1%;
-  margin-bottom: 1%;
-  background-color: rgba(255, 255, 255, 0.7);
+  margin: 1% 0 1% 0;
+  background-color: #FFF0F5;
+  box-shadow: 0 0 10px rgba(255, 174, 185, 0.5);
 
   font-size: 10px;
 }
 
 .profile img {
-  width: 15%;
+  
+  width: 30%;  
   height: 85%;
 
+  border-radius: 100px; 
+  margin: 0 auto; 
+  display: block; 
+  border: 2px solid #FFAEB9; 
+  padding: 2px; 
+
   position: absolute;
-  top: 10px;
+  top: 8px;
   right: 10px;
-
-  border: 2px solid #ddd;
 }
 
-.profile p {
-  margin: 4px 0;
-}
+@keyframes glow {  
+    0% { text-shadow: 0 0 5px #FF69B4, 0 0 10px #FF69B4, 0 0 15px #FF69B4, 0 0 20px #FF69B4; }  
+    20% { text-shadow: 0 0 15px #FF69B4, 0 0 20px #FF69B4, 0 0 30px #FF69B4, 0 0 35px #FF69B4; } 
+    50% { text-shadow: 0 0 30px #FF69B4, 0 0 35px #FF69B4, 0 0 40px #FF69B4, 0 0 45px #FF69B4; }
+    80% { text-shadow: 0 0 15px #FF69B4, 0 0 20px #FF69B4, 0 0 30px #FF69B4, 0 0 35px #FF69B4; } 
+    100% { text-shadow: 0 0 5px #FF69B4, 0 0 10px #FF69B4, 0 0 15px #FF69B4, 0 0 20px #FF69B4; }
+    80% { text-shadow: 0 0 15px #FF69B4, 0 0 20px #FF69B4, 0 0 30px #FF69B4, 0 0 35px #FF69B4; }
+    50% { text-shadow: 0 0 30px #FF69B4, 0 0 35px #FF69B4, 0 0 40px #FF69B4, 0 0 45px #FF69B4; } 
+    20% { text-shadow: 0 0 15px #FF69B4, 0 0 20px #FF69B4, 0 0 30px #FF69B4, 0 0 35px #FF69B4; } 
+}  
 
-.profile p strong {
+.profile h2 {  
+  padding-top: 3px;
+  padding-bottom: 3px;
+  margin-left: 25px;   
   font-weight: bold;
+  font-size: 12px;  
+  color: #FF3030;  
+  animation: glow 1s ease-in-out infinite; 
 }
 
-.form-group {
-  width: 100%;
+.profile .label {
+  padding-top: 5px;
+  margin-left: 30px;   
+  font-size: 10px;   
+  color: #FF83FA;   
+  border-radius: 15%;  
+  border: 1px solid #E066FF;
+  box-shadow: 0 0 1px rgba(0, 0, 0, 0.3); 
+  background-color: #FFF0F5;  
+  line-height: 2.3;  
+  padding: 3px; 
 }
 
-.form-group label {
-  width: 20%;
-}
-
-form input,
-form select {
-  width: 80%;
-
-  padding: 4px;
-  border-radius: 4px;
-  border: 1px solid #ccc;
-}
-
-form button {
-  padding: 4px 8px;
-  background-color: #007bff;
-  color: #fff;
-  border: none;
-  border-radius: 4px;
-  cursor: pointer;
-}
-
-form button:hover {
-  background-color: #0056b3;
+.profile .value {
+  font-weight: bold;
+  font-family:'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+  margin-left: 5px;   
+  font-size: 10px;   
 }
 </style>
