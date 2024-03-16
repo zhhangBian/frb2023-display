@@ -591,7 +591,7 @@ export default {
 }
 
 .profile_input {
-  height: 48%;
+  height: 45%;
   width: 93%;
     
   border: solid #FFAEB9 2px;
@@ -603,7 +603,7 @@ export default {
 }
 
 .form-title {
-  padding-top: 3px;
+  padding-top: 15px;
   padding-bottom: 3px;
   margin-left: 25px;   
   font-weight: bold;
@@ -661,11 +661,11 @@ form select {
 }
 
 .profile_match {
-  height: 34%;
+  height: 32%;
   width: 80%;
   border: solid #FFAEB9 2px;
   border-radius: 15px;
-  margin: 1% 0 1% 9%;
+  margin: 3% 0 1% 9%;
   background-color: #FFF0F5;
   box-shadow: 0 0 10px rgba(255, 174, 185, 0.5);
 }
