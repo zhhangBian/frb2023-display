@@ -55,12 +55,13 @@
             <p><span class="label"><strong>爱好:</strong></span> <span class="value">{{ profile.hobbies.join(', ') }}</span></p>
           </div>
         </div>
-
+      </div>
+      <div class="company_display">
         <div class="candiate_profile" id="company_2">
           <div v-for="profile in profiles_2" :key="profile.id" class="profile">
             <h2>{{ profile.name }}</h2>
             <img :src="profile.image" alt="Profile Image">
-            <p><span class="label"><strong>年龄:</strong></span> <span class="value">{{ profile.age }}</span></p>
+            <p class="profile_1"><span class="label"><strong>年龄:</strong></span> <span class="value">{{ profile.age }}</span></p>
             <p><span class="label"><strong>性别:</strong></span> <span class="value">{{ profile.gender }}</span></p>
             <p><span class="label"><strong>爱好:</strong></span> <span class="value">{{ profile.hobbies.join(', ') }}</span></p>
           </div>
@@ -70,7 +71,7 @@
           <div v-for="profile in profiles_3" :key="profile.id" class="profile">
             <h2>{{ profile.name }}</h2>
             <img :src="profile.image" alt="Profile Image">
-            <p><span class="label"><strong>年龄:</strong></span> <span class="value">{{ profile.age }}</span></p>
+            <p class="profile_1"><span class="label"><strong>年龄:</strong></span> <span class="value">{{ profile.age }}</span></p>
             <p><span class="label"><strong>性别:</strong></span> <span class="value">{{ profile.gender }}</span></p>
             <p><span class="label"><strong>爱好:</strong></span> <span class="value">{{ profile.hobbies.join(', ') }}</span></p>
           </div>
@@ -80,7 +81,7 @@
           <div v-for="profile in profiles_4" :key="profile.id" class="profile">
             <h2>{{ profile.name }}</h2>
             <img :src="profile.image" alt="Profile Image">
-            <p><span class="label"><strong>年龄:</strong></span> <span class="value">{{ profile.age }}</span></p>
+            <p class="profile_1"><span class="label"><strong>年龄:</strong></span> <span class="value">{{ profile.age }}</span></p>
             <p><span class="label"><strong>性别:</strong></span> <span class="value">{{ profile.gender }}</span></p>
             <p><span class="label"><strong>爱好:</strong></span> <span class="value">{{ profile.hobbies.join(', ') }}</span></p>
           </div>
@@ -405,14 +406,67 @@ export default {
       // 分割爱好字符串并去除空格
       const hobbies = this.newProfile.hobbiesStr.split(',').map(hobby => hobby.trim())
       // 添加到列表中
-      this.profiles_1.push({
-        id,
-        name: this.newProfile.name,
-        age: this.newProfile.age,
-        gender: this.newProfile.gender,
-        hobbies,
-        image: 'https://pigkiller-011955-1319328397.cos.ap-beijing.myqcloud.com/img/202403021612148.png'
-      })
+      if (this.newProfile.name == "张栗瑞") {
+          this.profiles_1.push({
+          id,
+          name: this.newProfile.name,
+          age: this.newProfile.age,
+          gender: this.newProfile.gender,
+          hobbies,
+          image: 'https://pigkiller-011955-1319328397.cos.ap-beijing.myqcloud.com/img/202403021612148.png'
+        })
+      }
+      else if (this.newProfile.name == "卞卓航") {
+        this.profiles_1.push({
+          id,
+          name: this.newProfile.name,
+          age: this.newProfile.age,
+          gender: this.newProfile.gender,
+          hobbies,
+          image: 'https://ooo.0x0.ooo/2024/03/17/OgUCGi.png'
+        })
+      } 
+      else if (this.newProfile.name == "廖鹏飞") {
+        this.profiles_1.push({
+          id,
+          name: this.newProfile.name,
+          age: this.newProfile.age,
+          gender: this.newProfile.gender,
+          hobbies,
+          image: 'https://ooo.0x0.ooo/2024/03/17/OgUwIX.png'
+        })
+      } 
+      else if (this.newProfile.name == "梁锦程") {
+        this.profiles_1.push({
+          id,
+          name: this.newProfile.name,
+          age: this.newProfile.age,
+          gender: this.newProfile.gender,
+          hobbies,
+          image: 'https://ooo.0x0.ooo/2024/03/17/OgWTsY.jpg'
+        })
+      }
+      else if (this.newProfile.name == "林舒雅") {
+        this.profiles_1.push({
+          id,
+          name: this.newProfile.name,
+          age: this.newProfile.age,
+          gender: this.newProfile.gender,
+          hobbies,
+          image: 'https://ooo.0x0.ooo/2024/03/17/OgWBgU.png'
+        })
+      }
+      else if (this.newProfile.name == "童欣") {
+        this.profiles_1.push({
+          id,
+          name: this.newProfile.name,
+          age: this.newProfile.age,
+          gender: this.newProfile.gender,
+          hobbies,
+          image: 'https://ooo.0x0.ooo/2024/03/17/OgW5Wp.png'
+        })
+      }
+      
 
       // 清空表单
       this.newProfile.name = ''
@@ -575,9 +629,9 @@ export default {
 }
 
 .bottom {
-  height: 40%;
+  height: 38%;
   width: 100%;
-
+  
   display: flex;
   flex-direction: row;
 }
@@ -597,7 +651,7 @@ export default {
   border: solid #FFAEB9 2px;
   border-radius: 15px;
   padding: 1%;
-  margin: 2% 0 1% 4%;
+  margin: 22% 0 1% 4%;
   background-color: #FFF0F5;
   box-shadow: 0 0 10% rgba(255, 174, 185, 0.5);
 }
@@ -709,7 +763,7 @@ form select {
 
 .company_profile {
   height: 100%;
-  width: 80%;
+  width: 20%;
 
   display: flex;
   flex-direction: row;
@@ -717,15 +771,32 @@ form select {
   overflow: auto;
 }
 
-.candiate_profile {
+.company_display {
   height: 100%;
-  width: 25%;
+  width: 60%;
+  margin-top: 3%;
+  display: flex;
+  flex-direction: row;
+
+  overflow: auto;
+}
+
+.company_profile .candiate_profile {
+  height: 100%;
+  width: 100%;
+  overflow: auto;
+}
+
+.company_display .candiate_profile {
+  height: 100%;
+  width: 33%;
   overflow: auto;
 }
 
 .planet {
   height: 100%;
-  width: 40%;
+  width: 30%;
+  margin-left: 2%;
 
   display: flex;
   flex-direction: row;
@@ -740,9 +811,15 @@ form select {
   width: 15%;
 
   font-size: 200%;
+  font-size: 48px;  
+  font-family:Georgia, 'Times New Roman', Times, serif;
+  background: linear-gradient(to bottom, #fc2797, #f427fc, #7c27fc, #27fcc6, #27fc34, #c8fc27,#fcf327);  
+  -webkit-background-clip: text;  
+  -webkit-text-fill-color: transparent;  
+
   writing-mode: vertical-lr;
-  margin-top: 20%;
-  margin-left: 2%;
+  margin-top: 17%;
+  margin-left: 3%;
   justify-content: space-between;
 }
 
@@ -753,7 +830,7 @@ form select {
 
 .match_rate {
   height: 100%;
-  width: 60%;
+  width: 65%;
 
   display: flex;
   flex-direction: row;
@@ -792,11 +869,10 @@ form select {
 }
 
 .profile img {
-  
   width: 30%;  
   height: 85%;
 
-  border-radius: 100px; 
+  border-radius: 100%; 
   margin: 0 auto; 
   display: block; 
   border: 2px solid #FFAEB9; 
