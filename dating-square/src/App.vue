@@ -403,70 +403,42 @@ export default {
     addProfile() {
       // 生成新的 ID
       const id = this.profiles_1.length + this.profiles_2.length + this.profiles_3.length + this.profiles_4.length + 1
+      
       // 分割爱好字符串并去除空格
       const hobbies = this.newProfile.hobbiesStr.split(',').map(hobby => hobby.trim())
       // 添加到列表中
+      
+      var newProfile = {
+        id,
+        name: this.newProfile.name,
+        age: this.newProfile.age,
+        gender: this.newProfile.gender,
+        hobbies,
+        image: ''
+      };
+
       if (this.newProfile.name == "张栗瑞") {
-          this.profiles_1.push({
-          id,
-          name: this.newProfile.name,
-          age: this.newProfile.age,
-          gender: this.newProfile.gender,
-          hobbies,
-          image: 'https://pigkiller-011955-1319328397.cos.ap-beijing.myqcloud.com/img/202403021612148.png'
-        })
+          newProfile.image = 'https://pigkiller-011955-1319328397.cos.ap-beijing.myqcloud.com/img/202403021612148.png';
       }
       else if (this.newProfile.name == "卞卓航") {
-        this.profiles_1.push({
-          id,
-          name: this.newProfile.name,
-          age: this.newProfile.age,
-          gender: this.newProfile.gender,
-          hobbies,
-          image: 'https://ooo.0x0.ooo/2024/03/17/OgUCGi.png'
-        })
+        newProfile.image = 'https://ooo.0x0.ooo/2024/03/17/OgUCGi.png';
       } 
       else if (this.newProfile.name == "廖鹏飞") {
-        this.profiles_1.push({
-          id,
-          name: this.newProfile.name,
-          age: this.newProfile.age,
-          gender: this.newProfile.gender,
-          hobbies,
-          image: 'https://ooo.0x0.ooo/2024/03/17/OgUwIX.png'
-        })
+        newProfile.image = 'https://ooo.0x0.ooo/2024/03/17/OgUwIX.png';
       } 
       else if (this.newProfile.name == "梁锦程") {
-        this.profiles_1.push({
-          id,
-          name: this.newProfile.name,
-          age: this.newProfile.age,
-          gender: this.newProfile.gender,
-          hobbies,
-          image: 'https://ooo.0x0.ooo/2024/03/17/OgWTsY.jpg'
-        })
+        newProfile.image = 'https://ooo.0x0.ooo/2024/03/17/OgWTsY.jpg';
       }
       else if (this.newProfile.name == "林舒雅") {
-        this.profiles_1.push({
-          id,
-          name: this.newProfile.name,
-          age: this.newProfile.age,
-          gender: this.newProfile.gender,
-          hobbies,
-          image: 'https://ooo.0x0.ooo/2024/03/17/OgWBgU.png'
-        })
+        newProfile.image = 'https://ooo.0x0.ooo/2024/03/17/OgWBgU.png';
       }
       else if (this.newProfile.name == "童欣") {
-        this.profiles_1.push({
-          id,
-          name: this.newProfile.name,
-          age: this.newProfile.age,
-          gender: this.newProfile.gender,
-          hobbies,
-          image: 'https://ooo.0x0.ooo/2024/03/17/OgW5Wp.png'
-        })
+        newProfile.image = 'https://ooo.0x0.ooo/2024/03/17/OgW5Wp.png';
       }
-      
+      else {
+        newProfile.image = 'https://pigkiller-011955-1319328397.cos.ap-beijing.myqcloud.com/img/202403172311289.png';
+      }
+      this.profile_1.push(newProfile);
 
       // 清空表单
       this.newProfile.name = ''
@@ -609,8 +581,8 @@ export default {
 
 <style scoped>
 .page {
-  height: 100vh;
-  width: 100vw;
+  height: 99vh;
+  width: 99vw;
 
   background-color: #ffc0cb;
   color: black;
@@ -626,6 +598,8 @@ export default {
 
   display: flex;
   flex-direction: row;
+
+  border: solid red 3px;
 }
 
 .bottom {
@@ -634,6 +608,8 @@ export default {
   
   display: flex;
   flex-direction: row;
+
+  border: solid green 3px;
 }
 
 .profile_add {
