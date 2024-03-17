@@ -293,6 +293,14 @@ export default {
 
       chart_count: null,
       option_count_chart: {
+        title: {
+          text: '访问人数变化',
+          left: 'center',
+          top: 20,
+          textStyle: {
+            color: '#000'
+          }
+        },
         xAxis: {
           type: 'category',
           data: ['Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat', 'Sun']
