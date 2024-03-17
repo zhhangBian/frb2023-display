@@ -7,30 +7,39 @@
             <div class="form-title">添加您的匹配条件</div>
 
             <div class="form-group">
-              <label for="name">姓名：</label>
-              <input type="text" id="name" v-model="newProfile.name" required>
+              <div for="name" class="form_type">姓名：</div>
+              <input type="text" class="form_enter" v-model="newProfile.name" required>
             </div>
 
             <div class="form-group">
-              <label for="age">年龄：</label>
-              <input type="number" id="age" v-model="newProfile.age" required>
+              <div for="age" class="form_type">年龄：</div>
+              <input type="number" class="form_enter" v-model="newProfile.age" required>
             </div>
 
             <div class="form-group">
-              <label for="gender">性别：</label>
-              <select id="gender" v-model="newProfile.gender" required>
+              <div for="gender" class="form_type">性别：</div>
+              <select class="form_enter" v-model="newProfile.gender" required>
                 <option value="男">男</option>
                 <option value="女">女</option>
               </select>
             </div>
 
             <div class="form-group">
-              <label for="hobbies">爱好：</label>
-              <input type="text" id="hobbies" v-model="newProfile.hobbiesStr" required>
-              <p id="note"><small>（多个爱好请用逗号分隔）</small></p>
+              <div for="hobbies" class="form_type">爱好：</div>
+              <input type="text" class="form_enter" placeholder="多个爱好请用逗号分隔" v-model="newProfile.hobbiesStr" required>
             </div>
 
-            <button type="submit">添加</button>
+            <div class="form-button">
+              <div class="form_title_button">添加的公司：</div>
+              <select class="button_enter" v-model="newProfile.company" required>
+                <option value=1>1</option>
+                <option value=2>2</option>
+                <option value=3>3</option>
+                <option value=4>4</option>
+              </select>
+
+              <button type="submit" class="form_add_button">添加</button>
+            </div>
           </form>
         </div>
 
@@ -48,42 +57,93 @@
       <div class="company_profile">
         <div class="candiate_profile" id="company_1">
           <div v-for="profile in profiles_1" :key="profile.id" class="profile">
-            <h2>{{ profile.name }}</h2>
-            <img :src="profile.image" alt="Profile Image">
-            <p><span class="label"><strong>年龄:</strong></span> <span class="value">{{ profile.age }}</span></p>
-            <p><span class="label"><strong>性别:</strong></span> <span class="value">{{ profile.gender }}</span></p>
-            <p><span class="label"><strong>爱好:</strong></span> <span class="value">{{ profile.hobbies.join(', ') }}</span></p>
+            <img :src="profile.image" class="profile_image">
+            
+            <div class="profile_name">{{ profile.name }}</div>
+            
+            <div class="profile_age">
+              <span class="label"><strong>年龄:</strong></span>
+              <span class="value">{{ profile.age }}</span>
+            </div>
+            
+            <div class="profile_gender">
+              <span class="label"><strong>性别:</strong></span>
+              <span class="value">{{ profile.gender }}</span>
+            </div>
+            
+            <div class="profile_hobby">
+              <span class="label"><strong>爱好:</strong></span>
+              <span class="value">{{ profile.hobbies.join(', ') }}</span>
+            </div>
           </div>
         </div>
-      </div>
-      <div class="company_display">
+
         <div class="candiate_profile" id="company_2">
           <div v-for="profile in profiles_2" :key="profile.id" class="profile">
-            <h2>{{ profile.name }}</h2>
-            <img :src="profile.image" alt="Profile Image">
-            <p class="profile_1"><span class="label"><strong>年龄:</strong></span> <span class="value">{{ profile.age }}</span></p>
-            <p><span class="label"><strong>性别:</strong></span> <span class="value">{{ profile.gender }}</span></p>
-            <p><span class="label"><strong>爱好:</strong></span> <span class="value">{{ profile.hobbies.join(', ') }}</span></p>
+            <img :src="profile.image" class="profile_image">
+            
+            <div class="profile_name">{{ profile.name }}</div>
+            
+            <div class="profile_age">
+              <span class="label"><strong>年龄:</strong></span>
+              <span class="value">{{ profile.age }}</span>
+            </div>
+            
+            <div class="profile_gender">
+              <span class="label"><strong>性别:</strong></span>
+              <span class="value">{{ profile.gender }}</span>
+            </div>
+            
+            <div class="profile_hobby">
+              <span class="label"><strong>爱好:</strong></span>
+              <span class="value">{{ profile.hobbies.join(', ') }}</span>
+            </div>
           </div>
         </div>
 
         <div class="candiate_profile" id="company_3">
           <div v-for="profile in profiles_3" :key="profile.id" class="profile">
-            <h2>{{ profile.name }}</h2>
-            <img :src="profile.image" alt="Profile Image">
-            <p class="profile_1"><span class="label"><strong>年龄:</strong></span> <span class="value">{{ profile.age }}</span></p>
-            <p><span class="label"><strong>性别:</strong></span> <span class="value">{{ profile.gender }}</span></p>
-            <p><span class="label"><strong>爱好:</strong></span> <span class="value">{{ profile.hobbies.join(', ') }}</span></p>
+            <img :src="profile.image" class="profile_image">
+            
+            <div class="profile_name">{{ profile.name }}</div>
+            
+            <div class="profile_age">
+              <span class="label"><strong>年龄:</strong></span>
+              <span class="value">{{ profile.age }}</span>
+            </div>
+            
+            <div class="profile_gender">
+              <span class="label"><strong>性别:</strong></span>
+              <span class="value">{{ profile.gender }}</span>
+            </div>
+            
+            <div class="profile_hobby">
+              <span class="label"><strong>爱好:</strong></span>
+              <span class="value">{{ profile.hobbies.join(', ') }}</span>
+            </div>
           </div>
         </div>
 
         <div class="candiate_profile" id="company_4">
           <div v-for="profile in profiles_4" :key="profile.id" class="profile">
-            <h2>{{ profile.name }}</h2>
-            <img :src="profile.image" alt="Profile Image">
-            <p class="profile_1"><span class="label"><strong>年龄:</strong></span> <span class="value">{{ profile.age }}</span></p>
-            <p><span class="label"><strong>性别:</strong></span> <span class="value">{{ profile.gender }}</span></p>
-            <p><span class="label"><strong>爱好:</strong></span> <span class="value">{{ profile.hobbies.join(', ') }}</span></p>
+            <img :src="profile.image" class="profile_image">
+            
+            <div class="profile_name">{{ profile.name }}</div>
+            
+            <div class="profile_age">
+              <span class="label"><strong>年龄:</strong></span>
+              <span class="value">{{ profile.age }}</span>
+            </div>
+            
+            <div class="profile_gender">
+              <span class="label"><strong>性别:</strong></span>
+              <span class="value">{{ profile.gender }}</span>
+            </div>
+            
+            <div class="profile_hobby">
+              <span class="label"><strong>爱好:</strong></span>
+              <span class="value">{{ profile.hobbies.join(', ') }}</span>
+            </div>
           </div>
         </div>
       </div>
@@ -351,16 +411,15 @@ export default {
           {
             name: 'Access From',
             type: 'pie',
-            radius: '55%',
-            center: ['50%', '50%'],
+            radius: '60%',
             data: [
               { value: 335, name: '18-20' },
               { value: 310, name: '20-30' },
               { value: 274, name: '30-40' },
               { value: 235, name: '40-50' },
-              { value: 400, name: '50+' }
+              { value: 100, name: '50+' }
             ].sort(function(a, b) {
-              return a.value - b.value
+              return a.value - b.value;
             }),
             roseType: 'radius',
             label: {
@@ -375,8 +434,8 @@ export default {
               length2: 20
             },
             itemStyle: {
-              color: '#c23531',
-              shadowBlur: 200,
+              color: '#FFDAB9',
+              shadowBlur: 1,
               shadowColor: 'rgba(0, 0, 0, 1)'
             },
             animationType: 'scale',
@@ -410,19 +469,20 @@ export default {
   methods: {
     addProfile() {
       // 生成新的 ID
-      const id = this.profiles_1.length + this.profiles_2.length + this.profiles_3.length + this.profiles_4.length + 1
+      const id = this.profiles_1.length + this.profiles_2.length + this.profiles_3.length + this.profiles_4.length + 1;
       
       // 分割爱好字符串并去除空格
       const hobbies = this.newProfile.hobbiesStr.split(',').map(hobby => hobby.trim())
       // 添加到列表中
       
       var newProfile = {
-        id,
+        id: id,
         name: this.newProfile.name,
         age: this.newProfile.age,
         gender: this.newProfile.gender,
         hobbies,
-        image: ''
+        image: '',
+        company: this.newProfile.company,
       };
 
       if (this.newProfile.name == "张栗瑞") {
@@ -446,7 +506,20 @@ export default {
       else {
         newProfile.image = 'https://pigkiller-011955-1319328397.cos.ap-beijing.myqcloud.com/img/202403172311289.png';
       }
-      this.profile_1.push(newProfile);
+
+      if(newProfile.company==1) {
+        this.profiles_1.push(newProfile);
+      }
+      else if(newProfile.company==2) {
+        this.profiles_2.push(newProfile);
+      }
+      else if(newProfile.company==3) {
+        this.profiles_3.push(newProfile);
+      }
+      else if(newProfile.company==4) {
+        this.profiles_4.push(newProfile);
+      }
+      
 
       // 清空表单
       this.newProfile.name = ''
@@ -606,18 +679,14 @@ export default {
 
   display: flex;
   flex-direction: row;
-
-  border: solid red 3px;
 }
 
 .bottom {
-  height: 38%;
+  height: 40%;
   width: 100%;
   
   display: flex;
   flex-direction: row;
-
-  border: solid green 3px;
 }
 
 .profile_add {
@@ -629,66 +698,85 @@ export default {
 }
 
 .profile_input {
-  height: 43%;
-  width: 93%;
-    
-  border: solid #FFAEB9 2px;
+  height: 50%;
+  width: 95%;
+  
   border-radius: 15px;
-  padding: 1%;
-  margin: 22% 0 1% 4%;
+  margin: 5% 0 2.5% 2.5%;
   background-color: #FFF0F5;
-  box-shadow: 0 0 10% rgba(255, 174, 185, 0.5);
 }
 
 .form-title {
-  padding-top: 6%;
-  padding-bottom: 2%;
-  margin-left: 9%;   
+  height: 5%;
+  width: 100%;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  padding-top: 2cqmin;
+
+  font-family: "幼圆";
   font-weight: bold;
-  font-size: 115%; 
+  font-size: 150%; 
 }
 
 .form-group {
+  height: 10%;
   width: 100%;
-}
 
-.form-group label {
   padding-top: 1%;
-  padding-bottom: 1%;
-  margin-left: 9%;   
-  font-weight: bold;
-  font-size: 93%;  
+
+  display: flex;
 }
 
-#note {
-  padding-top: 1%;
-  padding-bottom: 1%;
-  margin-left: 23%;  
-  font-size: 95%; 
+.form_type {
+  height: 100%;
+  width: 25%;
+
+  font-size: 100%;
+
+  padding-left: 5%;
+
+  justify-content: center;
+  align-items: center;
 }
 
-form button {
-  padding: 1.5% 4%;
-  background-color: #007bff;
-  color: #fff;
-  border: none;
+.form_enter {
+  height: 100%;
+  width: 70%;
+}
+
+.form-button {
+  height: 20%;
+  width: 100%;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding-top: 5%;
+}
+
+.form_title_button {
+  height: 100%;
+  width: 30%;
+
+  font-size: 90%;
+}
+
+.form_add_button {
+  height: 100%;
+  width: 30%;
+
   border-radius: 3px;
   cursor: pointer;
-  margin-left: 40%; 
+
+  background-color: #1E90FF;
+  color: #fff;
 }
 
-form button:hover {
-  background-color: #0056b3;
-}
-
-#name {
-  width: 30%;
-}
-#age {
-  width: 20%;
-}
-#gender {
-  width: 20%;
+#form_add_button:hover {
+  background-color: #0000CD;
 }
 
 form input,
@@ -699,13 +787,12 @@ form select {
 }
 
 .profile_match {
-  height: 31%;
-  width: 80%;
-  border: solid #FFAEB9 2px;
+  height: 40%;
+  width: 95%;
+
   border-radius: 15px;
-  margin: 4% 0 1% 9%;
+  margin: 0% 5% 2.5% 2.5%;
   background-color: #FFF0F5;
-  box-shadow: 0 0 10px rgba(255, 174, 185, 0.5);
 }
 
 .profile_match .label1{
@@ -747,7 +834,7 @@ form select {
 
 .company_profile {
   height: 100%;
-  width: 20%;
+  width: 80%;
 
   display: flex;
   flex-direction: row;
@@ -755,27 +842,87 @@ form select {
   overflow: auto;
 }
 
-.company_display {
-  height: 100%;
-  width: 60%;
-  margin-top: 3%;
-  display: flex;
-  flex-direction: row;
+.candiate_profile {
+  height: 90%;
+  width: 25%;
+
+  margin-top: 1%;
 
   overflow: auto;
 }
 
-.company_profile .candiate_profile {
-  height: 100%;
-  width: 100%;
-  overflow: auto;
+.profile {
+  height: 25%;
+  width: 95%;
+
+  position: relative;
+  padding: 1%;
+
+  border: solid #FFAEB9 2px;
+  border-radius: 15px;
+  
+  background-color: #FFF0F5;
+
+
+  font-size: 80%;
 }
 
-.company_display .candiate_profile {
-  height: 100%;
-  width: 33%;
-  overflow: auto;
+.profile_image {
+  width: 30%;  
+  height: 85%;
+
+  border-radius: 100%; 
+  margin: 0 auto; 
+  display: block; 
+  border: 2px solid #FFAEB9; 
+  padding: 1%; 
+
+  position: absolute;
+  top: 7%;
+  right: 5%;
 }
+
+.profile_name {  
+  padding-top: 1.5%;
+  padding-bottom: 1%;
+  margin-left: 10%;   
+  font-weight: bold;
+  font-size: 98%;  
+  color: #FF3030;  
+  animation: glow 2s ease-in-out infinite; 
+}
+
+.profile .label {
+  padding-top: 1%;
+  margin-left: 10%;   
+  font-size: 80%;   
+  color: #FF83FA;   
+  border-radius: 15%;  
+  border: 1px solid #E066FF;
+  box-shadow: 0 0 1px rgba(0, 0, 0, 0.3); 
+  background-color: #FFF0F5;  
+  line-height: 2.3;  
+  padding: 0.8%; 
+}
+
+.profile .value {
+  font-weight: bold;
+  font-family:'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+  margin-left: 2%;   
+  font-size: 85%;   
+}
+
+@keyframes
+glow {  
+    0% { text-shadow: 0 0 5px #FF69B4, 0 0 10px #FF69B4, 0 0 15px #FF69B4, 0 0 20px #FF69B4; }  
+    20% { text-shadow: 0 0 15px #FF69B4, 0 0 20px #FF69B4, 0 0 30px #FF69B4, 0 0 35px #FF69B4; } 
+    50% { text-shadow: 0 0 30px #FF69B4, 0 0 35px #FF69B4, 0 0 40px #FF69B4, 0 0 45px #FF69B4; }
+    80% { text-shadow: 0 0 15px #FF69B4, 0 0 20px #FF69B4, 0 0 30px #FF69B4, 0 0 35px #FF69B4; } 
+    100% { text-shadow: 0 0 5px #FF69B4, 0 0 10px #FF69B4, 0 0 15px #FF69B4, 0 0 20px #FF69B4; }
+    80% { text-shadow: 0 0 15px #FF69B4, 0 0 20px #FF69B4, 0 0 30px #FF69B4, 0 0 35px #FF69B4; }
+    50% { text-shadow: 0 0 30px #FF69B4, 0 0 35px #FF69B4, 0 0 40px #FF69B4, 0 0 45px #FF69B4; } 
+    20% { text-shadow: 0 0 15px #FF69B4, 0 0 20px #FF69B4, 0 0 30px #FF69B4, 0 0 35px #FF69B4; } 
+}  
 
 .planet {
   height: 100%;
@@ -834,77 +981,5 @@ form select {
   width: 50%;
 
   border: solid purple 2px;
-}
-
-
-.profile {
-  height: 20%;
-  width: 98%;
-
-  position: relative;
-  border: solid #FFAEB9 2px;
-  border-radius: 15px;
-  padding: 1%;
-  margin: 1% 0 1% 0;
-  background-color: #FFF0F5;
-  box-shadow: 0 0 10px rgba(255, 174, 185, 0.5);
-
-  font-size: 80%;
-}
-
-.profile img {
-  width: 30%;  
-  height: 85%;
-
-  border-radius: 100%; 
-  margin: 0 auto; 
-  display: block; 
-  border: 2px solid #FFAEB9; 
-  padding: 1%; 
-
-  position: absolute;
-  top: 7%;
-  right: 5%;
-}
-
-@keyframes glow {  
-    0% { text-shadow: 0 0 5px #FF69B4, 0 0 10px #FF69B4, 0 0 15px #FF69B4, 0 0 20px #FF69B4; }  
-    20% { text-shadow: 0 0 15px #FF69B4, 0 0 20px #FF69B4, 0 0 30px #FF69B4, 0 0 35px #FF69B4; } 
-    50% { text-shadow: 0 0 30px #FF69B4, 0 0 35px #FF69B4, 0 0 40px #FF69B4, 0 0 45px #FF69B4; }
-    80% { text-shadow: 0 0 15px #FF69B4, 0 0 20px #FF69B4, 0 0 30px #FF69B4, 0 0 35px #FF69B4; } 
-    100% { text-shadow: 0 0 5px #FF69B4, 0 0 10px #FF69B4, 0 0 15px #FF69B4, 0 0 20px #FF69B4; }
-    80% { text-shadow: 0 0 15px #FF69B4, 0 0 20px #FF69B4, 0 0 30px #FF69B4, 0 0 35px #FF69B4; }
-    50% { text-shadow: 0 0 30px #FF69B4, 0 0 35px #FF69B4, 0 0 40px #FF69B4, 0 0 45px #FF69B4; } 
-    20% { text-shadow: 0 0 15px #FF69B4, 0 0 20px #FF69B4, 0 0 30px #FF69B4, 0 0 35px #FF69B4; } 
-}  
-
-.profile h2 {  
-  padding-top: 1.5%;
-  padding-bottom: 1%;
-  margin-left: 10%;   
-  font-weight: bold;
-  font-size: 98%;  
-  color: #FF3030;  
-  animation: glow 2s ease-in-out infinite; 
-}
-
-.profile .label {
-  padding-top: 1%;
-  margin-left: 10%;   
-  font-size: 80%;   
-  color: #FF83FA;   
-  border-radius: 15%;  
-  border: 1px solid #E066FF;
-  box-shadow: 0 0 1px rgba(0, 0, 0, 0.3); 
-  background-color: #FFF0F5;  
-  line-height: 2.3;  
-  padding: 0.8%; 
-}
-
-.profile .value {
-  font-weight: bold;
-  font-family:'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
-  margin-left: 2%;   
-  font-size: 85%;   
 }
 </style>
