@@ -748,7 +748,8 @@ export default {
   justify-content: center;
   align-items: center;
 
-  padding-top: 2cqmin;
+  padding-top: 5%;
+  padding-bottom: 2%;
 
   font-family: "幼圆";
   font-weight: bold;
@@ -759,7 +760,7 @@ export default {
   height: 10%;
   width: 100%;
 
-  padding-top: 1%;
+  padding-top: 2%;
   font-size: 80%;
 
   display: flex;
@@ -805,22 +806,16 @@ export default {
   height: 100%;
   width: 30%;
 
-  border-radius: 3px;
+  border-radius: 5px;
   cursor: pointer;
 
+  border: solid #1E90FF 2px;
   background-color: #1E90FF;
   color: #fff;
 }
 
 #form_add_button:hover {
   background-color: #0000CD;
-}
-
-form input,
-form select {
-  padding: 1.5%;
-  border-radius: 4px;
-  border: 1px solid #ccc;
 }
 
 .profile_match {
@@ -863,14 +858,22 @@ form select {
   height: 100%;
   width: 60%;
 
-  color: black;
   text-align: center;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  color: #191970;
   font-weight: bold;
 }
 
 #match_button_term {
   padding-top: 10%;
 }
+
+
+
+
 
 .company_profile {
   height: 100%;
