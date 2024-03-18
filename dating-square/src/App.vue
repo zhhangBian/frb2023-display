@@ -90,93 +90,149 @@
 
       <div class="company_profile">
         <div class="candiate_profile" id="company_1">
-          <div v-for="profile in profiles_1" :key="profile.id" class="profile">
+          <div v-for="profile in profiles_1" :key="profile.id" class="profile_list">
             <img :src="profile.image" class="profile_image">
             
-            <div class="profile_name">{{ profile.name }}</div>
-            
-            <div class="profile_age">
-              <span class="label"><strong>年龄:</strong></span>
-              <span class="value">{{ profile.age }}</span>
+            <div class="profile_name">
+              {{ profile.name }}
             </div>
             
-            <div class="profile_gender">
-              <span class="label"><strong>性别:</strong></span>
-              <span class="value">{{ profile.gender }}</span>
+            <div class="profile_item">
+              <div class="profile_type">
+                年龄：
+              </div>
+              <div class="profile_value">
+                {{ profile.age }}
+              </div>
             </div>
             
-            <div class="profile_hobby">
-              <span class="label"><strong>爱好:</strong></span>
-              <span class="value">{{ profile.hobbies.join(', ') }}</span>
+            <div class="profile_item">
+              <div class="profile_type">
+                性别：
+              </div>
+              <div class="profile_value">
+                {{ profile.gender }}
+              </div>
+            </div>
+            
+            <div class="profile_item">
+              <div class="profile_type">
+                爱好：
+              </div>
+              <div class="profile_value">
+                {{ profile.hobbies.join(', ') }}
+              </div>
             </div>
           </div>
         </div>
 
         <div class="candiate_profile" id="company_2">
-          <div v-for="profile in profiles_2" :key="profile.id" class="profile">
+          <div v-for="profile in profiles_2" :key="profile.id" class="profile_list">
             <img :src="profile.image" class="profile_image">
             
-            <div class="profile_name">{{ profile.name }}</div>
-            
-            <div class="profile_age">
-              <span class="label"><strong>年龄:</strong></span>
-              <span class="value">{{ profile.age }}</span>
+            <div class="profile_name">
+              {{ profile.name }}
             </div>
             
-            <div class="profile_gender">
-              <span class="label"><strong>性别:</strong></span>
-              <span class="value">{{ profile.gender }}</span>
+            <div class="profile_item">
+              <div class="profile_type">
+                年龄：
+              </div>
+              <div class="profile_value">
+                {{ profile.age }}
+              </div>
             </div>
             
-            <div class="profile_hobby">
-              <span class="label"><strong>爱好:</strong></span>
-              <span class="value">{{ profile.hobbies.join(', ') }}</span>
+            <div class="profile_item">
+              <div class="profile_type">
+                性别：
+              </div>
+              <div class="profile_value">
+                {{ profile.gender }}
+              </div>
+            </div>
+            
+            <div class="profile_item">
+              <div class="profile_type">
+                爱好：
+              </div>
+              <div class="profile_value">
+                {{ profile.hobbies.join(', ') }}
+              </div>
             </div>
           </div>
         </div>
 
         <div class="candiate_profile" id="company_3">
-          <div v-for="profile in profiles_3" :key="profile.id" class="profile">
+          <div v-for="profile in profiles_3" :key="profile.id" class="profile_list">
             <img :src="profile.image" class="profile_image">
             
-            <div class="profile_name">{{ profile.name }}</div>
-            
-            <div class="profile_age">
-              <span class="label"><strong>年龄:</strong></span>
-              <span class="value">{{ profile.age }}</span>
+            <div class="profile_name">
+              {{ profile.name }}
             </div>
             
-            <div class="profile_gender">
-              <span class="label"><strong>性别:</strong></span>
-              <span class="value">{{ profile.gender }}</span>
+            <div class="profile_item">
+              <div class="profile_type">
+                年龄：
+              </div>
+              <div class="profile_value">
+                {{ profile.age }}
+              </div>
             </div>
             
-            <div class="profile_hobby">
-              <span class="label"><strong>爱好:</strong></span>
-              <span class="value">{{ profile.hobbies.join(', ') }}</span>
+            <div class="profile_item">
+              <div class="profile_type">
+                性别：
+              </div>
+              <div class="profile_value">
+                {{ profile.gender }}
+              </div>
+            </div>
+            
+            <div class="profile_item">
+              <div class="profile_type">
+                爱好：
+              </div>
+              <div class="profile_value">
+                {{ profile.hobbies.join(', ') }}
+              </div>
             </div>
           </div>
         </div>
 
         <div class="candiate_profile" id="company_4">
-          <div v-for="profile in profiles_4" :key="profile.id" class="profile">
+          <div v-for="profile in profiles_4" :key="profile.id" class="profile_list">
             <img :src="profile.image" class="profile_image">
             
-            <div class="profile_name">{{ profile.name }}</div>
-            
-            <div class="profile_age">
-              <span class="label"><strong>年龄:</strong></span>
-              <span class="value">{{ profile.age }}</span>
+            <div class="profile_name">
+              {{ profile.name }}
             </div>
             
-            <div class="profile_gender">
-              <span class="label"><strong>性别:</strong></span>
-              <span class="value">{{ profile.gender }}</span>
+            <div class="profile_item">
+              <div class="profile_type">
+                年龄：
+              </div>
+              <div class="profile_value">
+                {{ profile.age }}
+              </div>
             </div>
             
-            <div class="profile_hobby">
-              <span class="label"><strong>爱好:</strong></span>
-              <span class="value">{{ profile.hobbies.join(', ') }}</span>
+            <div class="profile_item">
+              <div class="profile_type">
+                性别：
+              </div>
+              <div class="profile_value">
+                {{ profile.gender }}
+              </div>
+            </div>
+            
+            <div class="profile_item">
+              <div class="profile_type">
+                爱好：
+              </div>
+              <div class="profile_value">
+                {{ profile.hobbies.join(', ') }}
+              </div>
             </div>
           </div>
         </div>
@@ -194,13 +250,12 @@
         </div>
       </div>
 
-      <div class="match_rate">
+      <div class="chart">
         <div class="count_chart" ref="chart_count">
 
         </div>
 
         <div class="rate_chart" id="rate_chart">
-
         </div>
       </div>
     </div>
@@ -357,7 +412,8 @@ export default {
         name: '',
         age: null,
         gender: '',
-        hobbiesStr: ''
+        hobbiesStr: '',
+        company: 0
       },
 
       matcher: {
@@ -368,7 +424,7 @@ export default {
       },
 
       company_list: ['北航', '南航', '西航', '东航'],
-      name_list: ['a', 'b', 'c', 'd', 'e'],
+      name_list: ['大A', '大B', '大C', '大D', '大E'],
       age_init: 18,
 
       width: 0,
@@ -445,7 +501,7 @@ export default {
           {
             name: 'Access From',
             type: 'pie',
-            radius: '60%',
+            radius: '55%',
             data: [
               { value: 335, name: '18-20' },
               { value: 310, name: '20-30' },
@@ -894,78 +950,109 @@ export default {
   overflow: auto;
 }
 
-.profile {
+.profile_list {
   height: 25%;
   width: 95%;
 
   position: relative;
   padding: 1%;
 
+  display: flex;
+  flex-direction: column;
+  justify-content: left;
+  align-items: left;
+
   border: solid #FFAEB9 2px;
   border-radius: 15px;
   
   background-color: #FFF0F5;
-
-
   font-size: 80%;
 }
 
 .profile_image {
-  width: 30%;  
-  height: 85%;
+  height: 60%;
+  width: 20%;
 
-  border-radius: 100%; 
-  margin: 0 auto; 
   display: block; 
-  border: 2px solid #FFAEB9; 
-  padding: 1%; 
+  padding: 0.5%; 
 
   position: absolute;
-  top: 7%;
+  top: 10%;
   right: 5%;
+
+  border: 2px solid #FFAEB9; 
+  border-radius: 100%; 
 }
 
 .profile_name {  
-  padding-top: 1.5%;
-  padding-bottom: 1%;
-  margin-left: 10%;   
+  height: 20%;
+  width: 80%;
+
+  margin-top: 2%;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  
   font-weight: bold;
-  font-size: 98%;  
-  color: #FF3030;  
+  color: #FF8247; 
   animation: glow 2s ease-in-out infinite; 
 }
 
-.profile .label {
-  padding-top: 1%;
-  margin-left: 10%;   
-  font-size: 80%;   
-  color: #FF83FA;   
-  border-radius: 15%;  
-  border: 1px solid #E066FF;
-  box-shadow: 0 0 1px rgba(0, 0, 0, 0.3); 
-  background-color: #FFF0F5;  
-  line-height: 2.3;  
-  padding: 0.8%; 
+.profile_item{
+  height: 20%;
+  width: 80%;
+
+  margin-top: 1%;
+
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
 }
 
-.profile .value {
+.profile_type {
+  height: 100%;
+  width: 30%;
+
+  margin-left: 5%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  background-color: #FFF0F5;  
+  border-radius: 15%;  
+  border: 1px solid #E066FF;
+  
   font-weight: bold;
-  font-family:'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
-  margin-left: 2%;   
-  font-size: 85%;   
+  color: #FF83FA;
+}
+
+.profile_value {
+  height: 100%;
+  width: 80%;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
 @keyframes
 glow {  
-    0% { text-shadow: 0 0 5px #FF69B4, 0 0 10px #FF69B4, 0 0 15px #FF69B4, 0 0 20px #FF69B4; }  
-    20% { text-shadow: 0 0 15px #FF69B4, 0 0 20px #FF69B4, 0 0 30px #FF69B4, 0 0 35px #FF69B4; } 
-    50% { text-shadow: 0 0 30px #FF69B4, 0 0 35px #FF69B4, 0 0 40px #FF69B4, 0 0 45px #FF69B4; }
-    80% { text-shadow: 0 0 15px #FF69B4, 0 0 20px #FF69B4, 0 0 30px #FF69B4, 0 0 35px #FF69B4; } 
-    100% { text-shadow: 0 0 5px #FF69B4, 0 0 10px #FF69B4, 0 0 15px #FF69B4, 0 0 20px #FF69B4; }
-    80% { text-shadow: 0 0 15px #FF69B4, 0 0 20px #FF69B4, 0 0 30px #FF69B4, 0 0 35px #FF69B4; }
-    50% { text-shadow: 0 0 30px #FF69B4, 0 0 35px #FF69B4, 0 0 40px #FF69B4, 0 0 45px #FF69B4; } 
-    20% { text-shadow: 0 0 15px #FF69B4, 0 0 20px #FF69B4, 0 0 30px #FF69B4, 0 0 35px #FF69B4; } 
-}  
+    0% { text-shadow: 0 0 5px #FFB6C1, 0 0 10px #FFB6C1, 0 0 15px #FFB6C1, 0 0 20px #FFB6C1; }  
+    20% { text-shadow: 0 0 15px #FFB6C1, 0 0 20px #FFB6C1, 0 0 30px #FFB6C1, 0 0 35px #FFB6C1; } 
+    50% { text-shadow: 0 0 30px #FFB6C1, 0 0 35px #FFB6C1, 0 0 40px #FFB6C1, 0 0 45px #FFB6C1; }
+    80% { text-shadow: 0 0 15px #FFB6C1, 0 0 20px #FFB6C1, 0 0 30px #FFB6C1, 0 0 35px #FFB6C1; } 
+    100% { text-shadow: 0 0 5px #FFB6C1, 0 0 10px #FFB6C1, 0 0 15px #FFB6C1, 0 0 20px #FFB6C1; }
+    80% { text-shadow: 0 0 15px #FFB6C1, 0 0 20px #FFB6C1, 0 0 30px #FFB6C1, 0 0 35px #FFB6C1; }
+    50% { text-shadow: 0 0 30px #FFB6C1, 0 0 35px #FFB6C1, 0 0 40px #FFB6C1, 0 0 45px #FFB6C1; } 
+    20% { text-shadow: 0 0 15px #FFB6C1, 0 0 20px #FFB6C1, 0 0 30px #FFB6C1, 0 0 35px #FFB6C1; } 
+}
+
+
+
+
+
 
 .planet {
   height: 100%;
@@ -1002,27 +1089,31 @@ glow {
   width: 85%;
 }
 
-.match_rate {
+
+
+
+
+.chart {
   height: 100%;
   width: 65%;
 
   display: flex;
   flex-direction: row;
 
-  border: solid black 3px;
+  border: solid black 2px;
 }
 
 .count_chart {
   height: 100%;
   width: 50%;
 
-  border: solid purple 2px;
+  border: solid black 2px;
 }
 
 .rate_chart {
   height: 100%;
   width: 50%;
 
-  border: solid purple 2px;
+  border: solid black 2px;
 }
 </style>
