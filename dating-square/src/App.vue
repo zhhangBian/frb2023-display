@@ -33,8 +33,7 @@
 
             <div class="form-group">
               <div for="hobbies" class="form_type">爱好：</div>
-              <input type="text" class="form_enter" placeholder="多个爱好请用逗号分隔" v-model="newProfile.hobbiesStr"
-                     required>
+              <input type="text" class="form_enter" placeholder="多个爱好请用逗号分隔" v-model="newProfile.hobbiesStr" required>
             </div>
 
             <div class="form-button">
@@ -528,10 +527,10 @@ export default {
           {
             name: 'Access From',
             type: 'pie',
-            radius: '55%',
+            radius: '80%',
             data: [
-              {value: 335, name: '18-20'},
-              {value: 350, name: '20-30'},
+              {value: 335, name: '18-25'},
+              {value: 350, name: '25-30'},
               {value: 274, name: '30-40'},
               {value: 135, name: '40-50'},
               {value: 100, name: '50+'}
@@ -637,12 +636,14 @@ export default {
     },
 
     searchProfile() {
-      this.matcher.rate = (Math.random() * (95 - 60) + 60).toFixed(2) + '%'
-      this.matcher.source_company = this.company_list[Math.floor(Math.random() * this.company_list.length)]
-
-      this.matcher.name = this.name_list[Math.floor(Math.random() * this.name_list.length)]
+      this.matcher.rate = (Math.random() * (95 - 60) + 60).toFixed(2) + '%';
+      this.matcher.source_company = this.company_list[Math.floor(Math.random() * this.company_list.length)];
+      this.matcher.name = this.name_list[Math.floor(Math.random() * this.name_list.length)];
       //this.matcher.age = '我刚满' + (++this.age_init) + '岁'
-      this.matcher.age = ++this.age_init;
+      if (this.age_init>=60) {
+        this.age_init = 18;
+      }
+      this.matcher.age = this.age_init++;
     },
 
     initChart_count() {
@@ -795,6 +796,7 @@ export default {
 
   font-size: 190%;
   font-weight: bold;
+  font-family: "仿宋";
 }
 
 .top {
