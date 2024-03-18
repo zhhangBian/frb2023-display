@@ -504,9 +504,9 @@ export default {
             radius: '55%',
             data: [
               { value: 335, name: '18-20' },
-              { value: 310, name: '20-30' },
+              { value: 350, name: '20-30' },
               { value: 274, name: '30-40' },
-              { value: 235, name: '40-50' },
+              { value: 135, name: '40-50' },
               { value: 100, name: '50+' }
             ].sort(function(a, b) {
               return a.value - b.value;
@@ -667,82 +667,82 @@ export default {
         ctx.scale(2, 2)
       }
 
-      this.GLOBE_RADIUS = this.height * 0.5
-      this.GLOBE_CENTER_Z = -this.GLOBE_RADIUS
-      this.PROJECTION_CENTER_X = this.width / 2
-      this.PROJECTION_CENTER_Y = this.height / 2
-      this.FIELD_OF_VIEW = this.width * 0.8
+      this.GLOBE_RADIUS = this.height * 0.6;
+      this.GLOBE_CENTER_Z = -this.GLOBE_RADIUS;
+      this.PROJECTION_CENTER_X = this.width / 2;
+      this.PROJECTION_CENTER_Y = this.height / 2;
+      this.FIELD_OF_VIEW = this.width * 0.8;
     },
 
     createDots() {
-      this.dots = []
-      this.dotColors = []
+      this.dots = [];
+      this.dotColors = [];
       for (let i = 0; i < this.DOTS_AMOUNT; i++) {
         const theta = Math.random() * 2 * Math.PI
-        const phi = Math.acos((Math.random() * 2) - 1)
-        const x = this.GLOBE_RADIUS * Math.sin(phi) * Math.cos(theta)
-        const y = this.GLOBE_RADIUS * Math.sin(phi) * Math.sin(theta)
-        const z = (this.GLOBE_RADIUS * Math.cos(phi)) + this.GLOBE_CENTER_Z
-        const color = this.generateRandomColor() // 生成随机颜色
-        this.dots.push({ x, y, z })
-        this.dotColors.push(color) // 将随机颜色存入数组
+        const phi = Math.acos((Math.random() * 2) - 1);
+        const x = this.GLOBE_RADIUS * Math.sin(phi) * Math.cos(theta);
+        const y = this.GLOBE_RADIUS * Math.sin(phi) * Math.sin(theta);
+        const z = (this.GLOBE_RADIUS * Math.cos(phi)) + this.GLOBE_CENTER_Z;
+        const color = this.generateRandomColor();
+        this.dots.push({ x, y, z });
+        this.dotColors.push(color);
       }
     },
 
     renderScene() {
-      const ctx = this.$refs.canvas.getContext('2d')
-      ctx.clearRect(0, 0, this.width, this.height)
-      this.rotation += 0.002
-      const sineRotation = Math.sin(this.rotation)
-      const cosineRotation = Math.cos(this.rotation)
+      const ctx = this.$refs.canvas.getContext('2d');
+      ctx.clearRect(0, 0, this.width, this.height);
+      this.rotation += 0.002;
+      const sineRotation = Math.sin(this.rotation);
+      const cosineRotation = Math.cos(this.rotation);
       for (let i = 0; i < this.dots.length; i++) {
-        const color = this.dotColors[i] // 获取随机颜色
-        this.drawDot(ctx, this.dots[i], sineRotation, cosineRotation, color)
+        const color = this.dotColors[i]; 
+        this.drawDot(ctx, this.dots[i], sineRotation, cosineRotation, color);
       }
-      window.requestAnimationFrame(this.renderScene)
+      window.requestAnimationFrame(this.renderScene);
     },
 
     generateRandomColor() {
-      const r = Math.floor(Math.random() * 256) // 随机生成红色分量
-      const g = Math.floor(Math.random() * 256) // 随机生成绿色分量
-      const b = Math.floor(Math.random() * 256) // 随机生成蓝色分量
-      return `rgb(${r},${g},${b})` // 返回随机颜色
+      const r = Math.floor(Math.random() * 256);
+      const g = Math.floor(Math.random() * 256);
+      const b = Math.floor(Math.random() * 256);
+      return `rgb(${r},${g},${b})`;
     },
 
     drawDot(ctx, dot, sin, cos, color) {
-      const rotX = cos * dot.x + sin * (dot.z - this.GLOBE_CENTER_Z)
-      const rotZ = -sin * dot.x + cos * (dot.z - this.GLOBE_CENTER_Z) + this.GLOBE_CENTER_Z
-      const sizeProjection = this.FIELD_OF_VIEW / (this.FIELD_OF_VIEW - rotZ)
-      const xProject = (rotX * sizeProjection) + this.PROJECTION_CENTER_X
-      const yProject = (dot.y * sizeProjection) + this.PROJECTION_CENTER_Y
-      ctx.fillStyle = color // 设置点的颜色
-      ctx.beginPath()
-      ctx.arc(xProject, yProject, this.DOT_RADIUS * sizeProjection, 0, Math.PI * 2)
-      ctx.closePath()
-      ctx.fill()
+      const rotX = cos * dot.x + sin * (dot.z - this.GLOBE_CENTER_Z);
+      const rotZ = -sin * dot.x + cos * (dot.z - this.GLOBE_CENTER_Z) + this.GLOBE_CENTER_Z;
+      const sizeProjection = this.FIELD_OF_VIEW / (this.FIELD_OF_VIEW - rotZ);
+      const xProject = (rotX * sizeProjection) + this.PROJECTION_CENTER_X;
+      const yProject = (dot.y * sizeProjection) + this.PROJECTION_CENTER_Y;
+      ctx.fillStyle = color;
+      ctx.beginPath();
+      ctx.arc(xProject, yProject, this.DOT_RADIUS * sizeProjection, 0, Math.PI * 2);
+      ctx.closePath();
+      ctx.fill();
     },
 
     afterResize() {
-      this.width = this.$refs.canvas.offsetWidth
-      this.height = this.$refs.canvas.offsetHeight
+      this.width = this.$refs.canvas.offsetWidth;
+      this.height = this.$refs.canvas.offsetHeight;
       if (window.devicePixelRatio > 1) {
-        this.$refs.canvas.width = this.$refs.canvas.clientWidth * 2
-        this.$refs.canvas.height = this.$refs.canvas.clientHeight * 2
-        ctx.scale(2, 2)
+        this.$refs.canvas.width = this.$refs.canvas.clientWidth * 2;
+        this.$refs.canvas.height = this.$refs.canvas.clientHeight * 2;
+        ctx.scale(2, 2);
       } else {
-        this.$refs.canvas.width = this.width
-        this.$refs.canvas.height = this.height
+        this.$refs.canvas.width = this.width;
+        this.$refs.canvas.height = this.height;
       }
-      this.GLOBE_RADIUS = this.width * 0.7
-      this.GLOBE_CENTER_Z = -this.GLOBE_RADIUS
-      this.PROJECTION_CENTER_X = this.width / 2
-      this.PROJECTION_CENTER_Y = this.height / 2
-      this.FIELD_OF_VIEW = this.width * 0.8
-      this.createDots()
+      this.GLOBE_RADIUS = this.width * 0.6;
+      this.GLOBE_CENTER_Z = -this.GLOBE_RADIUS;
+      this.PROJECTION_CENTER_X = this.width / 2;
+      this.PROJECTION_CENTER_Y = this.height / 2;
+      this.FIELD_OF_VIEW = this.width * 0.8;
+      this.createDots();
     },
     onResize() {
-      clearTimeout(this.resizeTimeout)
-      this.resizeTimeout = setTimeout(this.afterResize, 500)
+      clearTimeout(this.resizeTimeout);
+      this.resizeTimeout = setTimeout(this.afterResize, 500);
     }
   }
 }
@@ -772,7 +772,7 @@ export default {
 }
 
 .bottom {
-  height: 40%;
+  height: 39%;
   width: 100%;
   
   display: flex;
@@ -1064,24 +1064,25 @@ glow {
 
   justify-content: space-between;
 
-  border: solid black 3px;
+  border: solid black 2px;
 }
 
 .planet_title {
   height: 100%;
-  width: 15%;
+  width: 10%;
 
-  font-size: 200%;
-  font-size: 48px;  
-  font-family:Georgia, 'Times New Roman', Times, serif;
-  background: linear-gradient(to bottom, #fc2797, #f427fc, #7c27fc, #27fcc6, #27fc34, #c8fc27,#fcf327);  
+  margin-left: 5%;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  background: linear-gradient(to bottom, #006064, #03A9F4, #00BCD4, #E0F7FA);  
   -webkit-background-clip: text;  
   -webkit-text-fill-color: transparent;  
 
+  font-size: 200%;
   writing-mode: vertical-lr;
-  margin-top: 17%;
-  margin-left: 3%;
-  justify-content: space-between;
 }
 
 .planet_motion {
@@ -1099,8 +1100,6 @@ glow {
 
   display: flex;
   flex-direction: row;
-
-  border: solid black 2px;
 }
 
 .count_chart {
