@@ -44,12 +44,46 @@
         </div>
 
         <div class="profile_match">
-          <p><span class="label1"><strong>匹配结果</strong></span> <span class="value">{{ matcher.rate }}</span></p>
-          <p><span class="label"><strong>来源公司</strong></span> <span class="value">{{ matcher.source_company }}</span></p>
-          <p><span class="label"><strong>姓名</strong></span> <span class="value">{{ matcher.name }}</span></p>
-          <p><span class="label"><strong>年龄</strong></span> <span class="value">{{ matcher.age }}</span></p>
-          <div></div>
-          <input type="button" value="点击了解更多" @click="searchProfile">
+          <div class="match_term">
+            <div class="match_name">
+              匹配率：
+            </div>
+            <div class="match_value">
+              {{ matcher.rate }}
+            </div>
+          </div>
+          
+          <div class="match_term">
+            <div class="match_name">
+              数据公司：
+            </div>
+            <div class="match_value">
+              {{ matcher.source_company }}
+            </div>
+          </div>
+          
+          <div class="match_term">
+            <div class="match_name">
+              姓名：
+            </div>
+            <div class="match_value">
+              {{ matcher.name }}
+            </div>
+          </div>
+          
+          <div class="match_term">
+            <div class="match_name">
+              年龄：
+            </div>
+            <div class="match_value">
+              {{ matcher.age }}
+            </div>
+          </div>
+          
+
+          <div  class="match_term" id="match_button_term">
+            <input type="button" class="match_button" value="点击了解更多" @click="searchProfile">
+          </div>
         </div>
 
       </div>
@@ -718,7 +752,7 @@ export default {
 
   font-family: "幼圆";
   font-weight: bold;
-  font-size: 150%; 
+  font-size: 90%; 
 }
 
 .form-group {
@@ -726,6 +760,7 @@ export default {
   width: 100%;
 
   padding-top: 1%;
+  font-size: 80%;
 
   display: flex;
 }
@@ -748,8 +783,10 @@ export default {
 }
 
 .form-button {
-  height: 20%;
+  height: 10%;
   width: 100%;
+
+  font-size: 80%;
 
   display: flex;
   justify-content: center;
@@ -793,43 +830,46 @@ form select {
   border-radius: 15px;
   margin: 0% 5% 2.5% 2.5%;
   background-color: #FFF0F5;
+
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
 }
 
-.profile_match .label1{
-  display: inline-block; /* 使其可以像块级元素一样设置宽度和高度，但保留内联元素的特性 */  
-  padding: 2%; /* 设置内边距，确保文字不会紧贴着边框 */  
-  background-color: black; /* 设置背景颜色为黑色 */  
-  color: white; /* 设置文字颜色为白色，以便在黑色背景上可见 */  
-  border-radius: 10% / 10%; /* 创建一个椭圆形的边框，水平半径和垂直半径不同 */  
-  line-height: 1.3; /*调整行高以更好地适应椭圆形状   */
-  text-align: center; /* 文字水平居中 */  
-  font-size:70%; /* 设置字体大小 */
-  margin-left: 15%; 
-  margin-top: 5%;
+.match_term {
+  height: 15%;
+  width: 90%;
+
+  padding-top: 1%;
+
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+}
+
+.match_name{
+  height: 100%;
+  width: 40%;
+
+  text-align: left;
+  
+  color: black;
   font-weight: bold;
 }
 
-.profile_match .label{
-  display: inline-block; /* 使其可以像块级元素一样设置宽度和高度，但保留内联元素的特性 */  
-  padding: 2%; /* 设置内边距，确保文字不会紧贴着边框 */  
-  background-color: black; /* 设置背景颜色为黑色 */  
-  color: white; /* 设置文字颜色为白色，以便在黑色背景上可见 */  
-  border-radius: 10% / 10%; /* 创建一个椭圆形的边框，水平半径和垂直半径不同 */  
-  line-height: 1.3; /*调整行高以更好地适应椭圆形状   */
-  text-align: center; /* 文字水平居中 */  
-  font-size:70%; /* 设置字体大小 */
-  margin-left: 15%; 
+.match_value{
+  height: 100%;
+  width: 60%;
+
+  color: black;
+  text-align: center;
   font-weight: bold;
 }
 
-.profile_match .value{
-  margin-left: 3%;   
-  font-size: 80%;  
-}
-
-.profile_match input{
-  margin-left: 30%; 
-  margin-top: 5%;
+#match_button_term {
+  padding-top: 10%;
 }
 
 .company_profile {
