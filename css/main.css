@@ -27,29 +27,38 @@
     border-radius: 30px;
 }
 
-.login-welcome {
+.login_welcome {
+    height: 15%;
+    width: 100%;
+
+    margin: 3% auto auto;
     position: relative;
     display: flex;
-    margin: 3% auto auto;
     justify-content: center;
     align-items: center;
 
-    height: 15%;
+    color: white;
+    font-family: "宋体";
+    font-size: 200%;
+    font-weight: bold;
 }
 
-.login-input {
+.login_input {
+    height: 50%;
+    width: 100%;
+
     position: relative;
     display: flex;
     margin-bottom: auto;
     justify-content: center;
     align-items: center;
     flex-direction: column;
-
-    height: 50%;
-    width: 100%;
 }
 
-.login-enter {
+.login_enter {
+    height: 15%;
+    width: 30%;
+
     position: relative;
     display: flex;
     margin: -7px auto 0;
@@ -58,14 +67,19 @@
     justify-content: center;
     align-items: center;
 
-    height: 15%;
-    width: 30%;
+    color: white;
+    font-family: "微软雅黑";
+    font-size: 150%;
+    font-weight: bold;
 
     border-radius: 20px;
     background-color: #180a78;
 }
 
-.input-window {
+.login_input_enter {
+    height: 30%;
+    width: 60%;
+
     position: relative;
     display: flex;
 
@@ -73,20 +87,19 @@
     overflow: hidden;
     margin-bottom: 10px;
     padding: 0 50px;
+
     border: 1px solid #fff;
     border-radius: 25px;
 
     font-size: 100%;
+    color: #fff;
+
     background-color: transparent;
 
-    height: 30%;
-    width: 60%;
-
-    color: #fff;
     outline: none;
 }
 
-.login-else {
+.login_else {
     position: relative;
     display: flex;
     margin: auto;
@@ -98,13 +111,17 @@
     height: 15%;
 }
 
-.else-button {
+.login_else_button {
+    width: 40%;
+    height: 100%;
+
     position: relative;
     display: flex;
     margin: auto;
     justify-content: center;
     align-items: center;
 
-    width: 40%;
-    height: 100%;
+    color: white;
+    font-family: "微软雅黑";
+    font-size: 100%;
 }
