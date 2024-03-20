@@ -39,10 +39,10 @@
             <div class="form-button">
               <div class="form_title_button">添加的公司：</div>
               <select class="button_enter" v-model="newProfile.company" required>
-                <option value=1>1</option>
-                <option value=2>2</option>
-                <option value=3>3</option>
-                <option value=4>4</option>
+                <option value=1>A</option>
+                <option value=2>B</option>
+                <option value=3>C</option>
+                <option value=4>D</option>
               </select>
 
               <button type="submit" class="form_add_button">添加</button>
@@ -492,6 +492,9 @@ export default {
         yAxis: {
           type: 'value'
         },
+        tooltip: {
+          trigger: 'item'
+        },
         series: [{
           data: [120, 200, 150, 80, 70, 110, 130],
           type: 'line',
@@ -512,53 +515,47 @@ export default {
 
       chart_rate: null,
       option_rate_chart: {
+        legend: {
+          top: 'bottom'
+        },
+        toolbox: {
+          show: false,
+        },
         tooltip: {
           trigger: 'item'
         },
-        visualMap: {
-          show: false,
-          min: 80,
-          max: 600,
-          inRange: {
-            colorLightness: [0, 1]
-          }
-        },
         series: [
           {
-            name: 'Access From',
+            name: '访问年龄占比',
             type: 'pie',
-            radius: '80%',
+            radius: [10, 200],
+            center: ['50%', '50%'],
+            roseType: 'area',
+            itemStyle: {
+              borderRadius: 80
+            },
             data: [
-              {value: 335, name: '18-25'},
-              {value: 350, name: '25-30'},
-              {value: 274, name: '30-40'},
-              {value: 135, name: '40-50'},
-              {value: 100, name: '50+'}
-            ].sort(function (a, b) {
-              return a.value - b.value;
-            }),
-            roseType: 'radius',
+              { value: 340, name: '18-25' },
+              { value: 438, name: '25-30' },
+              { value: 232, name: '30-40' },
+              { value: 290, name: '40-50' },
+              { value: 290, name: '50-60' },
+              { value: 230, name: '60+' },
+            ],
             label: {
-              color: 'rgba(0, 0, 0, 1)'
+              position: 'inner',
+              alignTo: 'none',
+              fontSize: 20,
+              bleedMargin: 10
             },
             labelLine: {
-              lineStyle: {
-                color: 'rgba(0, 0, 0, 1)'
-              },
               smooth: 0.2,
               length: 10,
               length2: 20
             },
-            itemStyle: {
-              color: '#FFDAB9',
-              shadowBlur: 1,
-              shadowColor: 'rgba(0, 0, 0, 1)'
-            },
+            
             animationType: 'scale',
             animationEasing: 'elasticOut',
-            animationDelay: function (idx) {
-              return Math.random() * 200
-            }
           }
         ]
       }
