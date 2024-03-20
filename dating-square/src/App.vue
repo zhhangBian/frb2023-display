@@ -1,7 +1,7 @@
 <template>
   <div class="page">
     <div class="title">
-      <img src="https://pigkiller-011955-1319328397.cos.ap-beijing.myqcloud.com/img/202403181050502.jpg" class="logo">
+      <img src="https://pigkiller-011955-1319328397.cos.ap-beijing.myqcloud.com/img/202403201703409.png" class="logo" onclick="location.href='https://zhhangbian.github.io/frb2023-display/';">
       <img src="https://pigkiller-011955-1319328397.cos.ap-beijing.myqcloud.com/img/202403181053411.png" class="solgan">
 
       旅途多平台相亲
