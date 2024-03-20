@@ -818,9 +818,9 @@ export default {
 .logo {
   position: absolute;
   left: 1.5%;
-  top: 0.5%;
+  top: -0.2%;
 
-  width: 3%;
+  width: 4.3%;
 }
 
 .solgan {
