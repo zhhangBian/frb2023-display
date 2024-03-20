@@ -793,7 +793,6 @@ export default {
   width: 100vw;
 
   background-color: #ffc0cb;
-  //background-image: url("https://pigkiller-011955-1319328397.cos.ap-beijing.myqcloud.com/img/202403202148913.jpg");
   background-size: contain;
   background-repeat: no-repeat;
   background-position: center;
