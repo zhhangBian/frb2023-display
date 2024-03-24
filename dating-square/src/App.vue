@@ -505,14 +505,14 @@ export default {
           data: ['Mon', 'Tue', 'Wen', 'Thu', 'Fri', 'Sat', 'Sun'],
           nameTextStyle: {
             fontSize: 20,
-            color: "rgba(0, 0, 0, 1)"
+            color: 'rgba(0, 0, 0, 1)'
           }
         },
         yAxis: {
           type: 'value',
           nameTextStyle: {
             fontSize: 20,
-            color: "rgba(0, 0, 0, 1)"
+            color: 'rgba(0, 0, 0, 1)'
           }
         },
         series: [
@@ -525,7 +525,7 @@ export default {
               width: 4,
               type: 'dashed'
             },
-            symbolSize: 12,
+            symbolSize: 12
           },
           {
             name: '25-30',
@@ -536,7 +536,7 @@ export default {
               width: 4,
               type: 'dashed'
             },
-            symbolSize: 12,
+            symbolSize: 12
           },
           {
             name: '30-40',
@@ -547,7 +547,7 @@ export default {
               width: 4,
               type: 'dashed'
             },
-            symbolSize: 12,
+            symbolSize: 12
           },
           {
             name: '40-50',
@@ -558,7 +558,7 @@ export default {
               width: 4,
               type: 'dashed'
             },
-            symbolSize: 12,
+            symbolSize: 12
           },
           {
             name: '50+',
@@ -569,7 +569,7 @@ export default {
               width: 4,
               type: 'dashed'
             },
-            symbolSize: 12,
+            symbolSize: 12
           }
         ]
       },
