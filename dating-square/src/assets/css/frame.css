@@ -23,11 +23,11 @@
   justify-content: center;
   align-items: center;
 
-  background-color: #D291BC;
+  background-color: #d291bc;
 
   font-size: 190%;
   font-weight: bold;
-  font-family: "仿宋";
+  font-family: '仿宋';
 }
 
 .top {
@@ -39,11 +39,20 @@
 }
 
 .bottom {
-  height: 34%;
+  height: 38%;
   width: 100%;
 
   display: flex;
   flex-direction: row;
+}
+
+.line {
+  height: 0.1%;
+  width: 100%;
+
+  margin-top: -0.8%;
+
+  border: solid #ffc0cb 1.5px;
 }
 
 .logo {

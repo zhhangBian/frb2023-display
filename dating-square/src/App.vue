@@ -210,12 +210,20 @@
       </div>
     </div>
 
+    <div class="line"></div>
+
     <div class="bottom">
       <div class="planet">
-        <div class="planet_title">匹配星球</div>
-
         <div class="planet_motion">
           <canvas class="planet_canvas" ref="canvas" style="height: 100%; width: 100%"></canvas>
+        </div>
+
+        <div class="planet_title">
+          匹配星球<br>
+          使用联邦聚合相亲平台<br>
+          匹配最合适的彼此<br>
+          近<font color="blue">7</font>天成功率:<br>
+          <font color="red" face="黑体" size="200%">67.21%</font>
         </div>
       </div>
 
@@ -422,8 +430,8 @@ export default {
       rotation: 0,
 
       dots: [],
-      dotNum: 1000,
-      dotRadius: 3,
+      dotNum: 3000,
+      dotRadius: 5,
       dotColors: [],
 
       planetRadius: 0,
@@ -619,9 +627,9 @@ export default {
       switch (this.newProfile.name) {
         case '张栗瑞':
         case 'zlr':
-          newProfile.name = '最帅的lrgg'
+          newProfile.name = 'lrgg'
           newProfile.age = 18
-          newProfile.gender = '最帅的男人'
+          newProfile.gender = 'www'
           newProfile.intro = '&~'
           newProfile.image =
             'https://pigkiller-011955-1319328397.cos.ap-beijing.myqcloud.com/img/202403021612148.png'
@@ -722,10 +730,10 @@ export default {
         ctx.scale(2, 2)
       }
 
-      this.planetRadius = this.height * 0.6
-      this.planetZ = -this.planetRadius
-      this.planetX = this.width / 2
-      this.planetY = this.height / 2
+      this.planetRadius = this.height * 1.2;
+      this.planetZ = -this.planetRadius;
+      this.planetX = this.width / 4;
+      this.planetY = 8 * this.height / 9;
       this.FIELD_OF_VIEW = this.width * 0.8
     },
 

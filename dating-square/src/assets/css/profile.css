@@ -265,7 +265,7 @@
 
 .profile_basic_text {
   height: 100%;
-  width: 80%;
+  width: 77%;
 
   display: flex;
   padding-left: 5%;
@@ -280,7 +280,7 @@
 
   display: flex;
 
-  overflow: auto;
+  overflow: hidden;
 
   font-size: 100%;
   color: #696969;
