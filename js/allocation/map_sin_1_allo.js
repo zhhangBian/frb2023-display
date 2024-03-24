@@ -52,7 +52,7 @@ document.addEventListener("DOMContentLoaded", function () {
     }
 
     function getX(t, beginX, beginY, ctrlX, ctrlY, endX, endYY) {
-        return (1 - t) * (1 - t) * beginX * divWidth1 + 2 * (1 - t) * t * ctrlX * divWidth1 + t * t * endX * divHeight1;
+        return (1 - t) * (1 - t) * beginX * divWidth1 + 2 * (1 - t) * t * ctrlX * divWidth1 + t * t * endX * divWidth1;
     }
 
     function getY(t, beginX, beginY, ctrlX, ctrlY, endX, endY) {
