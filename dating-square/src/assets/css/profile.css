@@ -1,0 +1,307 @@
+.profile_add {
+  height: 100%;
+  width: 20%;
+
+  display: flex;
+  flex-direction: column;
+}
+
+.profile_input {
+  height: 50%;
+  width: 95%;
+
+  border-radius: 15px;
+  margin: 5% 0 2.5% 2.5%;
+  background-color: #FFF0F5;
+}
+
+.info_title {
+  height: 5%;
+  width: 100%;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  padding-top: 5%;
+  padding-bottom: 2%;
+
+  font-family: "幼圆";
+  font-weight: bold;
+  font-size: 90%;
+}
+
+.info_info {
+  height: 10%;
+  width: 100%;
+
+  padding-top: 2%;
+  font-size: 80%;
+
+  display: flex;
+}
+
+.form_type {
+  height: 100%;
+  width: 25%;
+
+  font-size: 100%;
+
+  padding-left: 5%;
+
+  justify-content: center;
+  align-items: center;
+}
+
+.form_enter {
+  height: 100%;
+  width: 70%;
+}
+
+.info_button {
+  height: 10%;
+  width: 100%;
+
+  font-size: 80%;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding-top: 5%;
+}
+
+.info_company_title {
+  height: 100%;
+  width: 30%;
+
+  font-size: 90%;
+}
+
+.info_add_button {
+  height: 100%;
+  width: 30%;
+
+  border-radius: 5px;
+  cursor: pointer;
+
+  border: solid #1E90FF 2px;
+  background-color: #1E90FF;
+  color: #fff;
+}
+
+#form_add_button:hover {
+  background-color: #0000CD;
+}
+
+.profile_match {
+  height: 40%;
+  width: 95%;
+
+  border-radius: 15px;
+  margin: 0% 5% 2.5% 2.5%;
+  background-color: #FFF0F5;
+
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.match_term {
+  height: 15%;
+  width: 90%;
+
+  padding-top: 1%;
+
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+}
+
+.match_name {
+  height: 100%;
+  width: 40%;
+
+  text-align: left;
+
+  color: black;
+  font-weight: bold;
+}
+
+.match_value {
+  height: 100%;
+  width: 60%;
+
+  text-align: center;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  color: #191970;
+  font-weight: bold;
+}
+
+#match_button_term {
+  padding-top: 10%;
+}
+
+
+.company_profile {
+  height: 100%;
+  width: 80%;
+
+  display: flex;
+  flex-direction: row;
+
+  overflow: auto;
+}
+
+.candidate_profile {
+  height: 90%;
+  width: 25%;
+
+  margin-top: 1%;
+  overflow: auto;
+
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.profile_title {
+  height: 10%;
+  width: 100%;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  font-size: 120%;
+  font-weight: bold;
+  font-family: "仿宋";
+}
+
+.profile_info {
+  height: 90%;
+  width: 100%;
+
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.profile_list {
+  height: 25%;
+  width: 95%;
+
+  position: relative;
+  padding: 1%;
+
+  display: flex;
+  flex-direction: column;
+  justify-content: left;
+
+  border: solid #FFAEB9 2px;
+  border-radius: 15px;
+
+  background-color: #FFF0F5;
+  font-size: 80%;
+}
+
+.profile_image {
+  height: 60%;
+  width: 20%;
+
+  display: block;
+  padding: 0.5%;
+
+  position: absolute;
+  top: 10%;
+  right: 5%;
+
+  border: 2px solid #FFAEB9;
+  border-radius: 100%;
+}
+
+.profile_name {
+  height: 20%;
+  width: 80%;
+
+  margin-top: 2%;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  font-weight: bold;
+  color: #FF8247;
+  animation: glow 2s ease-in-out infinite;
+}
+
+.profile_item {
+  height: 20%;
+  width: 80%;
+
+  margin-top: 1%;
+
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+}
+
+.profile_type {
+  height: 100%;
+  width: 30%;
+
+  margin-left: 5%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  background-color: #FFF0F5;
+  border-radius: 15%;
+  border: 1px solid #E066FF;
+
+  font-weight: bold;
+  color: #FF83FA;
+}
+
+.profile_value {
+  height: 100%;
+  width: 80%;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+@keyframes glow {
+  0% {
+    text-shadow: 0 0 5px #FFB6C1, 0 0 10px #FFB6C1, 0 0 15px #FFB6C1, 0 0 20px #FFB6C1;
+  }
+  20% {
+    text-shadow: 0 0 15px #FFB6C1, 0 0 20px #FFB6C1, 0 0 30px #FFB6C1, 0 0 35px #FFB6C1;
+  }
+  50% {
+    text-shadow: 0 0 30px #FFB6C1, 0 0 35px #FFB6C1, 0 0 40px #FFB6C1, 0 0 45px #FFB6C1;
+  }
+  80% {
+    text-shadow: 0 0 15px #FFB6C1, 0 0 20px #FFB6C1, 0 0 30px #FFB6C1, 0 0 35px #FFB6C1;
+  }
+  100% {
+    text-shadow: 0 0 5px #FFB6C1, 0 0 10px #FFB6C1, 0 0 15px #FFB6C1, 0 0 20px #FFB6C1;
+  }
+  80% {
+    text-shadow: 0 0 15px #FFB6C1, 0 0 20px #FFB6C1, 0 0 30px #FFB6C1, 0 0 35px #FFB6C1;
+  }
+  50% {
+    text-shadow: 0 0 30px #FFB6C1, 0 0 35px #FFB6C1, 0 0 40px #FFB6C1, 0 0 45px #FFB6C1;
+  }
+  20% {
+    text-shadow: 0 0 15px #FFB6C1, 0 0 20px #FFB6C1, 0 0 30px #FFB6C1, 0 0 35px #FFB6C1;
+  }
+}
