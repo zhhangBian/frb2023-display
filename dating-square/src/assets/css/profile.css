@@ -201,6 +201,19 @@
   font-size: 80%;
 }
 
+.profile_list::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(255, 255, 255, 0.5);
+  border-radius: inherit;
+  filter: blur(50px);
+  z-index: -1;
+}
+
 .profile_image {
   height: 90%;
 
@@ -265,7 +278,7 @@
 
 .profile_basic_text {
   height: 100%;
-  width: 77%;
+  width: 75%;
 
   display: flex;
   padding-left: 5%;
