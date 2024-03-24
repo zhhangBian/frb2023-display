@@ -1,0 +1,84 @@
+.map_sin_dis {
+  padding-top: 20px;
+  width: 39%;
+  height: 95%;
+  float: left;
+}
+
+.map_fed_dis {
+  padding-top: 20px;
+  width: 39%;
+  height: 95%;
+  float: left;
+}
+
+.graph_right_dis {
+  padding-top: 20px;
+  width: 22%;
+  height: 100%;
+
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.graph_time_dis {
+  width: 100%;
+  height: 15%;
+}
+
+.graph_num_dis {
+  padding-top: 20px;
+  width: 100%;
+  height: 40%;
+}
+
+.graph_rate_dis {
+  padding-top: 20px;
+  width: 100%;
+  height: 40%;
+}
+
+#time-dis {
+  background: none;
+  border: none;
+  position: relative;
+  display: flex;
+
+  height: 100%;
+  width: 60%;
+
+  text-align: center;
+  color: #83c7e3;
+  font-family: "微软雅黑";
+  font-size: 120%;
+}
+
+#progressBar-dispath {
+  margin-top: 3%;
+  margin-left: auto;
+  margin-right: auto;
+
+  width: 87%;
+  height: 25%;
+
+  background-color: #ddd;
+  border-radius: 3px;
+  box-shadow: 0 2px 3px rgba(0, 0, 0, 0.25);
+  border: 1px solid #ccc;
+}
+
+#progressBar-allocation {
+  margin-top: 1%;
+  margin-left: auto;
+  margin-right: auto;
+
+  width: 87%;
+  height: 25%;
+
+  background-color: #ddd;
+  border-radius: 3px;
+  box-shadow: 0 2px 3px rgba(0, 0, 0, 0.25);
+  border: 1px solid #ccc;
+}
