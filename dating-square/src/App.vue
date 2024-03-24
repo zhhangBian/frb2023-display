@@ -1,15 +1,10 @@
 <template>
   <div class="page">
     <div class="title">
-      <img
-        src="https://pigkiller-011955-1319328397.cos.ap-beijing.myqcloud.com/img/202403201703409.png"
-        class="logo"
-        onclick="location.href='https://zhhangbian.github.io/frb2023-display/';"
-      />
-      <img
-        src="https://pigkiller-011955-1319328397.cos.ap-beijing.myqcloud.com/img/202403181053411.png"
-        class="slogan"
-      />
+      <img src="https://pigkiller-011955-1319328397.cos.ap-beijing.myqcloud.com/img/202403201703409.png" class="logo"
+        onclick="location.href='https://zhhangbian.github.io/frb2023-display/';" />
+      <img src="https://pigkiller-011955-1319328397.cos.ap-beijing.myqcloud.com/img/202403181053411.png"
+        class="slogan" />
 
       旅途多平台相亲
     </div>
@@ -39,14 +34,8 @@
             </div>
 
             <div class="info_info">
-              <div for="hobbies" class="form_type">爱好：</div>
-              <input
-                type="text"
-                class="form_enter"
-                placeholder="多个爱好请用逗号分隔"
-                v-model="newProfile.hobbiesStr"
-                required
-              />
+              <div for="hobbies" class="form_type">简介：</div>
+              <input type="text" class="form_enter" placeholder="请简单描述一下你自己" v-model="newProfile.intro" required />
             </div>
 
             <div class="info_button">
@@ -107,28 +96,21 @@
               <img :src="profile.image" class="profile_image" />
 
               <div class="profile_text">
-                <div class="profile_name">
-                  {{ profile.name }}
-                </div>
-
-                <div class="profile_item">
-                  <div class="profile_type">年龄：</div>
-                  <div class="profile_value">
+                <div class="profile_basic">
+                  <div class="profile_name">
+                    {{ profile.name }}
+                  </div>
+                  <div class="profile_basic_text">
                     {{ profile.age }}
                   </div>
-                </div>
-
-                <div class="profile_item">
-                  <div class="profile_type">性别：</div>
-                  <div class="profile_value">
+                  <div class="profile_basic_text">
                     {{ profile.gender }}
                   </div>
                 </div>
 
-                <div class="profile_item">
-                  <div class="profile_type">爱好：</div>
-                  <div class="profile_value">
-                    {{ profile.hobbies.join(', ') }}
+                <div class="profile_brief">
+                  <div class="profile_brief_text">
+                    {{ profile.intro }}
                   </div>
                 </div>
               </div>
@@ -144,28 +126,21 @@
               <img :src="profile.image" class="profile_image" />
 
               <div class="profile_text">
-                <div class="profile_name">
-                  {{ profile.name }}
-                </div>
-
-                <div class="profile_item">
-                  <div class="profile_type">年龄：</div>
-                  <div class="profile_value">
+                <div class="profile_basic">
+                  <div class="profile_name">
+                    {{ profile.name }}
+                  </div>
+                  <div class="profile_basic_text">
                     {{ profile.age }}
                   </div>
-                </div>
-
-                <div class="profile_item">
-                  <div class="profile_type">性别：</div>
-                  <div class="profile_value">
+                  <div class="profile_basic_text">
                     {{ profile.gender }}
                   </div>
                 </div>
 
-                <div class="profile_item">
-                  <div class="profile_type">爱好：</div>
-                  <div class="profile_value">
-                    {{ profile.hobbies.join(', ') }}
+                <div class="profile_brief">
+                  <div class="profile_brief_text">
+                    {{ profile.intro }}
                   </div>
                 </div>
               </div>
@@ -181,28 +156,21 @@
               <img :src="profile.image" class="profile_image" />
 
               <div class="profile_text">
-                <div class="profile_name">
-                  {{ profile.name }}
-                </div>
-
-                <div class="profile_item">
-                  <div class="profile_type">年龄：</div>
-                  <div class="profile_value">
+                <div class="profile_basic">
+                  <div class="profile_name">
+                    {{ profile.name }}
+                  </div>
+                  <div class="profile_basic_text">
                     {{ profile.age }}
                   </div>
-                </div>
-
-                <div class="profile_item">
-                  <div class="profile_type">性别：</div>
-                  <div class="profile_value">
+                  <div class="profile_basic_text">
                     {{ profile.gender }}
                   </div>
                 </div>
 
-                <div class="profile_item">
-                  <div class="profile_type">爱好：</div>
-                  <div class="profile_value">
-                    {{ profile.hobbies.join(', ') }}
+                <div class="profile_brief">
+                  <div class="profile_brief_text">
+                    {{ profile.intro }}
                   </div>
                 </div>
               </div>
@@ -218,28 +186,21 @@
               <img :src="profile.image" class="profile_image" />
 
               <div class="profile_text">
-                <div class="profile_name">
-                  {{ profile.name }}
-                </div>
-
-                <div class="profile_item">
-                  <div class="profile_type">年龄：</div>
-                  <div class="profile_value">
+                <div class="profile_basic">
+                  <div class="profile_name">
+                    {{ profile.name }}
+                  </div>
+                  <div class="profile_basic_text">
                     {{ profile.age }}
                   </div>
-                </div>
-
-                <div class="profile_item">
-                  <div class="profile_type">性别：</div>
-                  <div class="profile_value">
+                  <div class="profile_basic_text">
                     {{ profile.gender }}
                   </div>
                 </div>
 
-                <div class="profile_item">
-                  <div class="profile_type">爱好：</div>
-                  <div class="profile_value">
-                    {{ profile.hobbies.join(', ') }}
+                <div class="profile_brief">
+                  <div class="profile_brief_text">
+                    {{ profile.intro }}
                   </div>
                 </div>
               </div>
@@ -287,7 +248,7 @@ export default {
           name: '小a',
           age: 28,
           gender: '男',
-          hobbies: ['游泳', '登山'],
+          intro: '我是一个热爱户外运动和旅行的人，喜欢与朋友分享生活中的点滴，希望找到一个有活力、乐观向上的伴侣。',
           image:
             'https://pigkiller-011955-1319328397.cos.ap-beijing.myqcloud.com/img/202403181125928.jpg'
         },
@@ -296,16 +257,16 @@ export default {
           name: '小b',
           age: 25,
           gender: '女',
-          hobbies: ['阅读', '电影'],
+          intro: '我是一位热爱读书和摄影的文艺女青年，喜欢安静的时光，渴望找到一个懂得珍惜彼此的人。',
           image:
             'https://pigkiller-011955-1319328397.cos.ap-beijing.myqcloud.com/img/202403181125929.jpg'
         },
         {
           id: 3,
           name: '小c',
-          age: 30,
+          age: 32,
           gender: '男',
-          hobbies: ['音乐', '旅行'],
+          intro: '我是一名IT工程师，对新技术充满好奇心，喜欢烹饪美食和看科幻电影，寻找一个理解和支持我的伴侣。',
           image:
             'https://pigkiller-011955-1319328397.cos.ap-beijing.myqcloud.com/img/202403181125930.jpg'
         },
@@ -314,7 +275,7 @@ export default {
           name: '小d',
           age: 27,
           gender: '女',
-          hobbies: ['摄影', '跳舞'],
+          intro: '我是一位热爱音乐和绘画的艺术家，喜欢探索生活的各种可能性，希望找到一个能够一起分享创意和梦想的人。',
           image:
             'https://pigkiller-011955-1319328397.cos.ap-beijing.myqcloud.com/img/202403181125931.jpg'
         }
@@ -324,36 +285,36 @@ export default {
         {
           id: 5,
           name: '小e',
-          age: 22,
+          age: 30,
           gender: '男',
-          hobbies: ['游泳', '登山'],
+          intro: '我是一名金融行业的职场人士，生活上喜欢简单而有品味的享受，寻找一个能够共同规划未来的伴侣。',
           image:
             'https://pigkiller-011955-1319328397.cos.ap-beijing.myqcloud.com/img/202403181125932.jpg'
         },
         {
           id: 6,
           name: '小f',
-          age: 26,
+          age: 24,
           gender: '女',
-          hobbies: ['阅读', '电影'],
+          intro: '我是一名爱好健身和健康生活的运动员，热爱挑战自我，希望找到一个积极向上、有责任心的伴侣。',
           image:
             'https://pigkiller-011955-1319328397.cos.ap-beijing.myqcloud.com/img/202403181125933.jpg'
         },
         {
           id: 7,
           name: '小g',
-          age: 23,
+          age: 29,
           gender: '男',
-          hobbies: ['音乐', '旅行'],
+          intro: '我是一名喜欢音乐和摄影的自由职业者，热爱探索世界各地的文化和风情，寻找一个志同道合、有共同兴趣的伴侣。',
           image:
             'https://pigkiller-011955-1319328397.cos.ap-beijing.myqcloud.com/img/202403181125934.jpg'
         },
         {
           id: 8,
           name: '小h',
-          age: 37,
+          age: 26,
           gender: '女',
-          hobbies: ['摄影', '跳舞'],
+          intro: '我是一名热爱动物和大自然的环保志愿者，喜欢户外活动和参与公益事业，希望找到一个有同理心、善良温柔的伴侣。',
           image:
             'https://pigkiller-011955-1319328397.cos.ap-beijing.myqcloud.com/img/202403181125935.jpg'
         }
@@ -363,36 +324,36 @@ export default {
         {
           id: 9,
           name: '小i',
-          age: 48,
+          age: 31,
           gender: '男',
-          hobbies: ['游泳', '登山'],
+          intro: '我是一名企业家，热爱挑战和创新，喜欢旅行和品尝各种美食，寻找一个能够一起创造幸福的伴侣。',
           image:
             'https://pigkiller-011955-1319328397.cos.ap-beijing.myqcloud.com/img/202403181125936.jpg'
         },
         {
           id: 10,
           name: '小j',
-          age: 15,
+          age: 23,
           gender: '女',
-          hobbies: ['阅读', '电影'],
+          intro: '我是一位热爱读书和写作的大学生，喜欢思考人生的意义和价值，希望找到一个能够共同成长、相互扶持的伴侣。',
           image:
             'https://pigkiller-011955-1319328397.cos.ap-beijing.myqcloud.com/img/202403181125937.jpg'
         },
         {
           id: 11,
           name: '小k',
-          age: 26,
+          age: 33,
           gender: '男',
-          hobbies: ['音乐', '旅行'],
+          intro: '我是一名艺术家，擅长绘画和雕塑，热爱艺术创作和收集古董，寻找一个能够共同欣赏艺术的伴侣。',
           image:
             'https://pigkiller-011955-1319328397.cos.ap-beijing.myqcloud.com/img/202403181125938.jpg'
         },
         {
           id: 12,
           name: '小l',
-          age: 11,
+          age: 28,
           gender: '女',
-          hobbies: ['摄影', '跳舞'],
+          intro: '我是一名职业设计师，热爱美食和时尚，喜欢尝试各种新鲜的事物，希望找到一个有品味、有趣味的伴侣。',
           image:
             'https://pigkiller-011955-1319328397.cos.ap-beijing.myqcloud.com/img/202403181125939.jpg'
         }
@@ -402,36 +363,36 @@ export default {
         {
           id: 13,
           name: '小m',
-          age: 54,
+          age: 30,
           gender: '男',
-          hobbies: ['游泳', '登山'],
+          intro: '我是一名医生，热爱公益事业和帮助他人，喜欢健身和参加慈善活动，寻找一个热爱生活、积极向上的伴侣。',
           image:
             'https://pigkiller-011955-1319328397.cos.ap-beijing.myqcloud.com/img/202403181125940.jpg'
         },
         {
           id: 14,
           name: '小n',
-          age: 35,
+          age: 25,
           gender: '女',
-          hobbies: ['阅读', '电影'],
+          intro: '我是一位热爱音乐和舞蹈的表演艺术家，喜欢享受舞台带来的快乐和挑战，希望找到一个能够与我共同追逐梦想的伴侣。',
           image:
             'https://pigkiller-011955-1319328397.cos.ap-beijing.myqcloud.com/img/202403181125942.jpg'
         },
         {
           id: 15,
           name: '小o',
-          age: 31,
+          age: 29,
           gender: '男',
-          hobbies: ['音乐', '旅行'],
+          intro: '我是一名教育工作者，热爱与孩子们交流和学习，喜欢户外运动和旅行，寻找一个善良温柔、有家庭责任感的伴侣。',
           image:
             'https://pigkiller-011955-1319328397.cos.ap-beijing.myqcloud.com/img/202403181125941.jpg'
         },
         {
           id: 16,
           name: '小p',
-          age: 22,
+          age: 27,
           gender: '女',
-          hobbies: ['摄影', '跳舞'],
+          intro: '我是一名医护人员，热爱生命和健康，喜欢烹饪和旅行，希望找到一个有爱心、有责任心的伴侣。',
           image:
             'https://pigkiller-011955-1319328397.cos.ap-beijing.myqcloud.com/img/202403181125943.jpg'
         }
@@ -441,7 +402,7 @@ export default {
         name: '',
         age: null,
         gender: '',
-        hobbiesStr: '',
+        intro: '',
         company: 0
       },
 
@@ -643,15 +604,14 @@ export default {
         this.profiles_2.length +
         this.profiles_3.length +
         this.profiles_4.length +
-        1
-      const hobbies = this.newProfile.hobbiesStr.split(',').map((hobby) => hobby.trim())
+        1;
 
       let newProfile = {
         id: id,
         name: this.newProfile.name,
         age: this.newProfile.age,
         gender: this.newProfile.gender,
-        hobbies: hobbies,
+        intro: this.newProfile.intro,
         image: '',
         company: this.newProfile.company
       }
@@ -662,7 +622,7 @@ export default {
           newProfile.name = '最帅的lrgg'
           newProfile.age = 18
           newProfile.gender = '最帅的男人'
-          newProfile.hobbies = ['你']
+          newProfile.intro = '&~'
           newProfile.image =
             'https://pigkiller-011955-1319328397.cos.ap-beijing.myqcloud.com/img/202403021612148.png'
           break
@@ -706,7 +666,7 @@ export default {
       this.newProfile.name = ''
       this.newProfile.age = 18
       this.newProfile.gender = ''
-      this.newProfile.hobbiesStr = ''
+      this.newProfile.intro = ''
     },
 
     searchProfile() {
