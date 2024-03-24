@@ -107,35 +107,38 @@
             <div v-for="profile in profiles_1" :key="profile.id" class="profile_list">
               <img :src="profile.image" class="profile_image">
 
-              <div class="profile_name">
-                {{ profile.name }}
-              </div>
+              <div class="profile_text">
+                <div class="profile_name">
+                  {{ profile.name }}
+                </div>
+  
+                <div class="profile_item">
+                  <div class="profile_type">
+                    年龄：
+                  </div>
+                  <div class="profile_value">
+                    {{ profile.age }}
+                  </div>
+                </div>
+  
+                <div class="profile_item">
+                  <div class="profile_type">
+                    性别：
+                  </div>
+                  <div class="profile_value">
+                    {{ profile.gender }}
+                  </div>
+                </div>
+  
+                <div class="profile_item">
+                  <div class="profile_type">
+                    爱好：
+                  </div>
+                  <div class="profile_value">
+                    {{ profile.hobbies.join(', ') }}
+                  </div>
+                </div>
 
-              <div class="profile_item">
-                <div class="profile_type">
-                  年龄：
-                </div>
-                <div class="profile_value">
-                  {{ profile.age }}
-                </div>
-              </div>
-
-              <div class="profile_item">
-                <div class="profile_type">
-                  性别：
-                </div>
-                <div class="profile_value">
-                  {{ profile.gender }}
-                </div>
-              </div>
-
-              <div class="profile_item">
-                <div class="profile_type">
-                  爱好：
-                </div>
-                <div class="profile_value">
-                  {{ profile.hobbies.join(', ') }}
-                </div>
               </div>
             </div>
           </div>
@@ -150,35 +153,38 @@
             <div v-for="profile in profiles_2" :key="profile.id" class="profile_list">
               <img :src="profile.image" class="profile_image">
 
-              <div class="profile_name">
-                {{ profile.name }}
-              </div>
+              <div class="profile_text">
+                <div class="profile_name">
+                  {{ profile.name }}
+                </div>
+  
+                <div class="profile_item">
+                  <div class="profile_type">
+                    年龄：
+                  </div>
+                  <div class="profile_value">
+                    {{ profile.age }}
+                  </div>
+                </div>
+  
+                <div class="profile_item">
+                  <div class="profile_type">
+                    性别：
+                  </div>
+                  <div class="profile_value">
+                    {{ profile.gender }}
+                  </div>
+                </div>
+  
+                <div class="profile_item">
+                  <div class="profile_type">
+                    爱好：
+                  </div>
+                  <div class="profile_value">
+                    {{ profile.hobbies.join(', ') }}
+                  </div>
+                </div>
 
-              <div class="profile_item">
-                <div class="profile_type">
-                  年龄：
-                </div>
-                <div class="profile_value">
-                  {{ profile.age }}
-                </div>
-              </div>
-
-              <div class="profile_item">
-                <div class="profile_type">
-                  性别：
-                </div>
-                <div class="profile_value">
-                  {{ profile.gender }}
-                </div>
-              </div>
-
-              <div class="profile_item">
-                <div class="profile_type">
-                  爱好：
-                </div>
-                <div class="profile_value">
-                  {{ profile.hobbies.join(', ') }}
-                </div>
               </div>
             </div>
           </div>
@@ -193,35 +199,38 @@
             <div v-for="profile in profiles_3" :key="profile.id" class="profile_list">
               <img :src="profile.image" class="profile_image">
 
-              <div class="profile_name">
-                {{ profile.name }}
-              </div>
+              <div class="profile_text">
+                <div class="profile_name">
+                  {{ profile.name }}
+                </div>
+  
+                <div class="profile_item">
+                  <div class="profile_type">
+                    年龄：
+                  </div>
+                  <div class="profile_value">
+                    {{ profile.age }}
+                  </div>
+                </div>
+  
+                <div class="profile_item">
+                  <div class="profile_type">
+                    性别：
+                  </div>
+                  <div class="profile_value">
+                    {{ profile.gender }}
+                  </div>
+                </div>
+  
+                <div class="profile_item">
+                  <div class="profile_type">
+                    爱好：
+                  </div>
+                  <div class="profile_value">
+                    {{ profile.hobbies.join(', ') }}
+                  </div>
+                </div>
 
-              <div class="profile_item">
-                <div class="profile_type">
-                  年龄：
-                </div>
-                <div class="profile_value">
-                  {{ profile.age }}
-                </div>
-              </div>
-
-              <div class="profile_item">
-                <div class="profile_type">
-                  性别：
-                </div>
-                <div class="profile_value">
-                  {{ profile.gender }}
-                </div>
-              </div>
-
-              <div class="profile_item">
-                <div class="profile_type">
-                  爱好：
-                </div>
-                <div class="profile_value">
-                  {{ profile.hobbies.join(', ') }}
-                </div>
               </div>
             </div>
           </div>
@@ -236,34 +245,36 @@
             <div v-for="profile in profiles_4" :key="profile.id" class="profile_list">
               <img :src="profile.image" class="profile_image">
 
-              <div class="profile_name">
-                {{ profile.name }}
-              </div>
-
-              <div class="profile_item">
-                <div class="profile_type">
-                  年龄：
+              <div class="profile_text">
+                <div class="profile_name">
+                  {{ profile.name }}
                 </div>
-                <div class="profile_value">
-                  {{ profile.age }}
+  
+                <div class="profile_item">
+                  <div class="profile_type">
+                    年龄：
+                  </div>
+                  <div class="profile_value">
+                    {{ profile.age }}
+                  </div>
                 </div>
-              </div>
-
-              <div class="profile_item">
-                <div class="profile_type">
-                  性别：
+  
+                <div class="profile_item">
+                  <div class="profile_type">
+                    性别：
+                  </div>
+                  <div class="profile_value">
+                    {{ profile.gender }}
+                  </div>
                 </div>
-                <div class="profile_value">
-                  {{ profile.gender }}
-                </div>
-              </div>
-
-              <div class="profile_item">
-                <div class="profile_type">
-                  爱好：
-                </div>
-                <div class="profile_value">
-                  {{ profile.hobbies.join(', ') }}
+  
+                <div class="profile_item">
+                  <div class="profile_type">
+                    爱好：
+                  </div>
+                  <div class="profile_value">
+                    {{ profile.hobbies.join(', ') }}
+                  </div>
                 </div>
               </div>
             </div>

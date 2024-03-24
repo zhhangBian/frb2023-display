@@ -198,6 +198,7 @@
   width: 95%;
 
   position: relative;
+  margin-top: 1%;
   padding: 1%;
 
   display: flex;
@@ -207,28 +208,28 @@
   border: solid #FFAEB9 2px;
   border-radius: 15px;
 
-  background-color: #FFF0F5;
+  /* background-color: #FFF0F5; */
   font-size: 80%;
 }
 
+.profile_text {
+  height: 100%;
+  width: 70%;
+}
+
 .profile_image {
-  height: 60%;
-  width: 20%;
+  height: 90%;
 
   display: block;
-  padding: 0.5%;
 
   position: absolute;
-  top: 10%;
-  right: 5%;
-
-  border: 2px solid #FFAEB9;
-  border-radius: 100%;
+  top: 5%;
+  right: 3%;
 }
 
 .profile_name {
   height: 20%;
-  width: 80%;
+  width: 100%;
 
   margin-top: 2%;
 
@@ -243,7 +244,7 @@
 
 .profile_item {
   height: 20%;
-  width: 80%;
+  width: 100%;
 
   margin-top: 1%;
 
