@@ -128,7 +128,7 @@ document.addEventListener("DOMContentLoaded", function () {
     }
 
     function getX(t, beginX, beginY, ctrlX, ctrlY, endX, endYY) {
-        return (1 - t) * (1 - t) * beginX * divWidth0 + 2 * (1 - t) * t * ctrlX * divWidth0 + t * t * endX * divHeight0;
+        return (1 - t) * (1 - t) * beginX * divWidth0 + 2 * (1 - t) * t * ctrlX * divWidth0 + t * t * endX * divWidth0;
     }
 
     function getY(t, beginX, beginY, ctrlX, ctrlY, endX, endY) {
@@ -148,7 +148,7 @@ document.addEventListener("DOMContentLoaded", function () {
             painter0.fillStyle = "#00FF00";
             x = getX(t, beginX, beginY, ctrlX, ctrlY, endX, endY);
             y = getY(t, beginX, beginY, ctrlX, ctrlY, endX, endY);
-        } else if (time > timeEnd && time <= timeEnd + 1000) {
+        } else if (time >= timeEnd && time <= timeEnd + 1000) {
             painter0.fillStyle = "#F0F8FF	";
             x = endX * divWidth0;
             y = endY * divHeight0;
